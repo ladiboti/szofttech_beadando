@@ -13,6 +13,8 @@ namespace szofttech
         private int day;
         private int hour;
         private int minute;
-        public string getDate();
+        public string getDate() {
+        
+        }
     }
 }

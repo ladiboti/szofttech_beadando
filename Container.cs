@@ -13,9 +13,17 @@ namespace szofttech
         private List<Event> events;
         private List<Student> students;
 
-        public void getEventList();
-        public void getStudentList();
-        public void addEvent(Event event);
-        public void addStudent(Student student);
+        public void getEventList() {
+        
+        }
+        public void getStudentList() {
+        
+        }
+        public void addEvent(Event event) {
+            
+        }
+        public void addStudent(Student student) {
+        
+        }
     }
 }
