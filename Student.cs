@@ -12,5 +12,28 @@ namespace szofttech
     private List<string>       bicycles;
 
     private string name;
+    private string neptunCode;
+    private string major;
+
+    private int roomNumber;
+    private int balance;
+    private int obligation;
+
+    private bool isUnderDiscipliary = false;
+
+    public Student(List<Notification> notificationList, List<string> bicycles, string name, 
+      string neptunCode, string major, int roomNumber, 
+      int balance, int obligation)
+    {
+      this.notificationList = new List<Notification>();
+      this.bicycles         = new List<string>();
+
+      this.name             = name;
+      this.neptunCode       = neptunCode;
+      this.major            = major;
+      this.roomNumber       = roomNumber;
+      this.balance          = balance;
+      this.obligation       = obligation;
+    }
   }
 }
