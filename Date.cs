@@ -13,8 +13,16 @@ namespace szofttech
         private int day;
         private int hour;
         private int minute;
+        public Date(int year, int month, int day, int hour, int minute)
+        {
+            this.year = year;
+            this.month = month;
+            this.day = day;
+            this.hour = hour;
+            this.minute = minute;
+        }
         public string getDate() {
-        
+            // kifejtés szükséges
         }
     }
 }

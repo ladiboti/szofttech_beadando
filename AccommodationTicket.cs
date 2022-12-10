@@ -8,18 +8,14 @@ namespace szofttech
 {
     internal class AccommodationTicket
     {
-        private String guestId;
-        private String guestName;
-        private Date expireDate;
-        public String getGuestId() {
-            return guestId;
-        }
-        public String getGuestName() {
-            return guestName;
-        }
-        public Date getExpireDate()
+        public string guestId { get; }
+        public string guestName { get; }
+        public Date expireDate { get;  }
+        public AccommodationTicket(string guestId, string guestName, Date expireDate)
         {
-            return expireDate;
+            this.guestId = guestId;
+            this.guestName = guestName;
+            this.expireDate = expireDate;
         }
     }
 }

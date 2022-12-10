@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Attila\\Source\\Repos\\szofttech_beadando2\\szofttech.csproj": {}
+    "D:\\Asztal\\a\\szofttech.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Attila\\Source\\Repos\\szofttech_beadando2\\szofttech.csproj": {
+    "D:\\Asztal\\a\\szofttech.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Attila\\Source\\Repos\\szofttech_beadando2\\szofttech.csproj",
+        "projectUniqueName": "D:\\Asztal\\a\\szofttech.csproj",
         "projectName": "szofttech",
-        "projectPath": "C:\\Users\\Attila\\Source\\Repos\\szofttech_beadando2\\szofttech.csproj",
-        "packagesPath": "C:\\Users\\Attila\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Attila\\Source\\Repos\\szofttech_beadando2\\obj\\",
+        "projectPath": "D:\\Asztal\\a\\szofttech.csproj",
+        "packagesPath": "C:\\Users\\Adrián\\.nuget\\packages\\",
+        "outputPath": "D:\\Asztal\\a\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Attila\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Adrián\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

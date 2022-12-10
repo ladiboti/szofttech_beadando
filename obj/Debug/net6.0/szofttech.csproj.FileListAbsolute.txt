@@ -1,0 +1,5 @@
+D:\Asztal\a\obj\Debug\net6.0\szofttech.csproj.AssemblyReference.cache
+D:\Asztal\a\obj\Debug\net6.0\szofttech.GeneratedMSBuildEditorConfig.editorconfig
+D:\Asztal\a\obj\Debug\net6.0\szofttech.AssemblyInfoInputs.cache
+D:\Asztal\a\obj\Debug\net6.0\szofttech.AssemblyInfo.cs
+D:\Asztal\a\obj\Debug\net6.0\szofttech.csproj.CoreCompileInputs.cache

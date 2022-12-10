@@ -10,20 +10,7 @@ namespace szofttech
 {
     internal class Container
     {
-        private List<Event> events;
-        private List<Student> students;
-
-        public void getEventList() {
-        
-        }
-        public void getStudentList() {
-        
-        }
-        public void addEvent(Event event) {
-            
-        }
-        public void addStudent(Student student) {
-        
-        }
+        public List<Event> events { get; set; }
+        public List<Student> student { get; set; }
     }
 }

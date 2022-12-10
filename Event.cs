@@ -8,22 +8,16 @@ namespace szofttech
 {
     internal class Event
     {
-        private Senior organizer;
-        private String descripiton;
-        private Date date;
-        private String place;
-
-        public Senior getOrganizer() {
-            return organizer;
+        public Senior organizer { get; }
+        public string description { get; }
+        public Date date { get; }
+        public string place { get; }
+        public Event(Senior organizer, string descripiton, Date date, string place)
+        {
+            this.organizer = organizer;
+            this.description = descripiton;
+            this.date = date;
+            this.place = place;
         }
-        public String getDescription() {
-            return descripiton;
-        }
-        public Date getDate() {
-            return date;
-        }
-        public String getPlace() {
-            return place;
-        } 
     }
 }
