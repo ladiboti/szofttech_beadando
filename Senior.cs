@@ -9,21 +9,23 @@ namespace szofttech
 {
     internal class Senior : Student
     {
-        public static List<AccommodationTicket> accommodationTickets { get;  }
+        public static List<AccommodationTicket> accommodationTickets { get; set; }
         public static Dictionary<string, string> pendingGuestRequest { get; }
-        public bool dutyStatus { get; set; }
+        public bool dutyStatus { get; private set; }
         public void addEvent(Event newEvent) { 
             // kifejtés szükséges
         }
-        public void startDuty() {
+        private void startDuty() {
             // kifejtés szükséges
         }
-        public void modifyDisciplinaryState() { 
+        private void modifyDisciplinaryState() { 
             // kifejtés szükséges
         }
-        public void giveAccommodationTicket() { 
+        private void giveAccommodationTicket() { 
             // kifejtés szükséges
         }
-
+        public void newGuestRequest(string id, string name) { 
+            // kifejtés szükséges
+        }
     }
 }
