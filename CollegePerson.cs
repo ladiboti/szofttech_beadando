@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace szofttech
 {
-    internal class CollegePerson
+    abstract class CollegePerson
     {
-        String a;
+      public abstract void login();
+      public abstract void logout();
     }
 }

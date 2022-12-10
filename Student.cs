@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace szofttech
 {
-  internal class Student
+  internal class Student : CollegePerson
   {
     private List<Notification> notificationList;
     private List<string>       bicycles;
@@ -34,6 +34,16 @@ namespace szofttech
       this.roomNumber       = roomNumber;
       this.balance          = balance;
       this.obligation       = obligation;
+    }
+
+    public override void login()
+    {
+      throw new NotImplementedException();
+    }
+
+    public override void logout()
+    {
+      throw new NotImplementedException();
     }
   }
 }
