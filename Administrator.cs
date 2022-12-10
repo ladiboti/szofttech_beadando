@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace szofttech
 {
-  internal class Administrator
-  {
+    internal class Administrator
+    {
         private static List<Request> requestsList = new List<Request>();
 
         private void addNewStudent()
@@ -36,6 +36,16 @@ namespace szofttech
         }
 
         private void addObligation()
+        {
+
+        }
+
+        private void modifyDisciplinaryState()
+        {
+
+        }
+
+        private void moveToRoom()
         {
 
         }
