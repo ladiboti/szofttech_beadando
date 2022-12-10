@@ -6,6 +6,7 @@
     {
       Console.WriteLine("Hello, World!");
       Console.WriteLine("asd");
+      Console.WriteLine("Valami");
     }
   }
 }
