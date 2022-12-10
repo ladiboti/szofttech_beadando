@@ -8,7 +8,13 @@ namespace szofttech
 {
     abstract class CollegePerson
     {
-      public abstract void login();
-      public abstract void logout();
+      public void login()
+      {
+        throw new NotImplementedException();
+      }
+      public void logout()
+      {
+        throw new NotImplementedException();
+      }
     }
 }
