@@ -13,9 +13,17 @@ namespace szofttech
         private Date date;
         private String place;
 
-        public getOrganizer();
-        public getDescription();
-        public getDate();
-        public getPlace();
+        public Senior getOrganizer() {
+            return organizer;
+        }
+        public String getDescription() {
+            return descripiton;
+        }
+        public Date getDate() {
+            return date;
+        }
+        public String getPlace() {
+            return place;
+        } 
     }
 }
