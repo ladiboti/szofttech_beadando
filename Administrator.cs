@@ -44,12 +44,33 @@ namespace szofttech
 
         public static void addRequest()
         {
-            
+            throw new NotImplementedException();
         }
 
         private void approveRequest()
         {
-            throw new NotImplementedException();
+            int index = 0;
+            foreach (Request r in requestsList) {
+                index++;
+                Console.WriteLine($"{index} {r.sender.name} {r.message} {r.status}");
+            }
+            if (index != 0)
+            {
+                int status = 0;
+                Console.WriteLine("Please choose a request which you want to modify! (Give a number)");
+                index = Convert.ToInt32(Console.ReadLine());
+                while (index < 0 && index > requestsList.Count) {
+                    Console.WriteLine("The given number is not valid! Please give a valid number!");
+                    index = Convert.ToInt32(Console.ReadLine());
+                }
+                Console.WriteLine("Please choose a status! (1 = accepted, 2 = denied)");
+                
+                status = Convert.ToInt32(Console.ReadLine());
+
+            }
+            else {
+                Console.WriteLine("Request container is empty!");
+            }
         }
 
         private void addNotification()
