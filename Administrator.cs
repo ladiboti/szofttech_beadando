@@ -14,7 +14,7 @@ namespace szofttech
         {
             string name = "";
             string neptunCode = "";
-            int roomNumber = 0;
+            int roomNumber = -1;
             string major = "";
             bool finished = false;
             while (!finished)
@@ -27,7 +27,7 @@ namespace szofttech
                 roomNumber = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Please give us the Student major!");
                 major = Console.ReadLine();
-                if (name == "" || neptunCode == "" || roomNumber == 0 || major == "") {
+                if (name == "" || neptunCode == "" || roomNumber < 0 || major == "") {
                     Console.WriteLine("The input is invalid!");
                     continue;
                 }
@@ -40,9 +40,20 @@ namespace szofttech
             Container.addStudent(newStudent);
         }
 
-        private void promoteStudent()
+        private void promoteStudentToSenior()
         {
-            throw new NotImplementedException();
+            string neptunCode;
+            Console.WriteLine("Please give us the neptun code of the Student you want to promote!");
+            neptunCode = Console.ReadLine();
+            while (neptunCode == "") {
+                Console.WriteLine("The given neptun code is invalid! Please give us a valid neptun code!");
+                neptunCode = Console.ReadLine();
+            }
+            Student student = Container.students.Find(x => x.neptunCode == neptunCode);
+            Container.students.Remove(student);
+            Container.students.Add(new Senior(
+                                              student.notificationList, student.bicycles, student.name,
+                                              student.neptunCode, student.major, student.roomNumber));
         }
 
         public static void addRequest()
