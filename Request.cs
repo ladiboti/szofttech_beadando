@@ -8,9 +8,9 @@ namespace szofttech
 {
     internal class Request
     {
-        private Student sender { get; }
-        private string message { get; }
-        private int status { get; set; }
+        public Student sender { get; }
+        public string message { get; }
+        public int status { get; set; }
 
         public Request(Student sender, string message)
         {
