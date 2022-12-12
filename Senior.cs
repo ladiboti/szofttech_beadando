@@ -86,7 +86,7 @@ namespace szofttech
             }
         }
 
-        public void newGuestRequest(string id, string nev)
+        public static void newGuestRequest(string id, string nev)
         {
             if(!pendingGuestRequests.ContainsKey(id))
                 pendingGuestRequests.Add(id, nev);
