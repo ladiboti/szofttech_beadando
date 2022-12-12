@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,31 +11,50 @@ namespace szofttech
 {
     static class Container
     {
-      static private List<Event> events     = new List<Event>();
-      static private List<Student> students = new List<Student>();
-        
+      private static string studentsPath = @"D:\students.json";
+      private static string eventsPath = @"D:\events.json";
 
-        public static void getEventList() 
-        {
-            foreach(Event i in events)
-            {
-                Console.WriteLine($"{i.organizer} {i.description} {i.getDate()} {i.place}");
-            }
-        }
-        public static void getStudentList() 
-        {
-            foreach (Student i in students)
-            {
-                Console.WriteLine($"{i.name} {i.neptunCode} {i.major} {i.roomNumber}");
-            }
-        }
-        public static void addEvent(Event newEvent)
-        {
-            events.Add(newEvent);
-        }
-        public static void addStudent(Student student) 
-        {
-            students.Add(student);
-        }
+      //elképzelhető, hogy null marad vegig
+      static private List<Event> events     = JsonConvert.DeserializeObject<List<Event>>(eventsPath);
+      static private List<Student> students = JsonConvert.DeserializeObject<List<Student>>(studentsPath);
+
+      private static void jsonify<T>(List<T> list)
+      {
+        var jsonString = JsonConvert.SerializeObject(list);
+  
+        //PONTOSITANI A FILE HELYET!!!!!!!!!!!!!!!!!
+        Type type = typeof(T);
+        //nullazni kell a file-t
+        File.WriteAllText(type == typeof(Student) ? 
+                          studentsPath : eventsPath, 
+                          jsonString
+                          );
+      }
+      
+      public static void getEventList() 
+      {
+          foreach(Event i in events)
+          {
+              Console.WriteLine($"{i.organizer} {i.description} {i.getDate()} {i.place}");
+          }
+      }
+      public static void getStudentList() 
+      {
+          foreach (Student i in students)
+          {
+              Console.WriteLine($"{i.name} {i.neptunCode} {i.major} {i.roomNumber}");
+          }
+      }
+      public static void addEvent(Event newEvent)
+      {   
+          //nem biztos, hogy igy kell generikus metodust hivni
+          events.Add(newEvent);
+          jsonify<Event>(events);
+      }
+      public static void addStudent(Student student) 
+      {
+          students.Add(student);
+          jsonify<Student>(students);
+      }
     }
 }
