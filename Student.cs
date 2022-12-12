@@ -54,7 +54,10 @@ namespace szofttech
 
     public void addBicycle()
     {
-      throw new NotImplementedException();
+      Console.WriteLine("Enter the serial number of your bicycle!");
+      string serialNumber = Console.ReadLine();
+      bicycles.Add(serialNumber);
+      Console.WriteLine("Bicycle added successfully to the database!");
     }
   }
 }
