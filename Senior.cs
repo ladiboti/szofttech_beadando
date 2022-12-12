@@ -10,9 +10,9 @@ namespace szofttech
 {
     internal class Senior : Student
     {
-        List<AccommodationTicket> accommodationTickets;
-        Dictionary<int, string> pendingGuestRequests;
-        bool dutyStatus;
+        public List<AccommodationTicket> accommodationTickets { get; set; }
+        public Dictionary<int, string> pendingGuestRequests { get; set; }
+        bool dutyStatus { get; set; }
 
         public Senior(List<Notification> notificationList, List<string> bicycles, string name, string neptunCode, string major, int roomNumber, int balance, int obligation, List<AccommodationTicket> accommodationTickets, Dictionary<int, string> pendingGuestRequests, bool dutyStatus) 
             : base(notificationList, bicycles, name, neptunCode, major, roomNumber, balance, obligation)
@@ -30,16 +30,6 @@ namespace szofttech
         private void startDuty()
         {
 
-        }
-
-        private void setDutyStatus(bool status)
-        {
-
-        }
-
-        public bool getDutyStatus()
-        {
-            return dutyStatus;
         }
 
         private void modifyDisciplinaryState()
