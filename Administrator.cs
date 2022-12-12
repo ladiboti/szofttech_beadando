@@ -64,9 +64,12 @@ namespace szofttech
                     index = Convert.ToInt32(Console.ReadLine());
                 }
                 Console.WriteLine("Please choose a status! (1 = accepted, 2 = denied)");
-                
                 status = Convert.ToInt32(Console.ReadLine());
-
+                while (status < 1 && status > 2) {
+                    Console.WriteLine("The given number is not valid! Please give a valid number!");
+                    status = Convert.ToInt32(Console.ReadLine());
+                }
+                requestsList[index].status = status;
             }
             else {
                 Console.WriteLine("Request container is empty!");
@@ -75,7 +78,7 @@ namespace szofttech
 
         private void addNotification()
         {
-            throw new NotImplementedException();
+            
         }
 
         private void addObligation()
