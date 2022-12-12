@@ -10,7 +10,7 @@ namespace szofttech
     {
         public Senior organizer { get; }
         public string description { get; }
-        public Date date { get; }
+        private Date date;
         public string place { get; }
         public Event(Senior organizer, string descripiton, Date date, string place)
         {
@@ -18,6 +18,9 @@ namespace szofttech
             this.description = descripiton;
             this.date = date;
             this.place = place;
+        }
+        public string getDate() {
+            return date.getDate();
         }
     }
 }
