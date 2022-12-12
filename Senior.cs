@@ -88,8 +88,10 @@ namespace szofttech
 
         public static void newGuestRequest(string id, string nev)
         {
-            if(!pendingGuestRequests.ContainsKey(id))
+            if (!pendingGuestRequests.ContainsKey(id))
                 pendingGuestRequests.Add(id, nev);
+            else
+                Console.WriteLine("Ez a személy már szrepel a vendégek között");
         }
     }
 }
