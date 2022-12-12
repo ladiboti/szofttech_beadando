@@ -5,6 +5,7 @@
         static void Main(string[] args)
         {
           Test.testStudentJsonify();
+          Test.testEventJsonify();
         }
   }
 }

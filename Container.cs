@@ -15,8 +15,8 @@ namespace szofttech
       private static string eventsPath   = @"D:\events.json";
 
     //elképzelhető, hogy null marad vegig
-    static private List<Event> events = new List<Event>();//JsonConvert.DeserializeObject<List<Event>>(File.ReadAllText(eventsPath));
-    static private List<Student> students = new List<Student>();//JsonConvert.DeserializeObject<List<Student>>(File.ReadAllText(studentsPath));
+    static public List<Event> events = new List<Event>();//JsonConvert.DeserializeObject<List<Event>>(File.ReadAllText(eventsPath));
+    static public List<Student> students = new List<Student>();//JsonConvert.DeserializeObject<List<Student>>(File.ReadAllText(studentsPath));
 
       private static void jsonify<T>(List<T> list)
       {
@@ -30,22 +30,22 @@ namespace szofttech
                           jsonString
                           );
       }
-      
-      public static void getEventList() 
-      {
-          foreach(Event i in events)
-          {
-              Console.WriteLine($"{i.organizer} {i.description} {i.getDate()} {i.place}");
-          }
-      }
-      public static void getStudentList() 
-      {
-          foreach (Student i in students)
-          {
-              Console.WriteLine($"{i.name} {i.neptunCode} {i.major} {i.roomNumber}");
-          }
-      }
-      public static void addEvent(Event newEvent)
+
+        public static void getEventList()
+        {
+            foreach (Event i in events)
+            {
+                Console.WriteLine($"{i.organizer} {i.description} {i.getDate()} {i.place}");
+            }
+        }
+        public static void getStudentList()
+        {
+            foreach (Student i in students)
+            {
+                Console.WriteLine($"{i.name} {i.neptunCode} {i.major} {i.roomNumber}");
+            }
+        }
+        public static void addEvent(Event newEvent)
       {   
           //nem biztos, hogy igy kell generikus metodust hivni
           events.Add(newEvent);
