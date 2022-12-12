@@ -11,11 +11,11 @@ namespace szofttech
     internal class Senior : Student
     {
         public List<AccommodationTicket> accommodationTickets { get; set; }
-        public Dictionary<int, string> pendingGuestRequests { get; set; }
+        public Dictionary<string, string> pendingGuestRequests { get; set; }
         bool dutyStatus { get; set; }
 
-        public Senior(List<Notification> notificationList, List<string> bicycles, string name, string neptunCode, string major, int roomNumber, int balance, int obligation, List<AccommodationTicket> accommodationTickets, Dictionary<int, string> pendingGuestRequests) 
-            : base(notificationList, bicycles, name, neptunCode, major, roomNumber, balance, obligation)
+        public Senior(List<Notification> notificationList, List<string> bicycles, string name, string neptunCode, string major, int roomNumber, List<AccommodationTicket> accommodationTickets, Dictionary<string, string> pendingGuestRequests) 
+            : base(notificationList, bicycles, name, neptunCode, major, roomNumber)
         {
             this.accommodationTickets = accommodationTickets;
             this.pendingGuestRequests = pendingGuestRequests;
@@ -42,19 +42,28 @@ namespace szofttech
             isUnderDiscipliary = isUnderDiscipliary ? false : true;
         }
 
-        private void giveAccomodationTicket()
+        private bool getDisciplinaryState()
         {
+            return isUnderDiscipliary;
+        }
 
+        private void giveAccomodationTicket(AccommodationTicket newTicket)
+        {
+            accommodationTickets.Add(newTicket);
         }
 
         private void listAccomodation()
         {
-
+            foreach (AccommodationTicket i in accommodationTickets)
+            {
+                Console.WriteLine($"{i.guestId} {i.guestName} {i.getExpireDate}");
+                pendingGuestRequests.Remove(i.guestId);
+            }
         }
 
-        public void newGuestRequest(int id, string nev)
+        public void newGuestRequest(string id, string nev)
         {
-
+            pendingGuestRequests.Add(id, nev);
         }
     }
 }

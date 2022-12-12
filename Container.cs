@@ -12,7 +12,7 @@ namespace szofttech
     static class Container
     {
       private static string studentsPath = @"D:\students.json";
-      private static string eventsPath = @"D:\events.json";
+      private static string eventsPath   = @"D:\events.json";
 
       //elképzelhető, hogy null marad vegig
       static private List<Event> events     = JsonConvert.DeserializeObject<List<Event>>(eventsPath);
