@@ -18,14 +18,13 @@ namespace szofttech
     public int roomNumber { get; set; }
     public int balance    { get; set; }
     public int obligation { get; set; }
-
-    public bool isUnderDiscipliary;
+    public bool isUnderDiscipliary { get; set; }
 
     public Student(List<Notification> notificationList, List<string> bicycles, string name, 
       string neptunCode, string major, int roomNumber)
     {
-      this.notificationList   = new List<Notification>();
-      this.bicycles           = new List<string>();
+      this.notificationList   = notificationList;
+      this.bicycles           = bicycles;
 
       this.name               = name;
       this.neptunCode         = neptunCode;
