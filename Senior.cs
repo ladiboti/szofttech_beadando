@@ -39,12 +39,14 @@ namespace szofttech
 
         private void modifyDisciplinaryState()
         {
-            isUnderDiscipliary = isUnderDiscipliary ? false : true;
+            string temp_neptun = Console.ReadLine();
+            Container.getStudentList().Find(x => x.neptunCode == neptunCode).isUnderDiscipliary = Container.getStudentList().Find(x => x.neptunCode == neptunCode).isUnderDiscipliary ? false : true;
         }
 
         private bool getDisciplinaryState()
         {
-            return isUnderDiscipliary;
+            string temp_neptun = Console.ReadLine();
+            return Container.getStudentList().Find(x => x.neptunCode == neptunCode).isUnderDiscipliary;
         }
 
         private void giveAccomodationTicket(AccommodationTicket newTicket)

@@ -32,19 +32,13 @@ namespace szofttech
                           );
       }
       
-      public static void getEventList() 
+      public static List<Event> getEventList() 
       {
-          foreach(Event i in events)
-          {
-              Console.WriteLine($"{i.organizer} {i.description} {i.getDate()} {i.place}");
-          }
+            return events;
       }
-      public static void getStudentList() 
+      public static List<Student> getStudentList() 
       {
-          foreach (Student i in students)
-          {
-              Console.WriteLine($"{i.name} {i.neptunCode} {i.major} {i.roomNumber}");
-          }
+            return students;
       }
       public static void addEvent(Event newEvent)
       {   
