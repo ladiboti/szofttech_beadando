@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "AEzBY+xusbE2Eudq1IfzJe3N3oT2svGT4ZYTftxtq8mF2+esux9/TrG2LuBUQXTCndvFuhSC9PwNbVrGeNziuA==",
+  "dgSpecHash": "Lxe7mqrC7L1wftxFBGev4Lvy0JokmgaHDR8ygyR9AEVdolmpC/Iu1A7Zplg9Ou3qn8GxE12dQsLGuU3DI8EPfQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\adres\\Desktop\\Egyetem\\3. szemeszter\\Szoftvertechnológia\\program\\szofttech.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\Bea\\Documents\\1_Pannon Egyetem\\3. felev\\Szoftvertechnologia\\Program\\szofttech.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Bea\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512"
+  ],
   "logs": []
 }

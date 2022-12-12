@@ -18,8 +18,7 @@ namespace szofttech
     public int roomNumber { get; set; }
     public int balance    { get; set; }
     public int obligation { get; set; }
-
-    public bool isUnderDiscipliary;
+    public bool isUnderDiscipliary { get; set; }
 
     public Student(List<Notification> notificationList, List<string> bicycles, string name, 
       string neptunCode, string major, int roomNumber)
