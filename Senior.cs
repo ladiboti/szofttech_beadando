@@ -43,14 +43,14 @@ namespace szofttech
         {
             Console.Write("Adja meg a fegyelmit kapó diák neptun kódját: ");
             string tempNeptun = Console.ReadLine();
-            Container.students.Find(x => x.neptunCode == temp_neptun).isUnderDiscipliary = Container.students.Find(x => x.neptunCode == temp_neptun).isUnderDiscipliary ? false : true;
+            Container.students.Find(x => x.neptunCode == tempNeptun).isUnderDiscipliary = Container.students.Find(x => x.neptunCode == tempNeptun).isUnderDiscipliary ? false : true;
         }
 
         private bool getDisciplinaryState()
         {
             Console.Write("Adja meg a diák neptun kódját: ");
             string tempNeptun = Console.ReadLine();
-            return Container.students.Find(x => x.neptunCode == temp_neptun).isUnderDiscipliary;
+            return Container.students.Find(x => x.neptunCode == tempNeptun).isUnderDiscipliary;
         }
 
         private void giveAccomodationTicket()

@@ -99,7 +99,10 @@ namespace szofttech
 
         private void modifyDisciplinaryState()
         {
-            throw new NotImplementedException();
+            Console.Write("Adja meg a fegyelmit kapó diák neptun kódját: ");
+            string tempNeptun = Console.ReadLine();
+            Container.students.Find(x => x.neptunCode == tempNeptun).isUnderDiscipliary = 
+                Container.students.Find(x => x.neptunCode == tempNeptun).isUnderDiscipliary ? false : true;
         }
 
         private void moveToRoom()
