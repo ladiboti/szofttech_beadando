@@ -40,8 +40,6 @@ namespace szofttech
       throw new NotImplementedException();
     }
 
-    //TODO: disciplinarystate setter???
-
     public void sendRequest()
     {
       throw new NotImplementedException();
@@ -49,7 +47,19 @@ namespace szofttech
 
     public void requestGuest()
     {
-      throw new NotImplementedException();
+      Console.Write("The ID number of your guest: ");
+      string id = Console.ReadLine();
+      Console.Write("The name of your guest: ");
+      string name = Console.ReadLine();
+      if (name != null && id != null)
+            {
+                Senior.newGuestRequest(id, name);
+                Console.WriteLine("Guest request was successfull");
+            }
+      else
+            {
+                Console.WriteLine("Nem adott meg értéket!");
+            }
     }
 
     public void addBicycle()

@@ -93,19 +93,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ladib\\.nuget\\packages\\": {}
+    "C:\\Users\\Bea\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ladib\\Source\\Repos\\szofttech_beadando\\szofttech.csproj",
+      "projectUniqueName": "C:\\Users\\Bea\\Documents\\1_Pannon Egyetem\\3. felev\\Szoftvertechnologia\\Program\\szofttech.csproj",
       "projectName": "szofttech",
-      "projectPath": "C:\\Users\\ladib\\Source\\Repos\\szofttech_beadando\\szofttech.csproj",
-      "packagesPath": "C:\\Users\\ladib\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ladib\\Source\\Repos\\szofttech_beadando\\obj\\",
+      "projectPath": "C:\\Users\\Bea\\Documents\\1_Pannon Egyetem\\3. felev\\Szoftvertechnologia\\Program\\szofttech.csproj",
+      "packagesPath": "C:\\Users\\Bea\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Bea\\Documents\\1_Pannon Egyetem\\3. felev\\Szoftvertechnologia\\Program\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\ladib\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Bea\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -156,7 +160,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
