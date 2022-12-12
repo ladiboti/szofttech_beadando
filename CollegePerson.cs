@@ -8,7 +8,6 @@ namespace szofttech
 {
     abstract class CollegePerson
     {
-        protected Container container = new Container();
       public void login()
       {
         throw new NotImplementedException();
