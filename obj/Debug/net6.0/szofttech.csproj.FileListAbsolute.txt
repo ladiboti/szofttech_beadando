@@ -21,21 +21,21 @@ C:\Users\ladib\Source\Repos\szofttech_beadando\obj\Debug\net6.0\refint\szofttech
 C:\Users\ladib\Source\Repos\szofttech_beadando\obj\Debug\net6.0\szofttech.pdb
 C:\Users\ladib\Source\Repos\szofttech_beadando\obj\Debug\net6.0\szofttech.genruntimeconfig.cache
 C:\Users\ladib\Source\Repos\szofttech_beadando\obj\Debug\net6.0\ref\szofttech.dll
-C:\Users\adres\Desktop\program\bin\Debug\net6.0\szofttech.exe
-C:\Users\adres\Desktop\program\bin\Debug\net6.0\szofttech.deps.json
-C:\Users\adres\Desktop\program\bin\Debug\net6.0\szofttech.runtimeconfig.json
-C:\Users\adres\Desktop\program\bin\Debug\net6.0\szofttech.dll
-C:\Users\adres\Desktop\program\bin\Debug\net6.0\szofttech.pdb
-C:\Users\adres\Desktop\program\bin\Debug\net6.0\Newtonsoft.Json.dll
-C:\Users\adres\Desktop\program\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
-C:\Users\adres\Desktop\program\obj\Debug\net6.0\szofttech.csproj.AssemblyReference.cache
-C:\Users\adres\Desktop\program\obj\Debug\net6.0\szofttech.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\adres\Desktop\program\obj\Debug\net6.0\szofttech.AssemblyInfoInputs.cache
-C:\Users\adres\Desktop\program\obj\Debug\net6.0\szofttech.AssemblyInfo.cs
-C:\Users\adres\Desktop\program\obj\Debug\net6.0\szofttech.csproj.CoreCompileInputs.cache
-C:\Users\adres\Desktop\program\obj\Debug\net6.0\szofttech.csproj.CopyComplete
-C:\Users\adres\Desktop\program\obj\Debug\net6.0\szofttech.dll
-C:\Users\adres\Desktop\program\obj\Debug\net6.0\refint\szofttech.dll
-C:\Users\adres\Desktop\program\obj\Debug\net6.0\szofttech.pdb
-C:\Users\adres\Desktop\program\obj\Debug\net6.0\szofttech.genruntimeconfig.cache
-C:\Users\adres\Desktop\program\obj\Debug\net6.0\ref\szofttech.dll
+C:\Users\Bea\Documents\1_Pannon Egyetem\3. felev\Szoftvertechnologia\Program\bin\Debug\net6.0\szofttech.exe
+C:\Users\Bea\Documents\1_Pannon Egyetem\3. felev\Szoftvertechnologia\Program\bin\Debug\net6.0\szofttech.deps.json
+C:\Users\Bea\Documents\1_Pannon Egyetem\3. felev\Szoftvertechnologia\Program\bin\Debug\net6.0\szofttech.runtimeconfig.json
+C:\Users\Bea\Documents\1_Pannon Egyetem\3. felev\Szoftvertechnologia\Program\bin\Debug\net6.0\szofttech.dll
+C:\Users\Bea\Documents\1_Pannon Egyetem\3. felev\Szoftvertechnologia\Program\bin\Debug\net6.0\szofttech.pdb
+C:\Users\Bea\Documents\1_Pannon Egyetem\3. felev\Szoftvertechnologia\Program\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\Bea\Documents\1_Pannon Egyetem\3. felev\Szoftvertechnologia\Program\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+C:\Users\Bea\Documents\1_Pannon Egyetem\3. felev\Szoftvertechnologia\Program\obj\Debug\net6.0\szofttech.csproj.AssemblyReference.cache
+C:\Users\Bea\Documents\1_Pannon Egyetem\3. felev\Szoftvertechnologia\Program\obj\Debug\net6.0\szofttech.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Bea\Documents\1_Pannon Egyetem\3. felev\Szoftvertechnologia\Program\obj\Debug\net6.0\szofttech.AssemblyInfoInputs.cache
+C:\Users\Bea\Documents\1_Pannon Egyetem\3. felev\Szoftvertechnologia\Program\obj\Debug\net6.0\szofttech.AssemblyInfo.cs
+C:\Users\Bea\Documents\1_Pannon Egyetem\3. felev\Szoftvertechnologia\Program\obj\Debug\net6.0\szofttech.csproj.CoreCompileInputs.cache
+C:\Users\Bea\Documents\1_Pannon Egyetem\3. felev\Szoftvertechnologia\Program\obj\Debug\net6.0\szofttech.csproj.CopyComplete
+C:\Users\Bea\Documents\1_Pannon Egyetem\3. felev\Szoftvertechnologia\Program\obj\Debug\net6.0\szofttech.dll
+C:\Users\Bea\Documents\1_Pannon Egyetem\3. felev\Szoftvertechnologia\Program\obj\Debug\net6.0\refint\szofttech.dll
+C:\Users\Bea\Documents\1_Pannon Egyetem\3. felev\Szoftvertechnologia\Program\obj\Debug\net6.0\szofttech.pdb
+C:\Users\Bea\Documents\1_Pannon Egyetem\3. felev\Szoftvertechnologia\Program\obj\Debug\net6.0\szofttech.genruntimeconfig.cache
+C:\Users\Bea\Documents\1_Pannon Egyetem\3. felev\Szoftvertechnologia\Program\obj\Debug\net6.0\ref\szofttech.dll
