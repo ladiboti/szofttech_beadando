@@ -8,11 +8,11 @@ namespace szofttech
 {
     internal class Administrator
     {
-        private static List<Request> requestsList = new List<Request>();
+        public static List<Request> requestsList;
 
         private void addNewStudent()
         {
-            throw new NotImplementedException();
+            
         }
 
         private void promoteStudent()
