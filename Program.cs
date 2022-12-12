@@ -2,12 +2,9 @@
 {
   internal class Program
   {
-    static void Main(string[] args)
-    {
-      Console.WriteLine("Hello, World!");
-      Console.WriteLine("asd");
-      Console.WriteLine("Valami");
-      Console.WriteLine("megy xd");
-    }
+        static void Main(string[] args)
+        {
+            
+        }
   }
 }

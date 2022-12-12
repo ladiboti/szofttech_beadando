@@ -22,7 +22,9 @@ namespace szofttech
             this.minute = minute;
         }
         public string getDate() {
-            // kifejtés szükséges
+            string date = Convert.ToString(year) + "." + Convert.ToString(month) + "." + Convert.ToString(day) + " "
+                + Convert.ToString(hour) + ":" + Convert.ToString(minute);
+            return date;
         }
     }
 }
