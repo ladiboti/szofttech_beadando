@@ -14,7 +14,10 @@ namespace szofttech
         private List<Student> students;
 
         public void getEventList() {
-        
+            foreach(var i in events)
+            {
+                Console.WriteLine(i.getOrganizer+ " " +i.getDescription+ " " +i.getDate+ " " +i.getPlace);
+            }
         }
         public void getStudentList() {
         
