@@ -39,19 +39,28 @@ namespace szofttech
 
         private void modifyDisciplinaryState()
         {
-            string temp_neptun = Console.ReadLine();
+            Console.Write("Adja meg a fegyelmit kapó diák neptun kódját: ");
+            string tempNeptun = Console.ReadLine();
             Container.students.Find(x => x.neptunCode == temp_neptun).isUnderDiscipliary = Container.students.Find(x => x.neptunCode == temp_neptun).isUnderDiscipliary ? false : true;
         }
 
         private bool getDisciplinaryState()
         {
-            string temp_neptun = Console.ReadLine();
+            Console.Write("Adja meg a diák neptun kódját: ");
+            string tempNeptun = Console.ReadLine();
             return Container.students.Find(x => x.neptunCode == temp_neptun).isUnderDiscipliary;
         }
 
-        private void giveAccomodationTicket(AccommodationTicket newTicket)
+        private void giveAccomodationTicket()
         {
-            accommodationTickets.Add(newTicket);
+            Console.Write("The id of the vistor: ");
+            string tempId = Console.ReadLine();
+            Console.Write("The name of the visitor: ");
+            string tempName = Console.ReadLine(); 
+            Console.Write("How long the visitor intended to stay (days): ");
+            int tempDay = Convert.ToInt32(Console.ReadLine());
+            accommodationTickets.Add(new AccommodationTicket(tempId, tempName, new Date(DateTime.Now.Year,DateTime.Now.Month,DateTime.Now.Day+tempDay,DateTime.Now.Hour,DateTime.Now.Minute)));
+            pendingGuestRequests.Remove(tempId);
         }
 
         private void listAccomodation()
@@ -59,7 +68,6 @@ namespace szofttech
             foreach (AccommodationTicket i in accommodationTickets)
             {
                 Console.WriteLine($"{i.guestId} {i.guestName} {i.getExpireDate}");
-                pendingGuestRequests.Remove(i.guestId);
             }
         }
 
