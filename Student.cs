@@ -22,8 +22,7 @@ namespace szofttech
     public bool isUnderDiscipliary
 
     public Student(List<Notification> notificationList, List<string> bicycles, string name, 
-      string neptunCode, string major, int roomNumber, 
-      int balance, int obligation)
+      string neptunCode, string major, int roomNumber)
     {
       this.notificationList   = new List<Notification>();
       this.bicycles           = new List<string>();
@@ -32,8 +31,8 @@ namespace szofttech
       this.neptunCode         = neptunCode;
       this.major              = major;
       this.roomNumber         = roomNumber;
-      this.balance            = balance;
-      this.obligation         = obligation;
+      this.balance            = 0;
+      this.obligation         = 0;
       this.isUnderDiscipliary = false;
   }
 
