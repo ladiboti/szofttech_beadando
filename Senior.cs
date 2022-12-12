@@ -43,14 +43,21 @@ namespace szofttech
         {
             Console.Write("Adja meg a fegyelmit kapó diák neptun kódját: ");
             string tempNeptun = Console.ReadLine();
-            Container.students.Find(x => x.neptunCode == temp_neptun).isUnderDiscipliary = Container.students.Find(x => x.neptunCode == temp_neptun).isUnderDiscipliary ? false : true;
+            if (tempNeptun != null)
+            {
+                Container.students.Find(x => x.neptunCode == tempNeptun).isUnderDiscipliary =
+                    Container.students.Find(x => x.neptunCode == tempNeptun).isUnderDiscipliary ? false : true;
+            }
+            else
+                Console.WriteLine("Nem adott meg neptun kódot");
+            
         }
 
         private bool getDisciplinaryState()
         {
             Console.Write("Adja meg a diák neptun kódját: ");
             string tempNeptun = Console.ReadLine();
-            return Container.students.Find(x => x.neptunCode == temp_neptun).isUnderDiscipliary;
+            return Container.students.Find(x => x.neptunCode == tempNeptun).isUnderDiscipliary;
         }
 
         private void giveAccomodationTicket()
@@ -66,6 +73,10 @@ namespace szofttech
             {
                 accommodationTickets.Add(new AccommodationTicket(tempId, tempName, new Date(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day + tempDay, DateTime.Now.Hour, DateTime.Now.Minute)));
                 pendingGuestRequests.Remove(tempId);
+            }
+            else
+            {
+                Console.WriteLine("Nem létezik a megadott név vagy személyigazolványszám!");
             }
         }
 
