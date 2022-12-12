@@ -10,12 +10,15 @@ namespace szofttech
     {
         public string guestId { get; }
         public string guestName { get; }
-        public Date expireDate { get;  }
+        private Date expireDate;
         public AccommodationTicket(string guestId, string guestName, Date expireDate)
         {
             this.guestId = guestId;
             this.guestName = guestName;
             this.expireDate = expireDate;
+        }
+        public string getExpireDate() {
+            return expireDate.getDate();
         }
     }
 }
