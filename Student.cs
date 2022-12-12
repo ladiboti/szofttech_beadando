@@ -8,16 +8,16 @@ namespace szofttech
 {
   internal class Student : CollegePerson
   {
-    private List<Notification> notificationList { get; set; }
-    private List<string>       bicycles         { get; set; }
+    public List<Notification> notificationList { get; set; }
+    public List<string>       bicycles         { get; set; }
 
-    private string name       { get; set; }
-    private string neptunCode { get; }
-    private string major      { get; }
+    public string name       { get; set; }
+    public string neptunCode { get; }
+    public string major      { get; }
 
-    private int roomNumber { get; set; }
-    private int balance    { get; set; }
-    private int obligation { get; set; }
+    public int roomNumber { get; set; }
+    public int balance    { get; set; }
+    public int obligation { get; set; }
 
     //setter?????
     private bool isUnderDiscipliary;

@@ -10,20 +10,26 @@ namespace szofttech
 {
     internal class Container
     {
-        private List<Event> events;
-        private List<Student> students;
+        static private List<Event> events;
+        static private List<Student> students;
 
-        public void getEventList() {
-            foreach(var i in events)
+        public void getEventList() 
+        {
+            foreach(Event i in events)
             {
-                Console.WriteLine(i.getOrganizer+ " " +i.getDescription+ " " +i.getDate+ " " +i.getPlace);
+                Console.WriteLine($"{i.organizer} {i.description} {i.date} {i.place}");
             }
         }
-        public void getStudentList() {
-        
+        public void getStudentList() 
+        {
+            foreach (Student i in students)
+            {
+                Console.WriteLine($"{i.name} {i.neptunCode} {i.major} {i.roomNumber}");
+            }
         }
-        public void addEvent(Event event) {
-            
+        public void addEvent(Event event) 
+        {
+                
         }
         public void addStudent(Student student) {
         
