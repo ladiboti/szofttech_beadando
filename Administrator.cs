@@ -54,6 +54,7 @@ namespace szofttech
             Container.students.Add(new Senior(
                                               student.notificationList, student.bicycles, student.name,
                                               student.neptunCode, student.major, student.roomNumber));
+            // folytatás később
         }
 
         public static void addRequest()
