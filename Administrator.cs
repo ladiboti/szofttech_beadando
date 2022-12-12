@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace szofttech
 {
-    internal class Administrator
+    internal class Administrator : CollegePerson
     {
         public static List<Request> requestsList;
 
