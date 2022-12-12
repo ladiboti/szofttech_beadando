@@ -11,11 +11,11 @@ namespace szofttech
         public string message { get; }
         private Date sentMessageDate;
         public Notification(string message, Date sentMessageDate) {
-            this.message = message;
+            this.message         = message;
             this.sentMessageDate = sentMessageDate;
         }
         public string getSentMessageDate() {
-            return sentMessageDate.getDate();
+            return sentMessageDate.getDateString();
         }
   }
 }

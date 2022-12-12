@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 
 namespace szofttech
 {
-    internal class Administrator
+    internal class Administrator : CollegePerson
     {
         public static List<Request> requestsList;
 
         private void addNewStudent()
         {
-            
+          Student s1 = new Student(new List<Notification>(), new List<string>(), "dummy", "asd123", "a", 1, 1, 0);
+
+          Container.addStudent(s1);
         }
 
         private void promoteStudent()

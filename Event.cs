@@ -14,13 +14,13 @@ namespace szofttech
         public string place { get; }
         public Event(Senior organizer, string descripiton, Date date, string place)
         {
-            this.organizer = organizer;
+            this.organizer   = organizer;
             this.description = descripiton;
-            this.date = date;
-            this.place = place;
+            this.date        = date;
+            this.place       = place;
         }
         public string getDate() {
-            return date.getDate();
+            return date.getDateString();
         }
     }
 }

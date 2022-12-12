@@ -8,30 +8,31 @@ using System.Threading.Tasks;
 
 namespace szofttech
 {
-    internal class Container
+    static class Container
     {
-        static private List<Event> events;
-        static private List<Student> students;
+      static private List<Event> events     = new List<Event>();
+      static private List<Student> students = new List<Student>();
+        
 
-        public void getEventList() 
+        public static void getEventList() 
         {
             foreach(Event i in events)
             {
                 Console.WriteLine($"{i.organizer} {i.description} {i.getDate()} {i.place}");
             }
         }
-        public void getStudentList() 
+        public static void getStudentList() 
         {
             foreach (Student i in students)
             {
                 Console.WriteLine($"{i.name} {i.neptunCode} {i.major} {i.roomNumber}");
             }
         }
-        public void addEvent(Event newEvent)
+        public static void addEvent(Event newEvent)
         {
             events.Add(newEvent);
         }
-        public void addStudent(Student student) 
+        public static void addStudent(Student student) 
         {
             students.Add(student);
         }

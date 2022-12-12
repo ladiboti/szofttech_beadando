@@ -19,7 +19,7 @@ namespace szofttech
         {
             this.accommodationTickets = accommodationTickets;
             this.pendingGuestRequests = pendingGuestRequests;
-            this.dutyStatus = dutyStatus;
+            this.dutyStatus           = dutyStatus;
         }
 
         public void addEvent(Event newEvent)

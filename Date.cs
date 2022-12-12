@@ -15,16 +15,15 @@ namespace szofttech
         private int minute;
         public Date(int year, int month, int day, int hour, int minute)
         {
-            this.year = year;
-            this.month = month;
-            this.day = day;
-            this.hour = hour;
+            this.year   = year;
+            this.month  = month;
+            this.day    = day;
+            this.hour   = hour;
             this.minute = minute;
         }
-        public string getDate() {
-            string date = Convert.ToString(year) + "." + Convert.ToString(month) + "." + Convert.ToString(day) + " "
-                + Convert.ToString(hour) + ":" + Convert.ToString(minute);
-            return date;
+    //convert kell???
+        public string getDateString() {
+            return $"{year}.{month}.{day}. {hour}:{minute}";
         }
     }
 }
