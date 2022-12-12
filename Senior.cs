@@ -14,27 +14,32 @@ namespace szofttech
         public Dictionary<int, string> pendingGuestRequests { get; set; }
         bool dutyStatus { get; set; }
 
-        public Senior(List<Notification> notificationList, List<string> bicycles, string name, string neptunCode, string major, int roomNumber, int balance, int obligation, List<AccommodationTicket> accommodationTickets, Dictionary<int, string> pendingGuestRequests, bool dutyStatus) 
+        public Senior(List<Notification> notificationList, List<string> bicycles, string name, string neptunCode, string major, int roomNumber, int balance, int obligation, List<AccommodationTicket> accommodationTickets, Dictionary<int, string> pendingGuestRequests) 
             : base(notificationList, bicycles, name, neptunCode, major, roomNumber, balance, obligation)
         {
             this.accommodationTickets = accommodationTickets;
             this.pendingGuestRequests = pendingGuestRequests;
-            this.dutyStatus           = dutyStatus;
+            this.dutyStatus           = false;
         }
 
         public void addEvent(Event newEvent)
         {
-
+            Container.addEvent(newEvent);
         }
 
         private void startDuty()
         {
+            dutyStatus = true;
+        }
 
+        private void stopDuty()
+        {
+            dutyStatus = false;
         }
 
         private void modifyDisciplinaryState()
         {
-
+            isUnderDiscipliary = isUnderDiscipliary ? false : true;
         }
 
         private void giveAccomodationTicket()
