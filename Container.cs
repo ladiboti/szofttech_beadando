@@ -17,7 +17,7 @@ namespace szofttech
         {
             foreach(Event i in events)
             {
-                Console.WriteLine($"{i.organizer} {i.description} {i.date} {i.place}");
+                Console.WriteLine($"{i.organizer} {i.description} {i.getDate()} {i.place}");
             }
         }
         public void getStudentList() 
@@ -27,12 +27,13 @@ namespace szofttech
                 Console.WriteLine($"{i.name} {i.neptunCode} {i.major} {i.roomNumber}");
             }
         }
-        public void addEvent(Event event) 
+        public void addEvent(Event newEvent)
         {
-                
+            events.Add(newEvent);
         }
-        public void addStudent(Student student) {
-        
+        public void addStudent(Student student) 
+        {
+            students.Add(student);
         }
     }
 }
