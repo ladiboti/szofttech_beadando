@@ -61,8 +61,12 @@ namespace szofttech
             string tempName = Console.ReadLine(); 
             Console.Write("How long the visitor intended to stay (days): ");
             int tempDay = Convert.ToInt32(Console.ReadLine());
-            accommodationTickets.Add(new AccommodationTicket(tempId, tempName, new Date(DateTime.Now.Year,DateTime.Now.Month,DateTime.Now.Day+tempDay,DateTime.Now.Hour,DateTime.Now.Minute)));
-            pendingGuestRequests.Remove(tempId);
+            if(pendingGuestRequests.ContainsKey(tempId) && pendingGuestRequests[tempId] != null && 
+                pendingGuestRequests.ContainsValue(tempName) && pendingGuestRequests[tempName] != null)
+            {
+                accommodationTickets.Add(new AccommodationTicket(tempId, tempName, new Date(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day + tempDay, DateTime.Now.Hour, DateTime.Now.Minute)));
+                pendingGuestRequests.Remove(tempId);
+            }
         }
 
         private void listAccomodation()
@@ -75,7 +79,8 @@ namespace szofttech
 
         public void newGuestRequest(string id, string nev)
         {
-            pendingGuestRequests.Add(id, nev);
+            if(!pendingGuestRequests.ContainsKey(id))
+                pendingGuestRequests.Add(id, nev);
         }
     }
 }
