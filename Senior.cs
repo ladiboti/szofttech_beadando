@@ -10,10 +10,8 @@ namespace szofttech
 {
     internal class Senior : Student
     {
-        //static!!!!!!!
-        //elfaradtam
-        public List<AccommodationTicket> accommodationTickets { get; set; }
-        public Dictionary<string, string> pendingGuestRequests { get; set; }
+        static public List<AccommodationTicket> accommodationTickets { get; set; }
+        static public Dictionary<string, string> pendingGuestRequests { get; set; }
         bool dutyStatus { get; set; }
 
         public Senior(List<Notification> notificationList, List<string> bicycles, string name, string neptunCode, string major, int roomNumber, List<AccommodationTicket> accommodationTickets, Dictionary<string, string> pendingGuestRequests) 
@@ -43,7 +41,14 @@ namespace szofttech
         {
             Console.Write("Adja meg a fegyelmit kapó diák neptun kódját: ");
             string tempNeptun = Console.ReadLine();
-            Container.students.Find(x => x.neptunCode == tempNeptun).isUnderDiscipliary = Container.students.Find(x => x.neptunCode == tempNeptun).isUnderDiscipliary ? false : true;
+            if (tempNeptun != null)
+            {
+                Container.students.Find(x => x.neptunCode == tempNeptun).isUnderDiscipliary =
+                    Container.students.Find(x => x.neptunCode == tempNeptun).isUnderDiscipliary ? false : true;
+            }
+            else
+                Console.WriteLine("Nem adott meg neptun kódot");
+            
         }
 
         private bool getDisciplinaryState()
@@ -61,8 +66,16 @@ namespace szofttech
             string tempName = Console.ReadLine(); 
             Console.Write("How long the visitor intended to stay (days): ");
             int tempDay = Convert.ToInt32(Console.ReadLine());
-            accommodationTickets.Add(new AccommodationTicket(tempId, tempName, new Date(DateTime.Now.Year,DateTime.Now.Month,DateTime.Now.Day+tempDay,DateTime.Now.Hour,DateTime.Now.Minute)));
-            pendingGuestRequests.Remove(tempId);
+            if(pendingGuestRequests.ContainsKey(tempId) && pendingGuestRequests[tempId] != null && 
+                pendingGuestRequests.ContainsValue(tempName) && pendingGuestRequests[tempName] != null)
+            {
+                accommodationTickets.Add(new AccommodationTicket(tempId, tempName, new Date(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day + tempDay, DateTime.Now.Hour, DateTime.Now.Minute)));
+                pendingGuestRequests.Remove(tempId);
+            }
+            else
+            {
+                Console.WriteLine("Nem létezik a megadott név vagy személyigazolványszám!");
+            }
         }
 
         private void listAccomodation()
@@ -73,9 +86,12 @@ namespace szofttech
             }
         }
 
-        public void newGuestRequest(string id, string nev)
+        public static void newGuestRequest(string id, string nev)
         {
-            pendingGuestRequests.Add(id, nev);
+            if (!pendingGuestRequests.ContainsKey(id))
+                pendingGuestRequests.Add(id, nev);
+            else
+                Console.WriteLine("Ez a személy már szrepel a vendégek között");
         }
     }
 }
