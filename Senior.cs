@@ -11,10 +11,10 @@ namespace szofttech
     internal class Senior : Student
     {
         public List<AccommodationTicket> accommodationTickets { get; set; }
-        public Dictionary<int, string> pendingGuestRequests { get; set; }
+        public Dictionary<string, string> pendingGuestRequests { get; set; }
         bool dutyStatus { get; set; }
 
-        public Senior(List<Notification> notificationList, List<string> bicycles, string name, string neptunCode, string major, int roomNumber, List<AccommodationTicket> accommodationTickets, Dictionary<int, string> pendingGuestRequests) 
+        public Senior(List<Notification> notificationList, List<string> bicycles, string name, string neptunCode, string major, int roomNumber, List<AccommodationTicket> accommodationTickets, Dictionary<string, string> pendingGuestRequests) 
             : base(notificationList, bicycles, name, neptunCode, major, roomNumber)
         {
             this.accommodationTickets = accommodationTickets;
@@ -61,7 +61,7 @@ namespace szofttech
             }
         }
 
-        public void newGuestRequest(int id, string nev)
+        public void newGuestRequest(string id, string nev)
         {
             pendingGuestRequests.Add(id, nev);
         }
