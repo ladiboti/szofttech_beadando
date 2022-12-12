@@ -12,9 +12,19 @@ namespace szofttech
 
         private void addNewStudent()
         {
-          Student s1 = new Student(new List<Notification>(), new List<string>(), "dummy", "asd123", "a", 1, 1, 0);
-
-          Container.addStudent(s1);
+            string name;
+            string neptunCode;
+            int roomNumber;
+            string major;
+            Console.WriteLine("Please give us the Student name!");
+            name = Console.ReadLine();
+            Console.WriteLine("Please give us the Student neptun code!");
+            neptunCode = Console.ReadLine();
+            Console.WriteLine("Please give us the Student room number!");
+            roomNumber = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Please give us the Student major!");
+            major = Console.ReadLine();
+            Student newStudent = new Student(new List<Notification>(), new List<string>(), name, neptunCode, major, roomNumber);
         }
 
         private void promoteStudent()
