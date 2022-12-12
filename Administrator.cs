@@ -8,7 +8,7 @@ namespace szofttech
 {
     internal class Administrator : CollegePerson
     {
-        public static List<Request> requestsList;
+        public static List<Request> requestsList = new List<Request>();
 
         private void addNewStudent()
         {
@@ -70,6 +70,7 @@ namespace szofttech
                     status = Convert.ToInt32(Console.ReadLine());
                 }
                 requestsList[index].status = status;
+                addNotification();
             }
             else {
                 Console.WriteLine("Request container is empty!");
@@ -83,7 +84,17 @@ namespace szofttech
 
         private void addObligation()
         {
-            throw new NotImplementedException();
+            int obligation;
+            Console.WriteLine("Please give us the obligation!");
+            obligation = Convert.ToInt32(Console.ReadLine());
+            while (obligation < 0) {
+                Console.WriteLine("The given number is invalid! Please give a valid number!");
+                obligation = Convert.ToInt32(Console.ReadLine());
+            }
+            foreach (Student s in Container.students) {
+                s.obligation += obligation;
+                s.notificationList.Add(addNotification());
+            }
         }
 
         private void modifyDisciplinaryState()
