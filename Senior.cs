@@ -10,6 +10,8 @@ namespace szofttech
 {
     internal class Senior : Student
     {
+        //static!!!!!!!
+        //elfaradtam
         public List<AccommodationTicket> accommodationTickets { get; set; }
         public Dictionary<string, string> pendingGuestRequests { get; set; }
         bool dutyStatus { get; set; }
