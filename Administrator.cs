@@ -8,7 +8,7 @@ namespace szofttech
 {
     internal class Administrator : CollegePerson
     {
-        public static List<Request> requestsList = new List<Request>();
+        private static List<Request> requestsList = new List<Request>();
 
         private void addNewStudent()
         {
@@ -33,7 +33,10 @@ namespace szofttech
                 }
                 finished = true;
             }
-            Student newStudent = new Student(new List<Notification>(), new List<string>(), name, neptunCode, major, roomNumber);
+            Student newStudent = new Student(new List<Notification>(), 
+                                             new List<string>(), 
+                                             name, neptunCode, major, roomNumber
+                                             );
             Container.addStudent(newStudent);
         }
 
@@ -59,27 +62,43 @@ namespace szofttech
                 int status = 0;
                 Console.WriteLine("Please choose a request which you want to modify! (Give a number)");
                 index = Convert.ToInt32(Console.ReadLine());
+
                 while (index < 0 && index > requestsList.Count) {
                     Console.WriteLine("The given number is not valid! Please give a valid number!");
                     index = Convert.ToInt32(Console.ReadLine());
                 }
+
                 Console.WriteLine("Please choose a status! (1 = accepted, 2 = denied)");
                 status = Convert.ToInt32(Console.ReadLine());
                 while (status < 1 && status > 2) {
                     Console.WriteLine("The given number is not valid! Please give a valid number!");
                     status = Convert.ToInt32(Console.ReadLine());
                 }
+
                 requestsList[index].status = status;
-                addNotification();
+                string neptunCode = requestsList[index].sender.neptunCode;
+
+                Container.students.Find(x => x.neptunCode == neptunCode)
+                                  .notificationList.Add(new Notification(addNotification(), 
+                                                        new Date(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day,
+                                                                 DateTime.Now.Hour, DateTime.Now.Minute))
+                                                        );
             }
             else {
                 Console.WriteLine("Request container is empty!");
             }
         }
 
-        private void addNotification()
+        private string addNotification()
         {
-            
+            string message;
+            Console.WriteLine("Please give us the text you want to send to the specific Student/Students!");
+            message = Console.ReadLine();
+            while (message == "") {
+                Console.WriteLine("The given text is invalid! Please give a valid text!");
+                message = Console.ReadLine();
+            }
+            return message;
         }
 
         private void addObligation()
@@ -91,9 +110,13 @@ namespace szofttech
                 Console.WriteLine("The given number is invalid! Please give a valid number!");
                 obligation = Convert.ToInt32(Console.ReadLine());
             }
+            string message = addNotification();
             foreach (Student s in Container.students) {
                 s.obligation += obligation;
-                s.notificationList.Add(addNotification());
+                s.notificationList.Add(new Notification(message, 
+                                                        new Date(DateTime.Now.Year, DateTime.Now.Month, 
+                                                        DateTime.Now.Day, DateTime.Now.Hour, DateTime.Now.Minute))
+                                      );
             }
         }
 
@@ -107,7 +130,25 @@ namespace szofttech
 
         private void moveToRoom()
         {
-            throw new NotImplementedException();
+            string neptunCode;
+            int roomNumber;
+            Container.getStudentList();
+            Console.WriteLine("Please give us the neptun code of the student who you want to move to another room!");
+            neptunCode = Console.ReadLine();
+            while (neptunCode == "") {
+                Console.WriteLine("The given neptun code is invalid! Please give us a valid neptun code!");
+                neptunCode = Console.ReadLine();
+            }
+            Console.WriteLine("Please give us the new room number of the Student!");
+            roomNumber = Convert.ToInt32(Console.ReadLine());
+            while (roomNumber < 0) {
+                Console.WriteLine("The given room number is invalid! Please give us a valid room number!");
+                roomNumber = Convert.ToInt32(Console.ReadLine());
+            }
+            Container.students.Find(x => x.neptunCode == neptunCode).roomNumber = roomNumber;
+            Container.students.Find(x => x.neptunCode == neptunCode).notificationList.Add(
+                new Notification(addNotification(), new Date(DateTime.Now.Year, DateTime.Now.Month,
+                                                             DateTime.Now.Day, DateTime.Now.Hour, DateTime.Now.Minute)));
         }
   }
 }
