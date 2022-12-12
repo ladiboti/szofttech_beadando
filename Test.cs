@@ -10,35 +10,61 @@ namespace szofttech
   {
     public static void testStudentJsonify()
     {
-      Student dummy1 = new Student(
+        Student dummy1 = new Student(
              new List<Notification> { new Notification("proba1", new Date(2022, 12, 12, 0, 0)),
-                                       new Notification("proba2", new Date(2022, 12, 13, 0, 0)),
-                                       new Notification("proba2", new Date(2022, 12, 14, 0, 0))},
+                                      new Notification("proba2", new Date(2022, 12, 13, 0, 0)),
+                                      new Notification("proba2", new Date(2022, 12, 14, 0, 0))
+                                    },
              new List<string> { "asd", "fgh", "jkl" },
              "Dumber",
              "ASD123",
              "software engineer",
              123
          );
-      Student dummy2 = new Student(
-          new List<Notification> { new Notification("proba1", new Date(2022, 12, 12, 0, 0)),
-                                       new Notification("proba2", new Date(2022, 12, 13, 0, 0)),
-                                       new Notification("proba2", new Date(2022, 12, 14, 0, 0))},
-          new List<string> { "qwe", "rtz", "uio" },
-          "Dumb",
-          "DSA321",
-          "business engineer",
-          321
+        Senior dummySenior = new Senior(
+            new List<Notification> { new Notification("proba1", new Date(2022, 12, 12, 0, 0)),
+                                     new Notification("proba2", new Date(2022, 12, 13, 0, 0)),
+                                     new Notification("proba2", new Date(2022, 12, 14, 0, 0))
+                                    },
+            new List<string> { "asd", "fgh", "jkl" },
+            "Dumber",
+            "ASD123",
+            "software engineer",
+            123,
+            new List<AccommodationTicket>   { new AccommodationTicket("1", "dummy1", new Date(2022, 12, 12, 0, 0)),
+                                              new AccommodationTicket("2", "dummy2", new Date(2022, 12, 13, 0, 0))
+                                            },
+            new Dictionary<string, string>  { { "1", "dummy1" },
+                                              { "2", "dummy2" }
+                                            }
         );
 
       Container.addStudent(dummy1);
-      dummy1.roomNumber = 3;
-      Container.addStudent(dummy2);
+      Container.addStudent(dummySenior);
     }
 
     public static void testEventJsonify()
     {
-      //Event dummyEvent1 = new Event();
+      Senior dummy1 = new Senior(
+            new List<Notification> { new Notification("proba1", new Date(2022, 12, 12, 0, 0)),
+                                     new Notification("proba2", new Date(2022, 12, 13, 0, 0)),
+                                     new Notification("proba2", new Date(2022, 12, 14, 0, 0))
+                                   },
+            new List<string> { "asd", "fgh", "jkl" },
+            "Dumber",
+            "ASD123",
+            "software engineer",
+            123,
+            new List<AccommodationTicket> { new AccommodationTicket("1", "dummy1", new Date(2022, 12, 12, 0, 0)),
+                                            new AccommodationTicket("2", "dummy2", new Date(2022, 12, 13, 0, 0))
+                                          },
+            new Dictionary<string, string> { { "1", "dummy1" },
+                                             { "2", "dummy2" }
+                                           }
+        );
+
+       Event dummyEvent1 = new Event(dummy1, "proba1", new Date(2022, 12, 12, 0, 0), "magister");
+       Container.addEvent(dummyEvent1);
     }
   }
 }
