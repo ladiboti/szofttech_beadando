@@ -19,7 +19,7 @@ namespace szofttech
     public int balance    { get; set; }
     public int obligation { get; set; }
 
-    public bool isUnderDiscipliary
+    public bool isUnderDiscipliary;
 
     public Student(List<Notification> notificationList, List<string> bicycles, string name, 
       string neptunCode, string major, int roomNumber)
