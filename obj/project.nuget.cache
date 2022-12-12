@@ -1,17 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "S0p/Cj88DI+X8xebI3o0iho4OZlx8KbzYOQsDd0FRX9jyT64Y3/FkHJeyraXCEpB4v6un2QtP6smgwdbLksJSQ==",
+  "dgSpecHash": "5FLRNgGMW95NrsaiMNjcdO5WvrIHpA1rBA6R64rAFX7iLc4vpM1cbuE4WxI6epbG68Ww2lldZwFmL9DVDZJKKw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\adres\\Desktop\\Egyetem\\3. szemeszter\\Szoftvertechnológia\\program\\szofttech.csproj",
+  "projectFilePath": "C:\\Users\\ladib\\Source\\Repos\\szofttech_beadando\\szofttech.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\adres\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512"
+    "C:\\Users\\ladib\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512",
+    "C:\\Users\\ladib\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\adres\\Desktop\\Egyetem\\3. szemeszter\\Szoftvertechnológia\\program\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }
