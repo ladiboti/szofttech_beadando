@@ -1,17 +1,30 @@
-﻿namespace szofttech
+﻿using System.Xml.Serialization;
+
+namespace szofttech
 {
   internal class Program
   {
-        static void Main(string[] args)
-        {
-            //Test.testStudentJsonify();
-            //Test.testEventJsonify();
+    private void start()
+    {
+      showMenu();
+    }
 
-            Test.testStudent();
+    private void showMenu()
+    {
+      throw new NotImplementedException();
+    }
+    static void Main(string[] args)
+    {
+        //Test.testStudentJsonify();
+        //Test.testEventJsonify();
 
-            //Test.testAdministrator();
-          
-          //Test.loadStudentsTest();
-        }
+        //Test.testStudent();
+
+        //Test.testAdministrator();
+        //Test.loadStudentsTest();
+
+        Program program = new Program();
+        program.start();
+    }
   }
 }
