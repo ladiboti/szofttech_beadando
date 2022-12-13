@@ -1,7 +1,9 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -53,7 +55,27 @@ namespace szofttech
 
     private void pay()
     {
-      throw new NotImplementedException();
+        char command;
+        Console.WriteLine("You have: " + balance + " on your account");
+        Console.WriteLine("You have: " + obligation + " that you have to pay");
+        Console.WriteLine("Do you want to pay your obligation? (Y/N)");
+        command = Convert.ToChar(Console.Read());
+        while (command != 'y' || command != 'n') {
+            Console.WriteLine("Please give the valid input! (Y/N)");
+            command = Convert.ToChar(Console.Read());
+        }
+        if (command == 'y' && balance > obligation)
+        {
+            balance -= obligation;
+            Console.WriteLine("The pay was successful");
+        }
+        else if (balance < obligation)
+        {
+            Console.WriteLine("You don't have enough money on your account!");
+        }
+        else {
+            Console.WriteLine("The pay was declined");
+        }
     }
 
     public void sendRequest()
