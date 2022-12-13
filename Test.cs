@@ -62,7 +62,7 @@ namespace szofttech
 
       foreach (var student in students)
       {
-        Console.WriteLine(student.name);
+        Console.WriteLine(student.toString());
       }
     }
   }
