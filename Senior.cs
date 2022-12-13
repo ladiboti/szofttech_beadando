@@ -10,8 +10,9 @@ namespace szofttech
 {
     internal class Senior : Student
     {
-        public static List<AccommodationTicket> accommodationTickets { get; set; }
-        public static Dictionary<string, string> pendingGuestRequests { get; set; }
+        public static List<AccommodationTicket> accommodationTickets = new List<AccommodationTicket>();
+        // getter és delete???
+        public static Dictionary<string, string> pendingGuestRequests = new Dictionary<string, string>();
         bool dutyStatus { get; set; }
 
         public Senior(List<Notification> notificationList, List<string> bicycles, string name, string neptunCode, string major, int roomNumber) 
@@ -39,21 +40,22 @@ namespace szofttech
 
         private void modifyDisciplinaryState()
         {
-            Console.Write("Adja meg a fegyelmit kapó diák neptun kódját: ");
+            Console.Write("Give the neptun code of the student who you wish to change its disciplinary state: ");
             string tempNeptun = Console.ReadLine();
             if (tempNeptun != null)
             {
                 Container.students.Find(x => x.neptunCode == tempNeptun).isUnderDiscipliary =
                     Container.students.Find(x => x.neptunCode == tempNeptun).isUnderDiscipliary ? false : true;
+                Console.WriteLine($"Disciplinary state successfully changed to: {Container.students.Find(x => x.neptunCode == tempNeptun).isUnderDiscipliary}");
             }
             else
-                Console.WriteLine("Nem adott meg neptun kódot");
+                Console.WriteLine("No neptun code given");
             
         }
 
         private bool getDisciplinaryState()
         {
-            Console.Write("Adja meg a diák neptun kódját: ");
+            Console.Write("Give the neptun code of a student: ");
             string tempNeptun = Console.ReadLine();
             return Container.students.Find(x => x.neptunCode == tempNeptun).isUnderDiscipliary;
         }
@@ -74,7 +76,7 @@ namespace szofttech
             }
             else
             {
-                Console.WriteLine("Nem létezik a megadott név vagy személyigazolványszám!");
+                Console.WriteLine("The given ID or name doesn't exist!");
             }
         }
 
@@ -91,7 +93,7 @@ namespace szofttech
             if (!pendingGuestRequests.ContainsKey(id))
                 pendingGuestRequests.Add(id, nev);
             else
-                Console.WriteLine("Ez a személy már szrepel a vendégek között");
+                Console.WriteLine("This person is already presented in the list.");
         }
     }
 }

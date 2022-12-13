@@ -41,8 +41,8 @@ namespace szofttech
     public Student(List<Notification> notificationList, List<string> bicycles, string name, 
       string neptunCode, string major, int roomNumber)
     {
-      this.notificationList   = notificationList;
-      this.bicycles           = bicycles;
+      this.notificationList   = new List<Notification>();
+      this.bicycles           = new List<string>();
 
       this.name               = name;
       this.neptunCode         = neptunCode;
@@ -53,23 +53,25 @@ namespace szofttech
       this.isUnderDiscipliary = false;
   }
 
-    private void pay()
+    public void pay()
     {
         char command;
         Console.WriteLine("You have: " + balance + " on your account");
         Console.WriteLine("You have: " + obligation + " that you have to pay");
         Console.WriteLine("Do you want to pay your obligation? (Y/N)");
         command = Convert.ToChar(Console.Read());
-        while (command != 'y' || command != 'n') {
+        while (!((char.ToUpper(command)).Equals('Y') || (char.ToUpper(command)).Equals('N'))) {
             Console.WriteLine("Please give the valid input! (Y/N)");
             command = Convert.ToChar(Console.Read());
         }
-        if (command == 'y' && balance > obligation)
+        if ((char.ToUpper(command)).Equals('Y') && balance > obligation && obligation > 0 && balance > 0)
         {
-            balance -= obligation;
+            int deductedDebit = obligation;
+            balance -= deductedDebit;
+            obligation -= deductedDebit;
             Console.WriteLine("The pay was successful");
         }
-        else if (balance < obligation)
+        else if ((char.ToUpper(command)).Equals('Y') && balance <= obligation)
         {
             Console.WriteLine("You don't have enough money on your account!");
         }
@@ -80,22 +82,39 @@ namespace szofttech
 
     public void sendRequest()
     {
-      throw new NotImplementedException();
+        string message;
+        Console.WriteLine("Please summarize your request!");
+        message = Console.ReadLine();
+        while (message == "") {
+            Console.WriteLine("The given input is empty! Please write something!");
+            message = Console.ReadLine();
+        }
+        Request request = new Request(this, message);
+        Administrator.addRequest(request);
+        Console.WriteLine("The request sent successfully!");
     }
 
     public void requestGuest()
     {
-      Console.Write("The ID number of your guest: ");
-      string id = Console.ReadLine();
+        Console.Write("The ID number of your guest: ");
+        string id = Console.ReadLine();
+        while (id == "") {
+            Console.WriteLine("Invalid input! Please give a valid input!");
+            id = Console.ReadLine();
+        }
 
-      Console.Write("The name of your guest: ");
-      string name = Console.ReadLine();
+        Console.Write("The name of your guest: ");
+        string name = Console.ReadLine();
+        while (name == "") {
+            Console.WriteLine("Invalid input! Please give a valid input!");
+            name = Console.ReadLine();
+        }
 
-      if (name != null && id != null)
-      {
-        Senior.newGuestRequest(id, name);
-        Console.WriteLine("Guest request was successfull");
-      }
+        if (name != null && id != null)
+        {
+            Senior.newGuestRequest(id, name);
+            Console.WriteLine("Guest request was successfull");
+        }
       else
       {
         Console.WriteLine("Nem adott meg értéket!");

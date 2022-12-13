@@ -4,11 +4,11 @@
   {
         static void Main(string[] args)
         {
-          Test.testStudentJsonify();
-          //Test.testEventJsonify();
-
+            //Test.testStudentJsonify();
+            //Test.testEventJsonify();
+            Test.testStudent();
           
-          Test.loadStudentsTest();
+          //Test.loadStudentsTest();
         }
   }
 }

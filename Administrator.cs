@@ -69,9 +69,9 @@ namespace szofttech
              // folytatás később
     }
 
-        public static void addRequest()
+        public static void addRequest(Request request)
         {
-            throw new NotImplementedException();
+            requestsList.Add(request);
         }
 
         private void approveRequest()
