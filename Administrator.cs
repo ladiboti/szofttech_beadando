@@ -17,6 +17,9 @@ namespace szofttech
             string neptunCode;
             int roomNumber = -1;
             string major;
+
+            //KÉRD BE ADRIÁN!!!!
+            string password = null;
             Console.WriteLine("Please give us the Student name!");
             name = Console.ReadLine();
             while (name == "") {
@@ -31,23 +34,30 @@ namespace szofttech
                 neptunCode = Console.ReadLine();
             }
             Console.WriteLine("Please give us the Student room number!");
-            Console.WriteLine(roomNumber.GetType());
-            //while (roomnNumber != Type())
+            
+            // ez a rész még kifejtésre szorul!!!
+
+            //while (roomNumber.GetType() != typeof(int))
             //{
             //    Console.WriteLine("The given input is invalid! Please give valid input!");
             //    name = Console.ReadLine();
             //}
-            try
-            {
-                roomNumber = Convert.ToInt32(Console.ReadLine());
-            } catch (FormatException e) {
-                Console.WriteLine("The given input is invalid!");
-            }
+            //try
+            //{
+            //    roomNumber = Convert.ToInt32(Console.ReadLine());
+            //} catch (FormatException e) {
+            //    Console.WriteLine("The given input is invalid!");
+            //}
             Console.WriteLine("Please give us the Student major!");
             major = Console.ReadLine();
+            while (major == "")
+            {
+                Console.WriteLine("The given input is invalid! Please give valid input!");
+                name = Console.ReadLine();
+            }
             Student newStudent = new Student(new List<Notification>(), 
                                              new List<string>(), 
-                                             name, neptunCode, major, roomNumber
+                                             name, neptunCode, major, password, roomNumber
                                              );
             Container.addStudent(newStudent);
         }

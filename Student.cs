@@ -19,6 +19,8 @@ namespace szofttech
     public string neptunCode { get; set; }
     public string major      { get; set; }
 
+    public string password   { get; set; }
+
     public int roomNumber { get; set; }
     public int balance    { get; set; }
     public int obligation { get; set; }
@@ -39,7 +41,7 @@ namespace szofttech
     }
 
     public Student(List<Notification> notificationList, List<string> bicycles, string name, 
-      string neptunCode, string major, int roomNumber)
+      string neptunCode, string major, string password, int roomNumber)
     {
       this.notificationList   = notificationList;
       this.bicycles           = bicycles;
@@ -47,6 +49,7 @@ namespace szofttech
       this.name               = name;
       this.neptunCode         = neptunCode;
       this.major              = major;
+      this.password           = password;
       this.roomNumber         = roomNumber;
       this.balance            = 0;
       this.obligation         = 0;
