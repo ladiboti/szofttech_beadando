@@ -48,8 +48,8 @@ namespace szofttech
       this.neptunCode         = neptunCode;
       this.major              = major;
       this.roomNumber         = roomNumber;
-      this.balance            = 5;
-      this.obligation         = 3;
+      this.balance            = 0;
+      this.obligation         = 0;
       this.isUnderDiscipliary = false;
   }
 
