@@ -10,7 +10,7 @@ namespace szofttech
   public static class Test
   {
     public static void testStudent() {
-        Student student = new Student(null, null, "Adrian", "TN21X0", "Software Engineer", 3071);
+        Student student = new Student(null, null, "Adrian", "TN21X0", "Software Engineer", "asd123", 3071);
             student.pay();
             student.pay();
             student.pay();
@@ -35,6 +35,7 @@ namespace szofttech
              "Dumb",
              "ASD123",
              "software engineer",
+             "asd123",
              123
          );
         Senior dummySenior = new Senior(
@@ -46,6 +47,7 @@ namespace szofttech
             "Dumber",
             "DSA321",
             "business engineer",
+            "asd123",
             321
         );
 
@@ -64,6 +66,7 @@ namespace szofttech
             "Dumber",
             "ASD123",
             "software engineer",
+            "asd123",
             123
         );
 

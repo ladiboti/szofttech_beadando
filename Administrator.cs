@@ -17,6 +17,9 @@ namespace szofttech
             string neptunCode;
             int roomNumber = -1;
             string major;
+
+            //KÉRD BE ADRIÁN!!!!
+            string password = null;
             Console.WriteLine("Please give us the Student name!");
             name = Console.ReadLine();
             while (name == "") {
@@ -47,7 +50,7 @@ namespace szofttech
             major = Console.ReadLine();
             Student newStudent = new Student(new List<Notification>(), 
                                              new List<string>(), 
-                                             name, neptunCode, major, roomNumber
+                                             name, neptunCode, major, password, roomNumber
                                              );
             Container.addStudent(newStudent);
         }
