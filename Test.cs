@@ -9,7 +9,15 @@ namespace szofttech
 {
   public static class Test
   {
-    public static void testStudent() {
+    public static void seniorTest()
+        {
+            Senior tester = new Senior(new List<Notification>(), new List<string>(), "Bekő Tóni", "DE97T2", "Gazdinfo", 115);
+            Senior other = new Senior(new List<Notification>(), new List<string>(), "Karó Géza", "BG5FO9", "Vegyészmérnök", 234);
+            tester.addEvent(new Event(tester, "Társasjáték est", new Date(2022, 12, 13, 18, 13), "Magi"));
+            tester.addEvent(new Event(other, "Szülinap", new Date(2022, 12, 28, 23, 00), "Magi"));
+            Container.getEventList();
+        }
+        public static void testStudent() {
         Student student = new Student(null, null, "Adrian", "TN21X0", "Software Engineer", 3071);
             student.pay();
             student.pay();

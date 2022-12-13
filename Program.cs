@@ -15,6 +15,7 @@ namespace szofttech
     }
     static void Main(string[] args)
     {
+        //Test.seniorTest();
         //Test.testStudentJsonify();
         //Test.testEventJsonify();
 
