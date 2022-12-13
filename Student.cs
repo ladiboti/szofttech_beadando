@@ -41,8 +41,8 @@ namespace szofttech
     public Student(List<Notification> notificationList, List<string> bicycles, string name, 
       string neptunCode, string major, int roomNumber)
     {
-      this.notificationList   = new List<Notification>();
-      this.bicycles           = new List<string>();
+      this.notificationList   = notificationList;
+      this.bicycles           = bicycles;
 
       this.name               = name;
       this.neptunCode         = neptunCode;
@@ -55,23 +55,23 @@ namespace szofttech
 
     public void pay()
     {
-        char command;
+        string command;
         Console.WriteLine("You have: " + balance + " on your account");
         Console.WriteLine("You have: " + obligation + " that you have to pay");
         Console.WriteLine("Do you want to pay your obligation? (Y/N)");
-        command = Convert.ToChar(Console.Read());
-        while (!((char.ToUpper(command)).Equals('Y') || (char.ToUpper(command)).Equals('N'))) {
+        command = Console.ReadLine();
+        while (!(command.Equals("Y") || command.Equals("N"))) {
             Console.WriteLine("Please give the valid input! (Y/N)");
-            command = Convert.ToChar(Console.Read());
+            command = Console.ReadLine();
         }
-        if ((char.ToUpper(command)).Equals('Y') && balance > obligation && obligation > 0 && balance > 0)
+        if (command.Equals("Y") && balance > obligation && obligation > 0 && balance > 0)
         {
             int deductedDebit = obligation;
             balance -= deductedDebit;
             obligation -= deductedDebit;
             Console.WriteLine("The pay was successful");
         }
-        else if ((char.ToUpper(command)).Equals('Y') && balance <= obligation)
+        else if (command.Equals("Y") && balance <= obligation)
         {
             Console.WriteLine("You don't have enough money on your account!");
         }

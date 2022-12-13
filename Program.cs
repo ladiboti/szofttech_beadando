@@ -6,7 +6,10 @@
         {
             //Test.testStudentJsonify();
             //Test.testEventJsonify();
+
             Test.testStudent();
+
+            //Test.testAdministrator();
           
           //Test.loadStudentsTest();
         }
