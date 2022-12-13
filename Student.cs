@@ -20,6 +20,20 @@ namespace szofttech
     public int obligation { get; set; }
     public bool isUnderDiscipliary { get; set; }
 
+    public Student()
+    {
+      this.notificationList   = null;
+      this.bicycles           = null;
+
+      this.name               = null;
+      this.neptunCode         = null;
+      this.major              = null;
+      this.roomNumber         = 0;
+      this.balance            = 0;
+      this.obligation         = 0;
+      this.isUnderDiscipliary = false;
+    }
+
     public Student(List<Notification> notificationList, List<string> bicycles, string name, 
       string neptunCode, string major, int roomNumber)
     {

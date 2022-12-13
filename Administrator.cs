@@ -55,8 +55,9 @@ namespace szofttech
                 neptunCode = Console.ReadLine();
             }
 
-            //rossz neptun kódnál hibát fog dobni
-            Student student = Container.students.Find(x => x.neptunCode == neptunCode);
+      //rossz neptun kódnál hibát fog dobni
+            Student student = new Student();
+            student = Container.students.Find(s => s.neptunCode == neptunCode);
 
             //TODO: frissiteni kell majd a jsont!!!!
             //public Senior(List<Notification> notificationList, List<string> bicycles, string name, string neptunCode, string major, int roomNumber)
