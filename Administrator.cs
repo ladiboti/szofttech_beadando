@@ -11,7 +11,7 @@ namespace szofttech
     {
         private static List<Request> requestsList = new List<Request>();
 
-        private void addNewStudent()
+        public void addNewStudent()
         {
             string name = "";
             string neptunCode = "";
@@ -25,7 +25,12 @@ namespace szofttech
                 Console.WriteLine("Please give us the Student neptun code!");
                 neptunCode = Console.ReadLine();
                 Console.WriteLine("Please give us the Student room number!");
-                roomNumber = Convert.ToInt32(Console.ReadLine());
+                try
+                {
+                    roomNumber = Convert.ToInt32(Console.ReadLine());
+                } catch (Exception e) {
+                    Console.WriteLine("The given input is invalid!");
+                }
                 Console.WriteLine("Please give us the Student major!");
                 major = Console.ReadLine();
                 if (name == "" || neptunCode == "" || roomNumber < 0 || major == "") {
