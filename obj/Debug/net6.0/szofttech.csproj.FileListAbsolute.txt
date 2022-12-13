@@ -46,3 +46,12 @@ C:\Users\adres\Desktop\program\obj\Debug\net6.0\szofttech.csproj.CoreCompileInpu
 C:\Users\adres\Desktop\program\obj\Debug\net6.0\szofttech.dll
 C:\Users\adres\Desktop\program\obj\Debug\net6.0\refint\szofttech.dll
 C:\Users\adres\Desktop\program\obj\Debug\net6.0\szofttech.pdb
+C:\Users\adres\Desktop\program\bin\Debug\net6.0\szofttech.exe
+C:\Users\adres\Desktop\program\bin\Debug\net6.0\szofttech.deps.json
+C:\Users\adres\Desktop\program\bin\Debug\net6.0\szofttech.runtimeconfig.json
+C:\Users\adres\Desktop\program\bin\Debug\net6.0\szofttech.dll
+C:\Users\adres\Desktop\program\bin\Debug\net6.0\szofttech.pdb
+C:\Users\adres\Desktop\program\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\adres\Desktop\program\obj\Debug\net6.0\szofttech.csproj.CopyComplete
+C:\Users\adres\Desktop\program\obj\Debug\net6.0\szofttech.genruntimeconfig.cache
+C:\Users\adres\Desktop\program\obj\Debug\net6.0\ref\szofttech.dll

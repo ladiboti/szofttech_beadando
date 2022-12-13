@@ -9,6 +9,13 @@ namespace szofttech
 {
   public static class Test
   {
+    public static void testStudent() {
+        Student student = new Student(null, null, "Adrian", "TN21X0", "Software Engineer", 3071);
+            //student.pay();
+            //student.sendRequest();
+            //student.requestGuest();
+            student.addBicycle();
+        }
     public static void testStudentJsonify()
     {
         Student dummy1 = new Student(
