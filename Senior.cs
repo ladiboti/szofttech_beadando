@@ -10,15 +10,16 @@ namespace szofttech
 {
     internal class Senior : Student
     {
-        static public List<AccommodationTicket> accommodationTickets { get; set; }
-        static public Dictionary<string, string> pendingGuestRequests { get; set; }
+        public static List<AccommodationTicket> accommodationTickets = new List<AccommodationTicket>();
+        // getter és delete???
+        public static Dictionary<string, string> pendingGuestRequests = new Dictionary<string, string>();
         bool dutyStatus { get; set; }
 
-        public Senior(List<Notification> notificationList, List<string> bicycles, string name, string neptunCode, string major, int roomNumber, List<AccommodationTicket> accommodationTickets, Dictionary<string, string> pendingGuestRequests) 
+        public Senior(List<Notification> notificationList, List<string> bicycles, string name, string neptunCode, string major, int roomNumber) 
             : base(notificationList, bicycles, name, neptunCode, major, roomNumber)
         {
-            this.accommodationTickets = accommodationTickets;
-            this.pendingGuestRequests = pendingGuestRequests;
+            //this.accommodationTickets = accommodationTickets;
+            //this.pendingGuestRequests = pendingGuestRequests;
             this.dutyStatus           = false;
         }
 

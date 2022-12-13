@@ -11,12 +11,15 @@ namespace szofttech
 {
     static class Container
     {
-      private static string studentsPath = @"C:\students.json";
-      private static string eventsPath   = @"C:\events.json";
+      private static string studentsPath = @"D:\students.json";
+      private static string eventsPath   = @"D:\events.json";
 
-    //elképzelhető, hogy null marad vegig
-    static public List<Event> events = new List<Event>();//JsonConvert.DeserializeObject<List<Event>>(File.ReadAllText(eventsPath));
-    static public List<Student> students = new List<Student>();//JsonConvert.DeserializeObject<List<Student>>(File.ReadAllText(studentsPath));
+      //elképzelhető, hogy null marad vegig
+      //productban a deserialize kell, hogy beolvassa a mar kesz jsont, ures file-al nem mukodik!!!!
+      static public List<Event> events = new List<Event>();//JsonConvert.DeserializeObject<List<Event>>(File.ReadAllText(eventsPath));
+      static public List<Student> students = new List<Student>();//JsonConvert.DeserializeObject<List<Student>>(File.ReadAllText(studentsPath));
+
+    
 
       private static void jsonify<T>(List<T> list)
       {
@@ -25,11 +28,16 @@ namespace szofttech
         //PONTOSITANI A FILE HELYET!!!!!!!!!!!!!!!!!
         Type type = typeof(T);
         //nullazni kell a file-t
-        File.WriteAllText(type == typeof(Student) ? 
-                          studentsPath : eventsPath, 
-                          jsonString
-                          );
-      }
+        File.WriteAllText(type == typeof(Student) ?
+                            studentsPath : eventsPath,
+                            string.Empty
+                            );
+
+        File.WriteAllText(type == typeof(Student) ?
+                            studentsPath : eventsPath,
+                            jsonString
+                            );
+    }
 
         public static void getEventList()
         {
