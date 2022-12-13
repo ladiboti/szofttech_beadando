@@ -88,7 +88,7 @@ namespace szofttech
             message = Console.ReadLine();
         }
         Request request = new Request(this, message);
-        Administrator.addRequest();
+        Administrator.addRequest(request);
     }
 
     public void requestGuest()
