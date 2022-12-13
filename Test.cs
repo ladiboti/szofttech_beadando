@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -65,6 +66,18 @@ namespace szofttech
 
        Event dummyEvent1 = new Event(dummy1, "proba1", new Date(2022, 12, 12, 0, 0), "magister");
        Container.addEvent(dummyEvent1);
+    }
+    public static void loadStudentsTest()
+    {
+      string studentsPath = @"C:\students.json";
+      List<Student> students = JsonConvert.DeserializeObject<List<Student>>(File.ReadAllText(studentsPath));
+
+      foreach (var student in students)
+      {
+        Console.WriteLine(
+          $"{student.name}\n{student.major}"  
+        );
+      }
     }
   }
 }

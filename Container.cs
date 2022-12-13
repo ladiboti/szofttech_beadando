@@ -15,10 +15,11 @@ namespace szofttech
       private static string eventsPath   = @"C:\events.json";
 
     //elképzelhető, hogy null marad vegig
-    static public List<Event> events = new List<Event>();//JsonConvert.DeserializeObject<List<Event>>(File.ReadAllText(eventsPath));
-    static public List<Student> students = new List<Student>();//JsonConvert.DeserializeObject<List<Student>>(File.ReadAllText(studentsPath));
+      static public List<Event> events = JsonConvert.DeserializeObject<List<Event>>(File.ReadAllText(eventsPath));
+      static public List<Student> students = JsonConvert.DeserializeObject<List<Student>>(File.ReadAllText(studentsPath));
 
     
+
       private static void jsonify<T>(List<T> list)
       {
         var jsonString = JsonConvert.SerializeObject(list);

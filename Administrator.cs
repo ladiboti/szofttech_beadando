@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace szofttech
 {
@@ -43,19 +44,29 @@ namespace szofttech
         private void promoteStudentToSenior()
         {
             string neptunCode;
+
             Console.WriteLine("Please give us the neptun code of the Student you want to promote!");
             neptunCode = Console.ReadLine();
+            
+            //ez a feltétel így biztosan nem lesz jó
             while (neptunCode == "") {
+
                 Console.WriteLine("The given neptun code is invalid! Please give us a valid neptun code!");
                 neptunCode = Console.ReadLine();
             }
+
+            //rossz neptun kódnál hibát fog dobni
             Student student = Container.students.Find(x => x.neptunCode == neptunCode);
-            Container.students.Remove(student);
-            Container.students.Add(new Senior(
-                                              student.notificationList, student.bicycles, student.name,
+
+            //TODO: frissiteni kell majd a jsont!!!!
+            //public Senior(List<Notification> notificationList, List<string> bicycles, string name, string neptunCode, string major, int roomNumber)
+            //      : base(notificationList, bicycles, name, neptunCode, major, roomNumber)
+            Container.students.Add(new Senior(student.notificationList, student.bicycles, student.name,
                                               student.neptunCode, student.major, student.roomNumber));
-            // folytatás később
-        }
+
+            Container.students.Remove(student);
+             // folytatás később
+    }
 
         public static void addRequest()
         {
