@@ -80,7 +80,15 @@ namespace szofttech
 
     public void sendRequest()
     {
-      throw new NotImplementedException();
+        string message;
+        Console.WriteLine("Please summarize your request!");
+        message = Console.ReadLine();
+        while (message == "") {
+            Console.WriteLine("The given input is empty! Please write something!");
+            message = Console.ReadLine();
+        }
+        Request request = new Request(this, message);
+        Administrator.addRequest();
     }
 
     public void requestGuest()
