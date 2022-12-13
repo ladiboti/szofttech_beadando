@@ -15,8 +15,8 @@ namespace szofttech
         public static Dictionary<string, string> pendingGuestRequests = new Dictionary<string, string>();
         bool dutyStatus { get; set; }
 
-        public Senior(List<Notification> notificationList, List<string> bicycles, string name, string neptunCode, string major, int roomNumber) 
-            : base(notificationList, bicycles, name, neptunCode, major, roomNumber)
+        public Senior(List<Notification> notificationList, List<string> bicycles, string name, string neptunCode, string major, string password, int roomNumber) 
+            : base(notificationList, bicycles, name, neptunCode, major, password, roomNumber)
         {
             //this.accommodationTickets = accommodationTickets;
             //this.pendingGuestRequests = pendingGuestRequests;
@@ -28,42 +28,59 @@ namespace szofttech
             Container.addEvent(newEvent);
         }
 
-        private void startDuty()
+        public void startDuty()
         {
             dutyStatus = true;
         }
 
-        private void stopDuty()
+        public void stopDuty()
         {
             dutyStatus = false;
         }
 
-        private void modifyDisciplinaryState()
+        public void modifyDisciplinaryState()
         {
             Console.Write("Give the neptun code of the student who you wish to change its disciplinary state: ");
-            string tempNeptun = Console.ReadLine();
-            if (tempNeptun != null)
+            string tempNeptun = Console.ReadLine().ToUpper();
+            while (tempNeptun == "")
             {
+                Console.WriteLine("No neptun code given. Give one!");
+                tempNeptun = Console.ReadLine();
+            }
+            if (Container.students.Exists(x => x.neptunCode == tempNeptun) == true)
+            { 
                 Container.students.Find(x => x.neptunCode == tempNeptun).isUnderDiscipliary =
                     Container.students.Find(x => x.neptunCode == tempNeptun).isUnderDiscipliary ? false : true;
                 Console.WriteLine($"Disciplinary state successfully changed to: {Container.students.Find(x => x.neptunCode == tempNeptun).isUnderDiscipliary}");
             }
             else
-                Console.WriteLine("No neptun code given");
+                Console.WriteLine("The person does not presented in the list");
             
         }
 
-        private bool getDisciplinaryState()
+        public bool getDisciplinaryState()
         {
             Console.Write("Give the neptun code of a student: ");
-            string tempNeptun = Console.ReadLine();
-            return Container.students.Find(x => x.neptunCode == tempNeptun).isUnderDiscipliary;
+            string tempNeptun = Console.ReadLine().ToUpper();
+            while (tempNeptun == "")
+            {
+                Console.WriteLine("No neptun code given");
+                tempNeptun = Console.ReadLine();
+            }
+            if (Container.students.Exists(x => x.neptunCode == tempNeptun) == true)
+            {
+                return Container.students.Find(x => x.neptunCode == tempNeptun).isUnderDiscipliary;
+            }
+            else
+                Console.WriteLine("The person does not presented in the list");
+            return false;
+            
         }
 
-        private void giveAccomodationTicket()
+        public void giveAccomodationTicket()
         {
             Console.Write("The id of the vistor: ");
-            string tempId = Console.ReadLine();
+            string tempId = Console.ReadLine().ToUpper();
             Console.Write("The name of the visitor: ");
             string tempName = Console.ReadLine(); 
             Console.Write("How long the visitor intended to stay (days): ");
@@ -80,7 +97,7 @@ namespace szofttech
             }
         }
 
-        private void listAccomodation()
+        public void listAccomodation()
         {
             foreach (AccommodationTicket i in accommodationTickets)
             {

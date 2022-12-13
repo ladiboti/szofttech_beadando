@@ -11,14 +11,24 @@ namespace szofttech
   {
     public static void seniorTest()
         {
-            Senior tester = new Senior(new List<Notification>(), new List<string>(), "Bekő Tóni", "DE97T2", "Gazdinfo", 115);
-            Senior other = new Senior(new List<Notification>(), new List<string>(), "Karó Géza", "BG5FO9", "Vegyészmérnök", 234);
+            Senior tester = new Senior(new List<Notification>(), new List<string>(), "Bekő Tóni", "DE97T2", "Gazdinfo","ps_1", 115);
+            Senior other = new Senior(new List<Notification>(), new List<string>(), "Karó Géza", "BG5FO9", "Vegyészmérnök","ps_2", 234);
+            Student testStudent = new Student(new List<Notification>(), new List<string>(), "Kris", "DGB6LT", "Proginfo", "Dallos0927", 144);
             tester.addEvent(new Event(tester, "Társasjáték est", new Date(2022, 12, 13, 18, 13), "Magi"));
             tester.addEvent(new Event(other, "Szülinap", new Date(2022, 12, 28, 23, 00), "Magi"));
             Container.getEventList();
+            Container.addStudent(testStudent);
+
+            tester.startDuty();
+            other.startDuty();
+            other.stopDuty();
+
+            tester.modifyDisciplinaryState();
+            tester.getDisciplinaryState();
+            Container.getStudentList();
         }
         public static void testStudent() {
-        Student student = new Student(null, null, "Adrian", "TN21X0", "Software Engineer", 3071);
+        Student student = new Student(null, null, "Adrian", "TN21X0", "Software Engineer","valami", 3071);
             student.pay();
             student.pay();
             student.pay();
@@ -43,6 +53,7 @@ namespace szofttech
              "Dumb",
              "ASD123",
              "software engineer",
+             "Password",
              123
          );
         Senior dummySenior = new Senior(
@@ -54,6 +65,7 @@ namespace szofttech
             "Dumber",
             "DSA321",
             "business engineer",
+            "Password",
             321
         );
 
@@ -72,6 +84,7 @@ namespace szofttech
             "Dumber",
             "ASD123",
             "software engineer",
+            "Qq123456",
             123
         );
 

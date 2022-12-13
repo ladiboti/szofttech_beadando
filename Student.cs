@@ -47,7 +47,7 @@ namespace szofttech
       this.bicycles           = bicycles;
 
       this.name               = name;
-      this.neptunCode         = neptunCode;
+      this.neptunCode         = neptunCode.ToUpper();
       this.major              = major;
       this.password           = password;
       this.roomNumber         = roomNumber;
@@ -100,7 +100,7 @@ namespace szofttech
     public void requestGuest()
     {
         Console.Write("The ID number of your guest: ");
-        string id = Console.ReadLine();
+        string id = Console.ReadLine().ToUpper();
         while (id == "") {
             Console.WriteLine("Invalid input! Please give a valid input!");
             id = Console.ReadLine();

@@ -84,7 +84,7 @@ namespace szofttech
             //public Senior(List<Notification> notificationList, List<string> bicycles, string name, string neptunCode, string major, int roomNumber)
             //      : base(notificationList, bicycles, name, neptunCode, major, roomNumber)
             Container.students.Add(new Senior(student.notificationList, student.bicycles, student.name,
-                                              student.neptunCode, student.major, student.roomNumber));
+                                              student.neptunCode, student.major, student.password, student.roomNumber));
 
             Container.students.Remove(student);
              // folytatás később

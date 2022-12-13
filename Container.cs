@@ -43,7 +43,7 @@ namespace szofttech
         {
             foreach (Event i in events)
             {
-                Console.WriteLine($"{i.organizer} {i.description} {i.getDate()} {i.place}");
+                Console.WriteLine($"{i.organizer.name} {i.description} {i.getDate()} {i.place}");
             }
         }
         public static void getStudentList()
