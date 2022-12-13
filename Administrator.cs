@@ -13,32 +13,38 @@ namespace szofttech
 
         public void addNewStudent()
         {
-            string name = "";
-            string neptunCode = "";
+            string name;
+            string neptunCode;
             int roomNumber = -1;
-            string major = "";
-            bool finished = false;
-            while (!finished)
-            {
-                Console.WriteLine("Please give us the Student name!");
+            string major;
+            Console.WriteLine("Please give us the Student name!");
+            name = Console.ReadLine();
+            while (name == "") {
+                Console.WriteLine("The given input is invalid! Please give valid input!");
                 name = Console.ReadLine();
-                Console.WriteLine("Please give us the Student neptun code!");
-                neptunCode = Console.ReadLine();
-                Console.WriteLine("Please give us the Student room number!");
-                try
-                {
-                    roomNumber = Convert.ToInt32(Console.ReadLine());
-                } catch (Exception e) {
-                    Console.WriteLine("The given input is invalid!");
-                }
-                Console.WriteLine("Please give us the Student major!");
-                major = Console.ReadLine();
-                if (name == "" || neptunCode == "" || roomNumber < 0 || major == "") {
-                    Console.WriteLine("The input is invalid!");
-                    continue;
-                }
-                finished = true;
             }
+            Console.WriteLine("Please give us the Student neptun code!");
+            neptunCode = Console.ReadLine();
+            while (neptunCode == "")
+            {
+                Console.WriteLine("The given input is invalid! Please give valid input!");
+                neptunCode = Console.ReadLine();
+            }
+            Console.WriteLine("Please give us the Student room number!");
+            Console.WriteLine(roomNumber.GetType());
+            //while (roomnNumber != Type())
+            //{
+            //    Console.WriteLine("The given input is invalid! Please give valid input!");
+            //    name = Console.ReadLine();
+            //}
+            try
+            {
+                roomNumber = Convert.ToInt32(Console.ReadLine());
+            } catch (FormatException e) {
+                Console.WriteLine("The given input is invalid!");
+            }
+            Console.WriteLine("Please give us the Student major!");
+            major = Console.ReadLine();
             Student newStudent = new Student(new List<Notification>(), 
                                              new List<string>(), 
                                              name, neptunCode, major, roomNumber
