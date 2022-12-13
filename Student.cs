@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,14 +12,29 @@ namespace szofttech
     public List<Notification> notificationList { get; set; }
     public List<string>       bicycles         { get; set; }
 
+    //set nelkul nem megy a tostring xddd
     public string name       { get; set; }
-    public string neptunCode { get; }
-    public string major      { get; }
+    public string neptunCode { get; set; }
+    public string major      { get; set; }
 
     public int roomNumber { get; set; }
     public int balance    { get; set; }
     public int obligation { get; set; }
     public bool isUnderDiscipliary { get; set; }
+
+    public Student()
+    {
+      this.notificationList   = null;
+      this.bicycles           = null;
+
+      this.name               = null;
+      this.neptunCode         = null;
+      this.major              = null;
+      this.roomNumber         = 0;
+      this.balance            = 0;
+      this.obligation         = 0;
+      this.isUnderDiscipliary = false;
+    }
 
     public Student(List<Notification> notificationList, List<string> bicycles, string name, 
       string neptunCode, string major, int roomNumber)
@@ -49,25 +65,49 @@ namespace szofttech
     {
       Console.Write("The ID number of your guest: ");
       string id = Console.ReadLine();
+
       Console.Write("The name of your guest: ");
       string name = Console.ReadLine();
+
       if (name != null && id != null)
-            {
-                Senior.newGuestRequest(id, name);
-                Console.WriteLine("Guest request was successfull");
-            }
+      {
+        Senior.newGuestRequest(id, name);
+        Console.WriteLine("Guest request was successfull");
+      }
       else
-            {
-                Console.WriteLine("Nem adott meg értéket!");
-            }
+      {
+        Console.WriteLine("Nem adott meg értéket!");
+      }
     }
 
     public void addBicycle()
     {
+      //exeception!!!!
       Console.WriteLine("Enter the serial number of your bicycle!");
       string serialNumber = Console.ReadLine();
+
       bicycles.Add(serialNumber);
       Console.WriteLine("Bicycle added successfully to the database!");
+    }
+
+    public string toString()
+    {
+
+      string text = $"name: {name}\nneptuncode: {(neptunCode == null ? "null" : "megy")}\nmajor: {major}\nroom number: {roomNumber}\n" +
+                    $"balance: {balance}\nobligation: {obligation}\ndisciplinary state: {(isUnderDiscipliary ? "true" : "false")}";
+
+      text += "\nNotifications:\n";
+      foreach (var notification in notificationList)
+      {
+        text += notification.message + "\n";
+      }
+
+      text += "\nBicycles:\n";
+      foreach (var bicycle in bicycles)
+      {
+        text += bicycle + "\n";
+      }
+      return text;
     }
   }
 }
