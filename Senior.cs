@@ -84,11 +84,29 @@ namespace szofttech
             Console.Write("The name of the visitor: ");
             string tempName = Console.ReadLine(); 
             Console.Write("How long the visitor intended to stay (days): ");
-            int tempDay = Convert.ToInt32(Console.ReadLine());
-            if(pendingGuestRequests.ContainsKey(tempId) && pendingGuestRequests[tempId] != null && 
-                pendingGuestRequests.ContainsValue(tempName) && pendingGuestRequests[tempName] != null)
+            string tempDay = Console.ReadLine();
+            while(tempId == "" || tempName == "" || tempDay == "")
             {
-                accommodationTickets.Add(new AccommodationTicket(tempId, tempName, new Date(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day + tempDay, DateTime.Now.Hour, DateTime.Now.Minute)));
+                Console.WriteLine("No ID, staying and/or Name was given");
+                if(tempId == "")
+                {
+                    Console.Write("The id of the vistor: ");
+                    tempId = Console.ReadLine().ToUpper();
+                }
+                if(tempName == "")
+                {
+                    Console.Write("The name of the visitor: ");
+                    tempName = Console.ReadLine();
+                }
+                if (tempDay == "")
+                {
+                    Console.Write("How long the visitor intended to stay (days): ");
+                    tempDay = Console.ReadLine();
+                }
+            }
+            if(pendingGuestRequests.ContainsKey(tempId) && pendingGuestRequests.ContainsValue(tempName))
+            {
+                accommodationTickets.Add(new AccommodationTicket(tempId, tempName, new Date(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day + Convert.ToInt32(tempDay), DateTime.Now.Hour, DateTime.Now.Minute)));
                 pendingGuestRequests.Remove(tempId);
             }
             else
@@ -101,7 +119,7 @@ namespace szofttech
         {
             foreach (AccommodationTicket i in accommodationTickets)
             {
-                Console.WriteLine($"{i.guestId} {i.guestName} {i.getExpireDate}");
+                Console.WriteLine($"{i.guestId} {i.guestName} {i.getExpireDate()}");
             }
         }
 

@@ -26,6 +26,10 @@ namespace szofttech
             tester.modifyDisciplinaryState();
             tester.getDisciplinaryState();
             Container.getStudentList();
+
+            testStudent.requestGuest();
+            tester.giveAccomodationTicket();
+            tester.listAccomodation();
         }
         public static void testStudent() {
         Student student = new Student(null, null, "Adrian", "TN21X0", "Software Engineer","valami", 3071);
