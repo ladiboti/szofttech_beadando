@@ -1,4 +1,5 @@
-﻿using System.Reflection.Metadata;
+﻿using Newtonsoft.Json;
+using System.Reflection.Metadata;
 using System.Xml.Serialization;
 
 namespace szofttech
@@ -7,6 +8,7 @@ namespace szofttech
   {
     private void start()
     {
+      Container.loadAllJSON();
       CollegePerson.login();
       CollegePerson.user.menu();
     }
