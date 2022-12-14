@@ -6,11 +6,6 @@ namespace szofttech
   internal class Program
   {
     private void start()
-    {  
-      showMenu();
-    }
-
-    private void showMenu()
     {
       CollegePerson.login();
       CollegePerson.user.menu();

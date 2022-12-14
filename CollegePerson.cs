@@ -11,7 +11,6 @@ namespace szofttech
     //undorito, de igy mukodik a legegyszerubben :))))))
     public static CollegePerson user;
     public string name { get; set; }
-
     public abstract void menu();
     public static void login()
     {
