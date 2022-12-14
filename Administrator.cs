@@ -17,14 +17,18 @@ namespace szofttech
             string name;
             string neptunCode;
             int roomNumber = -1;
+            string roomNumberString;
+            bool canConvert = false;
             string major;
             string password = null;
+
             Console.WriteLine("Please give us the Student name!");
             name = Console.ReadLine();
             while (name == "") {
                 Console.WriteLine("The given input is invalid! Please give valid input!");
                 name = Console.ReadLine();
             }
+
             Console.WriteLine("Please give us the Student neptun code!");
             neptunCode = Console.ReadLine();
             while (neptunCode == "")
@@ -32,28 +36,24 @@ namespace szofttech
                 Console.WriteLine("The given input is invalid! Please give valid input!");
                 neptunCode = Console.ReadLine();
             }
-            Console.WriteLine("Please give us the Student room number!");
-            
-            // ez a rész még kifejtésre szorul!!!
 
-            //while (roomNumber.GetType() != typeof(int))
-            //{
-            //    Console.WriteLine("The given input is invalid! Please give valid input!");
-            //    name = Console.ReadLine();
-            //}
-            //try
-            //{
-            //    roomNumber = Convert.ToInt32(Console.ReadLine());
-            //} catch (FormatException e) {
-            //    Console.WriteLine("The given input is invalid!");
-            //}
+            Console.WriteLine("Please give us the Student room number!");
+            roomNumberString = Console.ReadLine();
+            canConvert = int.TryParse(roomNumberString, out roomNumber);
+            while (roomNumberString == "" && !canConvert) {
+                Console.WriteLine("The given input is invalid! Please give valid input!");
+                roomNumberString = Console.ReadLine();
+                canConvert = int.TryParse(roomNumberString, out roomNumber);
+            }
+
             Console.WriteLine("Please give us the Student major!");
             major = Console.ReadLine();
             while (major == "")
             {
                 Console.WriteLine("The given input is invalid! Please give valid input!");
-                name = Console.ReadLine();
+                major = Console.ReadLine();
             }
+
             Student newStudent = new Student(new List<Notification>(), 
                                              new List<string>(), 
                                              name, neptunCode, major, password, roomNumber
