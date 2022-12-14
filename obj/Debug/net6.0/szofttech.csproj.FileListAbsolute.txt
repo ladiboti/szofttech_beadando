@@ -26,7 +26,6 @@ C:\Users\Bea\Documents\1_Pannon Egyetem\3. felev\Szoftvertechnologia\Program\bin
 C:\Users\Bea\Documents\1_Pannon Egyetem\3. felev\Szoftvertechnologia\Program\bin\Debug\net6.0\szofttech.dll
 C:\Users\Bea\Documents\1_Pannon Egyetem\3. felev\Szoftvertechnologia\Program\bin\Debug\net6.0\szofttech.pdb
 C:\Users\Bea\Documents\1_Pannon Egyetem\3. felev\Szoftvertechnologia\Program\bin\Debug\net6.0\Newtonsoft.Json.dll
-C:\Users\Bea\Documents\1_Pannon Egyetem\3. felev\Szoftvertechnologia\Program\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
 C:\Users\Bea\Documents\1_Pannon Egyetem\3. felev\Szoftvertechnologia\Program\obj\Debug\net6.0\szofttech.csproj.AssemblyReference.cache
 C:\Users\Bea\Documents\1_Pannon Egyetem\3. felev\Szoftvertechnologia\Program\obj\Debug\net6.0\szofttech.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Bea\Documents\1_Pannon Egyetem\3. felev\Szoftvertechnologia\Program\obj\Debug\net6.0\szofttech.AssemblyInfoInputs.cache

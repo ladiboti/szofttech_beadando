@@ -11,8 +11,8 @@ namespace szofttech
 {
     static class Container
     {
-      private static string studentsPath = @"D:\students.json";
-      private static string eventsPath   = @"D:\events.json";
+      private static string studentsPath = @"C:\students.json";
+      private static string eventsPath   = @"C:\events.json";
 
       //elképzelhető, hogy null marad vegig
       //productban a deserialize kell, hogy beolvassa a mar kesz jsont, ures file-al nem mukodik!!!!
@@ -43,7 +43,7 @@ namespace szofttech
         {
             foreach (Event i in events)
             {
-                Console.WriteLine($"{i.organizer} {i.description} {i.getDate()} {i.place}");
+                Console.WriteLine($"{i.organizer.name} {i.description} {i.getDate()} {i.place}");
             }
         }
         public static void getStudentList()
