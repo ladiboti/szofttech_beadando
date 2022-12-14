@@ -16,13 +16,12 @@ namespace szofttech
 
       //elképzelhető, hogy null marad vegig
       //productban a deserialize kell, hogy beolvassa a mar kesz jsont, ures file-al nem mukodik!!!!
-      static public List<Event> events = JsonConvert.DeserializeObject<List<Event>>(File.ReadAllText(eventsPath));
+      static public List<Event> events     = JsonConvert.DeserializeObject<List<Event>>(File.ReadAllText(eventsPath));
       static public List<Student> students = JsonConvert.DeserializeObject<List<Student>>(File.ReadAllText(studentsPath));
-
-    
 
       private static void jsonify<T>(List<T> list)
       {
+        
         var jsonString = JsonConvert.SerializeObject(list);
   
         //PONTOSITANI A FILE HELYET!!!!!!!!!!!!!!!!!
@@ -37,22 +36,32 @@ namespace szofttech
                             studentsPath : eventsPath,
                             jsonString
                             );
-    }
+      }
 
-        public static void getEventList()
-        {
-            foreach (Event i in events)
-            {
-                Console.WriteLine($"{i.organizer.name} {i.description} {i.getDate()} {i.place}");
-            }
-        }
-        public static void getStudentList()
-        {
-            foreach (Student i in students)
-            {
-                Console.WriteLine($"{i.name} {i.neptunCode} {i.major} {i.roomNumber}");
-            }
-        }
+      public static void refreshStudentsJSON()
+      {
+        jsonify<Student>(students);
+      }
+
+      public static void refreshEventsJSON()
+      {
+        jsonify<Event>(events);
+      }
+
+    public static void getEventList()
+      {
+          foreach (Event i in events)
+          {
+              Console.WriteLine($"{i.organizer.name} {i.description} {i.getDate()} {i.place}");
+          }
+      }
+      public static void getStudentList()
+      {
+          foreach (Student i in students)
+          {
+              Console.WriteLine($"{i.name} {i.neptunCode} {i.major} {i.roomNumber}");
+          }
+      }
         public static void addEvent(Event newEvent)
       {   
           //nem biztos, hogy igy kell generikus metodust hivni
