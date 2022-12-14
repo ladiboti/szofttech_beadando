@@ -161,10 +161,11 @@ namespace szofttech
                 Container.students.Find(x => x.neptunCode == tempNeptun).isUnderDiscipliary =
                     Container.students.Find(x => x.neptunCode == tempNeptun).isUnderDiscipliary ? false : true;
                 Console.WriteLine($"Disciplinary state successfully changed to: {Container.students.Find(x => x.neptunCode == tempNeptun).isUnderDiscipliary}");
-                Container.refreshSeniorJSON();
             }
             else
                 Console.WriteLine("The person does not presented in the list");
+            Container.refreshStudentsJSON();
+            Container.refreshSeniorJSON();
             Console.ReadKey();
             Console.Clear();
         }
