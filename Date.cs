@@ -32,7 +32,8 @@ namespace szofttech
         }
     //convert kell???
         public string getDateString() {
-            return $"{year}.{month}.{day}. {hour}:{minute}";
+            string date = $"{year}.{month}.{day}. {hour}:{minute}".ToString();
+            return date;
         }
     }
 }
