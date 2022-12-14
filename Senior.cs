@@ -15,6 +15,10 @@ namespace szofttech
         public static Dictionary<string, string> pendingGuestRequests = new Dictionary<string, string>();
         bool dutyStatus { get; set; }
 
+        public Senior()
+        {
+          
+        }
         public Senior(List<Notification> notificationList, List<string> bicycles, string name, string neptunCode, string major, string password, int roomNumber) 
             : base(notificationList, bicycles, name, neptunCode, major, password, roomNumber)
         {

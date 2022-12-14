@@ -86,9 +86,9 @@ namespace szofttech
             {
                 Student student = new Student();
                 student = Container.students.Find(x => x.neptunCode == tempNeptun);
-                Container.students.Add(new Senior(student.notificationList, student.bicycles, student.name,
+                Container.addSenior(new Senior(student.notificationList, student.bicycles, student.name,
                                               student.neptunCode, student.major, student.password, student.roomNumber));
-                Container.students.Remove(student);
+                //Container.students.Remove(student);
                 Console.WriteLine("The selected student is sucessfully promoted!");
             }
             else
@@ -109,7 +109,7 @@ namespace szofttech
         private void approveRequest()
         {
             int index = 0;
-            Console.WriteLine("DEBUG: Administrator.approveRequest()" + Container.requests.Count());
+            //Console.WriteLine("DEBUG: Administrator.approveRequest()" + Container.requests.Count());
             foreach (Request r in Container.requests) {
                 index++;
                 Console.WriteLine($"{index} {r.sender.name} {r.message} {r.status}");
@@ -175,8 +175,10 @@ namespace szofttech
             foreach (Student s in Container.students) {
                 s.obligation += obligation;
                 s.notificationList.Add(new Notification(message, 
-                                                        new Date(2022,3,14,12,0).getDateString())
-                                      );
+                                                        new Date(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day,
+                                                                 DateTime.Now.Hour, DateTime.Now.Minute).getDateString())
+                                                        );
+            
             }
             Container.refreshStudentsJSON();
         }
