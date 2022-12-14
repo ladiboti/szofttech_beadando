@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "OWIfxj9A4C86jpwQE+6xw1VL0za31dZD4Ke1acG2sVJiyF1cOZqNu8KjQq8mGCjZjDsjUd+wtAxOl0ExFnldSA==",
+  "dgSpecHash": "LhApDXSwIgAEs8DsNNVgAeegfzF566+ZEr0eyNRIAAy9E4qvIwObGFm0InROPVedpfJ+ODeF8j3WYTbFHCwy0g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\adres\\Desktop\\program\\szofttech.csproj",
+  "projectFilePath": "C:\\Users\\ladib\\source\\repos\\szofttech_beadando\\szofttech.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\adres\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512"
+    "C:\\Users\\ladib\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512"
   ],
   "logs": []
 }
