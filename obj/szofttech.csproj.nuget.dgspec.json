@@ -1,40 +1,24 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
-    "C:\\Users\\ladib\\source\\repos\\szofttech_beadando\\szofttech.csproj": {}
+    "C:\\Users\\adres\\Desktop\\program\\szofttech.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ladib\\source\\repos\\szofttech_beadando\\szofttech.csproj": {
+    "C:\\Users\\adres\\Desktop\\program\\szofttech.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ladib\\source\\repos\\szofttech_beadando\\szofttech.csproj",
+        "projectUniqueName": "C:\\Users\\adres\\Desktop\\program\\szofttech.csproj",
         "projectName": "szofttech",
-        "projectPath": "C:\\Users\\ladib\\source\\repos\\szofttech_beadando\\szofttech.csproj",
-        "packagesPath": "C:\\Users\\ladib\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ladib\\source\\repos\\szofttech_beadando\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\ladib\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-    "C:\\Users\\Bea\\Documents\\1_Pannon Egyetem\\3. felev\\Szoftvertechnologia\\Program\\szofttech.csproj": {}
-  },
-  "projects": {
-    "C:\\Users\\Bea\\Documents\\1_Pannon Egyetem\\3. felev\\Szoftvertechnologia\\Program\\szofttech.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\Bea\\Documents\\1_Pannon Egyetem\\3. felev\\Szoftvertechnologia\\Program\\szofttech.csproj",
-        "projectName": "szofttech",
-        "projectPath": "C:\\Users\\Bea\\Documents\\1_Pannon Egyetem\\3. felev\\Szoftvertechnologia\\Program\\szofttech.csproj",
-        "packagesPath": "C:\\Users\\Bea\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Bea\\Documents\\1_Pannon Egyetem\\3. felev\\Szoftvertechnologia\\Program\\obj\\",
+        "projectPath": "C:\\Users\\adres\\Desktop\\program\\szofttech.csproj",
+        "packagesPath": "C:\\Users\\adres\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\adres\\Desktop\\program\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Bea\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> e5c8f81bd03f26413555384ca8800795102f7800
+          "C:\\Users\\adres\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -81,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
