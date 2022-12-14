@@ -117,19 +117,25 @@ namespace szofttech
             if (index != 0)
             {
                 int status = 0;
+                string statusString;
+                string indexString;
+                bool canConvert = false;
                 Console.WriteLine("Please choose a request which you want to modify! (Give a number)");
-                index = Convert.ToInt32(Console.ReadLine());
-
-                while (index < 0 && index > Container.requests.Count) {
-                    Console.WriteLine("The given number is not valid! Please give a valid number!");
-                    index = Convert.ToInt32(Console.ReadLine());
+                indexString = Console.ReadLine();
+                canConvert = int.TryParse(indexString, out index);
+                while ((indexString == "" || index < 0 && index > Container.requests.Count()) || !canConvert)
+                {
+                    Console.WriteLine("The given number is invalid! Please give a valid number!");
+                    indexString = Console.ReadLine();
+                    canConvert = int.TryParse(indexString, out index);
                 }
 
                 Console.WriteLine("Please choose a status! (1 = accepted, 2 = denied)");
-                status = Convert.ToInt32(Console.ReadLine());
-                while (status < 1 && status > 2) {
+                statusString = Console.ReadLine();
+                canConvert = int.TryParse(statusString, out status);
+                while ((statusString == "" || status < 1 || status > 2) || !canConvert) {
                     Console.WriteLine("The given number is not valid! Please give a valid number!");
-                    status = Convert.ToInt32(Console.ReadLine());
+                    statusString = Console.ReadLine();
                 }
 
                 Container.requests[index].status = status;
