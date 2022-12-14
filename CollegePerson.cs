@@ -9,7 +9,7 @@ namespace szofttech
   abstract class CollegePerson
   {
     //undorito, de igy mukodik a legegyszerubben :))))))
-    static CollegePerson user;
+    public static CollegePerson user;
     public string name { get; set; }
     public static void login()
     {
@@ -41,12 +41,14 @@ namespace szofttech
           Console.WriteLine(user is null ? "Bad credidentals, try again" :
                                           $"Welcome {(user is Student ? user.name : "admin")} glad to see you here!");
           break;
-
       }
     }
+    //test!!!
     public static void logout()
     {
-      throw new NotImplementedException();
+      Console.WriteLine("For new login restart the application\nShutting down...");
+      System.Threading.Thread.Sleep(100);
+      System.Environment.Exit(1);
     }
   }
 }
