@@ -47,9 +47,9 @@ namespace szofttech
     public static void testStudentJsonify()
     {
         Student dummy1 = new Student(
-             new List<Notification> { new Notification("proba1", new Date(2022, 12, 12, 0, 0)),
-                                      new Notification("proba2", new Date(2022, 12, 13, 0, 0)),
-                                      new Notification("proba3", new Date(2022, 12, 14, 0, 0))
+             new List<Notification> { new Notification("proba1", new Date(2022, 12, 12, 0, 0).getDateString()),
+                                      new Notification("proba2", new Date(2022, 12, 13, 0, 0).getDateString()),
+                                      new Notification("proba3", new Date(2022, 12, 14, 0, 0).getDateString())
                                     },
              new List<string> { "qwe", "rtz", "uio" },
              "Dumb",
@@ -59,9 +59,9 @@ namespace szofttech
              123
          );
         Senior dummySenior = new Senior(
-            new List<Notification> { new Notification("proba4", new Date(2022, 12, 15, 0, 0)),
-                                     new Notification("proba5", new Date(2022, 12, 16, 0, 0)),
-                                     new Notification("proba6", new Date(2022, 12, 17, 0, 0))
+            new List<Notification> { new Notification("proba4", new Date(2022, 12, 15, 0, 0).getDateString()),
+                                     new Notification("proba5", new Date(2022, 12, 16, 0, 0).getDateString()),
+                                     new Notification("proba6", new Date(2022, 12, 17, 0, 0).getDateString())
                                     },
             new List<string> { "asd", "fgh", "jkl" },
             "Dumber",
@@ -78,9 +78,9 @@ namespace szofttech
     public static void testEventJsonify()
     {
       Senior dummy1 = new Senior(
-            new List<Notification> { new Notification("proba1", new Date(2022, 12, 12, 0, 0)),
-                                     new Notification("proba2", new Date(2022, 12, 13, 0, 0)),
-                                     new Notification("proba2", new Date(2022, 12, 14, 0, 0))
+            new List<Notification> { new Notification("proba1", new Date(2022, 12, 12, 0, 0).getDateString()),
+                                     new Notification("proba2", new Date(2022, 12, 13, 0, 0).getDateString()),
+                                     new Notification("proba2", new Date(2022, 12, 14, 0, 0).getDateString())
                                    },
             new List<string> { "asd", "fgh", "jkl" },
             "Dumber",

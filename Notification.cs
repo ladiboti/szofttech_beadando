@@ -9,8 +9,11 @@ namespace szofttech
   internal class Notification
   {
         public string message { get; }
-        public Notification(string message) {
-            this.message         = message;
+        public string messageDate { get; }
+        public Notification(string message, string messageDate)
+        {
+            this.message = message;
+            this.messageDate = messageDate;
         }
-  }
+    }
 }
