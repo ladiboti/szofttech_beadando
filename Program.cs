@@ -14,16 +14,16 @@ namespace szofttech
     }
     static void Main(string[] args)
     {
-      //Test.seniorTest();
-      //Test.testStudentJsonify();
-      //Test.testEventJsonify();
+        //Test.seniorTest();
+        //Test.testStudentJsonify();
+        //Test.testEventJsonify();
 
-      //Test.testStudent();
+        //Test.testStudent();
 
-      //Test.testAdministrator();
-      //Test.loadStudentsTest();
+        //Test.testAdministrator();
+        //Test.loadStudentsTest();
 
-      start();
+        start();
     }
   }
 }

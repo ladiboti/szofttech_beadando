@@ -168,6 +168,7 @@ namespace szofttech
             Container.refreshSeniorJSON();
             Console.ReadKey();
             Console.Clear();
+
         }
 
         public void getDisciplinaryState()
@@ -181,11 +182,14 @@ namespace szofttech
             }
             if (Container.students.Exists(x => x.neptunCode == tempNeptun) == true)
             {
-                Console.WriteLine("A student is under disciplinary state.");
-            }
-            else if (Container.students.Exists(x => x.neptunCode == tempNeptun) == false)
-            {
-                Console.WriteLine("A student is not under disciplinary state.");
+                if (Container.students.Find(x => x.neptunCode == tempNeptun).isUnderDiscipliary == true)
+                {
+                    Console.WriteLine("The student is under disciplinary!");
+                }
+                else if (Container.students.Find(x => x.neptunCode == tempNeptun).isUnderDiscipliary == false)
+                {
+                    Console.WriteLine("The student is not under disciplinary!");
+                }
             }
             else
                 Console.WriteLine("The person does not presented in the list");
@@ -225,7 +229,6 @@ namespace szofttech
             {
                 accommodationTickets.Add(new AccommodationTicket(tempId, tempName, new Date(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day + Convert.ToInt32(tempDay), DateTime.Now.Hour, DateTime.Now.Minute)));
                 pendingGuestRequests.Remove(tempId);
-                Console.WriteLine("Accomodation ticket successfully added!");
             }
             else
             {
@@ -251,6 +254,8 @@ namespace szofttech
                 pendingGuestRequests.Add(id, nev);
             else
                 Console.WriteLine("This person is already presented in the list.");
+            Console.ReadKey();
+            Console.Clear();
         }
 
     public override void menu()

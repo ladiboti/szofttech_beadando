@@ -71,7 +71,9 @@ namespace szofttech
                                              name, neptunCode, major, password, roomNumber
                                              );
             Container.addStudent(newStudent);
-            Console.WriteLine("Student successfully added!");
+            Console.WriteLine("New student is successfully added!");
+            Console.ReadKey();
+            Console.Clear();
         }
 
         private void promoteStudentToSenior()
@@ -94,6 +96,8 @@ namespace szofttech
             }
             else
                 Console.WriteLine("The person does not presented in the list");
+            Console.ReadKey();
+            Console.Clear();
 
             //TODO: frissiteni kell majd a jsont!!!!
             //public Senior(List<Notification> notificationList, List<string> bicycles, string name, string neptunCode, string major, int roomNumber)
@@ -118,31 +122,23 @@ namespace szofttech
             if (index != 0)
             {
                 int status = 0;
-                string statusString;
-                string indexString;
-                bool canConvert = false;
                 Console.WriteLine("Please choose a request which you want to modify! (Give a number)");
-                indexString = Console.ReadLine();
-                canConvert = int.TryParse(indexString, out index);
-                while ((indexString == "" || index <= 0) || !canConvert)
-                {
-                    Console.WriteLine("The given number is invalid! Please give a valid number!");
-                    indexString = Console.ReadLine();
-                    canConvert = int.TryParse(indexString, out index);
+                index = Convert.ToInt32(Console.ReadLine());
+
+                while (index < 0 && index > Container.requests.Count) {
+                    Console.WriteLine("The given number is not valid! Please give a valid number!");
+                    index = Convert.ToInt32(Console.ReadLine());
                 }
 
                 Console.WriteLine("Please choose a status! (1 = accepted, 2 = denied)");
-                statusString = Console.ReadLine();
-                canConvert = int.TryParse(statusString, out status);
-                while ((statusString == "" || status < 1 && status > 2) || !canConvert)
-                {
-                    Console.WriteLine("The given number is invalid! Please give a valid number!");
-                    statusString = Console.ReadLine();
-                    canConvert = int.TryParse(statusString, out status);
+                status = Convert.ToInt32(Console.ReadLine());
+                while (status < 1 && status > 2) {
+                    Console.WriteLine("The given number is not valid! Please give a valid number!");
+                    status = Convert.ToInt32(Console.ReadLine());
                 }
 
-                Container.requests[index-1].status = status;
-                string neptunCode = Container.requests[index-1].sender.neptunCode;
+                Container.requests[index].status = status;
+                string neptunCode = Container.requests[index].sender.neptunCode;
 
                 Container.students.Find(x => x.neptunCode == neptunCode)
                                   .notificationList.Add(new Notification(addNotification(), 
@@ -153,6 +149,8 @@ namespace szofttech
             else {
                 Console.WriteLine("Request container is empty!");
             }
+            Console.ReadKey();
+            Console.Clear();
         }
 
         private string addNotification()
@@ -165,6 +163,8 @@ namespace szofttech
                 message = Console.ReadLine();
             }
             return message;
+            Console.ReadKey();
+            Console.Clear();
         }
 
         private void addObligation()
@@ -190,6 +190,8 @@ namespace szofttech
             
             }
             Container.refreshStudentsJSON();
+            Console.ReadKey();
+            Console.Clear();
         }
 
         private void modifyDisciplinaryState()
@@ -210,6 +212,8 @@ namespace szofttech
             else
                 Console.WriteLine("The person does not presented in the list");
             Container.refreshStudentsJSON();
+            Console.ReadKey();
+            Console.Clear();
         }
 
         private void moveToRoom()
@@ -246,6 +250,8 @@ namespace szofttech
             }
             else
                 Console.WriteLine("The person does not presented in the list");
+            Console.ReadKey();
+            Console.Clear();
         }
     public override void menu()
     {

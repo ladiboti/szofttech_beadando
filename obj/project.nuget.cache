@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "LhApDXSwIgAEs8DsNNVgAeegfzF566+ZEr0eyNRIAAy9E4qvIwObGFm0InROPVedpfJ+ODeF8j3WYTbFHCwy0g==",
+  "dgSpecHash": "A91exumF1UbSBHvON6vzcvcPAWL1lgvNYV3Ov66c81ZQLop7rtkgGFdMnq28l8gMgyca3/z8F8d1Lo+AyAUHEQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ladib\\source\\repos\\szofttech_beadando\\szofttech.csproj",
+  "projectFilePath": "C:\\Users\\Bea\\Documents\\1_Pannon Egyetem\\3. felev\\Szoftvertechnologia\\vegProgram\\szofttech.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\ladib\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512"
+    "C:\\Users\\Bea\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512"
   ],
   "logs": []
 }
