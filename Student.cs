@@ -159,6 +159,15 @@ namespace szofttech
     public override void menu()
     {
       Console.WriteLine("DEBUG: STUDENT MENU");
+
+      Console.WriteLine(
+       $" 1: Pay your obligation\n" +
+       $" 2: Send request to the administrator\n" +
+       $" 3: Send a guest request\n" +
+       $" 4: Add a bicycle to the virtual storage\n" +
+       $" 5: Set your balance\n" +
+       $"99: Log out"
+      );
       Console.WriteLine("Here is your functions, tell me what do you want to do!");
       //ki kell irni a lehetosegeket :(((((
       int actionNumber = int.Parse(Console.ReadLine());

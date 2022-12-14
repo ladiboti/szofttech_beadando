@@ -159,27 +159,58 @@ namespace szofttech
     public override void menu()
     {
       Console.WriteLine("DEBUG: SENIOR MENU");
+
+      Console.WriteLine(
+       $" 1: Pay your obligation\n" +
+       $" 2: Send request to the administrator\n" +
+       $" 3: Send a guest request\n" +
+       $" 4: Add a bicycle to the virtual storage\n" +
+       $" 5: Set your balance\n" +
+       $" 6: Create a new event\n" +
+       $" 7: Start your duty\n" +
+       $" 8: Stop your duty\n" +
+       $" 9: Modify student's disciplinary state\n" +
+       $"10: Get student's disciplinary state\n" +
+       $"11: Give accomondation ticket to a student\n" +
+       $"99: Log out"
+      );
+      Console.WriteLine("\nHere is your functions, tell me what do you want to do!");
       Console.WriteLine("Here is your functions, tell me what do you want to do!");
       //ki kell irni a lehetosegek :(((((
       int actionNumber = int.Parse(Console.ReadLine());
       switch (actionNumber)
       {
         case 1:
-          //addEvent();
+          pay();
           break;
         case 2:
-          startDuty();
+          sendRequest();
           break;
         case 3:
-          stopDuty();
+          requestGuest();
           break;
         case 4:
-          modifyDisciplinaryState();
+          addBicycle();
           break;
         case 5:
-          getDisciplinaryState();
+          //setbalance!!!
           break;
         case 6:
+          //addEvent();
+          break;
+        case 7:
+          startDuty();
+          break;
+        case 8:
+          stopDuty();
+          break;
+        case 9:
+          modifyDisciplinaryState();
+          break;
+        case 10:
+          getDisciplinaryState();
+          break;
+        case 11:
           giveAccomodationTicket();
           break;
         case 99:

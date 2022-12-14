@@ -196,8 +196,18 @@ namespace szofttech
     public override void menu()
     {
       Console.WriteLine("DEBUG: ADMIN MENU");
-      Console.WriteLine("Here is your functions, tell me what do you want to do!");
-      //ki kell irni a lehetosegek :(((((
+     
+      Console.WriteLine(
+        $" 1: Add new student\n" +
+        $" 2: Promote student to senior\n" +
+        $" 3: Approve requests\n" +
+        $" 4: Add obligation to student\n" +
+        $" 5: Modify student's disciplinary state\n" +
+        $" 6: Move student to another room\n" +
+        $"99: Log out"  
+      );
+      Console.WriteLine("\nHere is your functions, tell me what do you want to do!");
+
       int actionNumber = int.Parse(Console.ReadLine());
       switch (actionNumber)
       {
