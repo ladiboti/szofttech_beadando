@@ -118,9 +118,6 @@ namespace szofttech
 
           students.Add(student);
           jsonify<Student>(students);
-       
-        
-       
       }
 
       public static void addRequest(Request request)
