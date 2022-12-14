@@ -12,22 +12,8 @@ namespace szofttech
 
     private void showMenu()
     {
-      Console.WriteLine("Welcome to the dormitory management system!\n" +
-                        "before going forward please log in to your account!");
       CollegePerson.login();
-      //CollegePerson.logout();
-      //switch-es szerkezettel szebb lenne
       CollegePerson.user.menu();
-    }
-
-    private void adminMenu()
-    {
-      
-    }
-
-    private void studentMenu()
-    {
-      Console.WriteLine("here is the student menu: ");
     }
     static void Main(string[] args)
     {

@@ -17,6 +17,8 @@ namespace szofttech
     {
       //debug 
       Container.students.ForEach(student => Console.WriteLine(student.toString()));
+      Console.WriteLine("Welcome to the dormitory management system!\n" +
+                       "before going forward please log in to your account!");
       //username nincs, csak neptun kod
       Console.WriteLine("For login, please enter your username, or neptun code below:");
       string username = Console.ReadLine();
