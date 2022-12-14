@@ -77,7 +77,7 @@ namespace szofttech
                 neptunCode = Console.ReadLine();
             }
 
-      //rossz neptun kódnál hibát fog dobni
+            //rossz neptun kódnál hibát fog dobni
             Student student = new Student();
             student = Container.students.Find(s => s.neptunCode == neptunCode);
 
