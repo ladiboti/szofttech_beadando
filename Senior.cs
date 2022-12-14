@@ -132,7 +132,7 @@ namespace szofttech
         {
             if(dutyStatus == false)
             {
-                Console.WriteLine("You are not on duty!");
+                Console.WriteLine("You are not on duty at the moment!");
             }
             else
             {
