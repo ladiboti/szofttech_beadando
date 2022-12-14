@@ -265,7 +265,7 @@ namespace szofttech
                     addBicycle();
                     break;
                 case 5:
-                    //setbalance!!!
+                    setBalance();
                     break;
                 case 6:
                     addEvent();
