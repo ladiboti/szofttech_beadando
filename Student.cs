@@ -24,7 +24,7 @@ namespace szofttech
     public string password   { get; set; }
 
     public int roomNumber { get; set; }
-    private int balance;
+    public int balance;
     public int obligation { get; set; }
     public bool isUnderDiscipliary { get; set; }
 
