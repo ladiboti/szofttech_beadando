@@ -15,7 +15,9 @@ namespace szofttech
     public List<string>       bicycles         { get; set; }
 
     //set nelkul nem megy a tostring xddd
-    public string name       { get; set; }
+
+    //áttettem az ősosztályba
+    //public string name       { get; set; }
     public string neptunCode { get; set; }
     public string major      { get; set; }
 
@@ -137,8 +139,9 @@ namespace szofttech
     public string toString()
     {
 
-      string text = $"name: {name}\nneptuncode: {(neptunCode == null ? "null" : "megy")}\nmajor: {major}\nroom number: {roomNumber}\n" +
-                    $"balance: {balance}\nobligation: {obligation}\ndisciplinary state: {(isUnderDiscipliary ? "true" : "false")}";
+      string text = $"name: {name}\nneptuncode: {(neptunCode)}\nmajor: {major}\nroom number: {roomNumber}\n" +
+                    $"balance: {balance}\nobligation: {obligation}\ndisciplinary state: {(isUnderDiscipliary ? "true" : "false")}\n" +
+                    $"password: {password}";
 
       text += "\nNotifications:\n";
       foreach (var notification in notificationList)
