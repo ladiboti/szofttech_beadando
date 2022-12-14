@@ -44,16 +44,24 @@ namespace szofttech
                         break;
 
                     default:
-                        //rossz felhasznalonev es jelszo eseten null!!! :D
-                        user = new Student();
-                        user = Container.students.Find(s =>
-                                s.neptunCode.ToUpper() == username
-                             && s.password == password);
+            //rossz felhasznalonev es jelszo eseten null!!! :D
 
-                        //TODO: ciklusban menjen
-                        Console.WriteLine(user is null ? "Bad credidentals, try again" :
-                                                        $"Welcome {(user is Student ? user.name : "ADMIN")} glad to see you here!");
-                        break;
+                    user = new Senior();
+                    user = Container.seniors.Find(s =>
+                            s.neptunCode.ToUpper() == username
+                          && s.password == password);
+                        
+                    if(user is null)
+                    {
+                        user = new Student();
+                      user = Container.students.Find(s =>
+                          s.neptunCode.ToUpper() == username
+                        && s.password == password);
+                    }
+                    //TODO: ciklusban menjen
+                    Console.WriteLine(user is null ? "Bad credidentals, try again" :
+                                                    $"Welcome {(user is Student ? user.name : "ADMIN")} glad to see you here!");
+                    break;
                 }
             } while (user is null);
         }
