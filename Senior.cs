@@ -17,9 +17,8 @@ namespace szofttech
 
         public Senior()
         {
-            this.dutyStatus = false;
+          
         }
-
         public Senior(List<Notification> notificationList, List<string> bicycles, string name, string neptunCode, string major, string password, int roomNumber) 
             : base(notificationList, bicycles, name, neptunCode, major, password, roomNumber)
         {
@@ -28,12 +27,12 @@ namespace szofttech
             this.dutyStatus           = false;
         }
 
-        public List<AccommodationTicket> getAccommodationTickets()
+        public static List<AccommodationTicket> getAccommodationTickets()
         {
             return accommodationTickets;
         }
 
-        public void setAccommodationTickets(List<AccommodationTicket> tempList)
+        public static void setAccommodationTickets(List<AccommodationTicket> tempList)
         {
             foreach(var i in tempList)
             {
@@ -41,12 +40,12 @@ namespace szofttech
             }
         }
 
-        public Dictionary<string, string> getPendingGuestRequest()
+        public static Dictionary<string, string> getPendingGuestRequest()
         {
             return pendingGuestRequests;
         }
 
-        public void setPednigGuestRequest(Dictionary<string, string> tempDict)
+        public static void setPednigGuestRequest(Dictionary<string, string> tempDict)
         {
             foreach(var i in tempDict)
             {
@@ -110,18 +109,36 @@ namespace szofttech
                 place = Console.ReadLine();
             }
             Event newEvent = new Event(new Senior(this.notificationList,this.bicycles,this.name,this.neptunCode,this.major,this.password,this.roomNumber),
-                description, date, place);
+                description, date.getDateString(), place);
             Container.addEvent(newEvent);
+            Container.refreshEventsJSON();
+            Console.WriteLine("Event created!");
         }
 
         public void startDuty()
         {
-            dutyStatus = true;
+            if(dutyStatus == true)
+            {
+                Console.WriteLine("You are already on duty!");
+            }
+            else
+            {
+                dutyStatus = true;
+                Console.WriteLine("You are now on duty!");
+            }
         }
 
         public void stopDuty()
         {
-            dutyStatus = false;
+            if(dutyStatus == false)
+            {
+                Console.WriteLine("You are not on duty at the moment!");
+            }
+            else
+            {
+                dutyStatus = false;
+                Console.WriteLine("You are no longer on duty!");
+            }  
         }
 
         public void modifyDisciplinaryState()
@@ -138,6 +155,7 @@ namespace szofttech
                 Container.students.Find(x => x.neptunCode == tempNeptun).isUnderDiscipliary =
                     Container.students.Find(x => x.neptunCode == tempNeptun).isUnderDiscipliary ? false : true;
                 Console.WriteLine($"Disciplinary state successfully changed to: {Container.students.Find(x => x.neptunCode == tempNeptun).isUnderDiscipliary}");
+                Container.refreshSeniorJSON();
             }
             else
                 Console.WriteLine("The person does not presented in the list");
@@ -209,7 +227,7 @@ namespace szofttech
             }
         }
 
-        public void newGuestRequest(string id, string nev)
+        public static void newGuestRequest(string id, string nev)
         {
             if (!pendingGuestRequests.ContainsKey(id))
                 pendingGuestRequests.Add(id, nev);
@@ -236,6 +254,7 @@ namespace szofttech
                 $"10: Get student's disciplinary state\n" +
                 $"11: Give accomondation ticket to a student\n" +
                 $"12: Show your notifications\n" +
+                $"13: List accomodations\n" +
                 $"99: Log out"
             );
             Console.WriteLine("\nHere is your functions, tell me what do you want to do!");
@@ -266,7 +285,7 @@ namespace szofttech
                     addBicycle();
                     break;
                 case 5:
-                    //setbalance!!!
+                    setBalance();
                     break;
                 case 6:
                     addEvent();
@@ -289,8 +308,11 @@ namespace szofttech
                 case 12:
                     showNotifications();
                     break;
-                case 99:
+                case 13:
                     listAccomodation();
+                    break;
+                case 99:
+                    logout();
                     break;
                 default:
                     Console.WriteLine("Sorry, but this function doesn't exist");

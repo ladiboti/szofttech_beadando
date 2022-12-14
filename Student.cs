@@ -24,7 +24,7 @@ namespace szofttech
     public string password   { get; set; }
 
     public int roomNumber { get; set; }
-    public int balance    { get; set; }
+    public int balance;
     public int obligation { get; set; }
     public bool isUnderDiscipliary { get; set; }
 
@@ -59,6 +59,49 @@ namespace szofttech
       this.isUnderDiscipliary = false;
         }
 
+
+    public int getBalance() {
+        return balance;
+    }
+    public void setBalance() {
+            string username;
+            string password;
+            int balance;
+            string balanceString;
+            bool canConvert = false;
+            string command;
+            Console.WriteLine("Login into your bank account!");
+            Console.WriteLine("Username: ");
+            username = Console.ReadLine();
+            Console.WriteLine("Password: ");
+            password = Console.ReadLine();
+            Console.WriteLine("Successfully logged in!");
+            Console.WriteLine("How much do you want to send?");
+            balanceString = Console.ReadLine();
+            canConvert = int.TryParse(balanceString, out balance);
+            while ((balanceString == "" || balance <= 0) || !canConvert)
+            {
+                Console.WriteLine("The given input is invalid! Please give valid input!");
+                balanceString = Console.ReadLine();
+                canConvert = int.TryParse(balanceString, out balance);
+            }
+            Console.WriteLine($"Name: {this.name} \nAccount number: 11773470-00543175 \nSending ammount: {balance}");
+            Console.WriteLine("Do you want to send it? (Y/N)");
+            command = Console.ReadLine();
+            while (!((command.ToUpper()).Equals("Y") || (command.ToUpper()).Equals("N"))) {
+                Console.WriteLine("The given input is invalid! Please give valid input!");
+                command = Console.ReadLine();
+            }
+            if (command.Equals("Y"))
+            {
+                this.balance = balance;
+                Container.refreshStudentsJSON();
+                Console.WriteLine("Transaction was successful!");
+            }
+            else {
+                Console.WriteLine("Transaction was denied!");
+            }
+    }
     public void pay()
     {
         string command;
@@ -70,11 +113,12 @@ namespace szofttech
             Console.WriteLine("Please give the valid input! (Y/N)");
             command = Console.ReadLine();
         }
-        if (command.Equals("Y") && balance > obligation && obligation > 0 && balance > 0)
+        if (command.Equals("Y") && balance >= obligation && obligation > 0 && balance > 0)
         {
             int deductedDebit = obligation;
             balance -= deductedDebit;
             obligation -= deductedDebit;
+            Container.refreshStudentsJSON();
             Console.WriteLine("The pay was successful");
         }
         else if (command.Equals("Y") && balance <= obligation)
@@ -130,6 +174,7 @@ namespace szofttech
       string serialNumber = Console.ReadLine();
 
       bicycles.Add(serialNumber);
+        Container.refreshStudentsJSON();
       Console.WriteLine("Bicycle added successfully to the database!");
     }
 
@@ -161,7 +206,7 @@ namespace szofttech
       {
         //a date null
         Console.WriteLine(
-          $"-{notification.message}\n\tTODO: DATE!!!"
+          $"-{notification.message}\n\t{notification.messageDate}"
         );
       }
 
@@ -208,7 +253,7 @@ namespace szofttech
                     addBicycle();
                     break;
                 case 5:
-                    //setbalance!!!
+                    setBalance();
                     break;
                 case 6:
                     showNotifications();

@@ -83,35 +83,16 @@ namespace szofttech
                 tempNeptun = Console.ReadLine();
             }
             if (Container.students.Exists(x => x.neptunCode == tempNeptun) == true)
-            { 
+            {
                 Student student = new Student();
                 student = Container.students.Find(x => x.neptunCode == tempNeptun);
-                Console.WriteLine("DEBUG: " + student.toString());
-
-                Senior senior = new Senior(student.notificationList, student.bicycles, student.name,
-                                              student.neptunCode, student.major, student.password, student.roomNumber);
-                Console.WriteLine("DEBUG: " + senior.toString() + "\n" + senior.GetType());
-                
-
-                foreach(var i in Container.students)
-                {
-                    Console.WriteLine(i.toString() + i.GetType());
-                }
-                Container.students.Remove(student);
-                Container.students.Add(senior);
-
+                Container.addSenior(new Senior(student.notificationList, student.bicycles, student.name,
+                                              student.neptunCode, student.major, student.password, student.roomNumber));
+                //Container.students.Remove(student);
                 Console.WriteLine("The selected student is sucessfully promoted!");
-                foreach(var i in Container.students)
-                {
-                    if(i is Senior)
-                    {
-                        Console.WriteLine(i.toString());
-                    }
-                }
             }
             else
                 Console.WriteLine("The person does not presented in the list");
-            Container.refreshStudentsJSON();
 
             //TODO: frissiteni kell majd a jsont!!!!
             //public Senior(List<Notification> notificationList, List<string> bicycles, string name, string neptunCode, string major, int roomNumber)
@@ -128,7 +109,7 @@ namespace szofttech
         private void approveRequest()
         {
             int index = 0;
-            Console.WriteLine("DEBUG: Administrator.approveRequest()" + Container.requests.Count());
+            //Console.WriteLine("DEBUG: Administrator.approveRequest()" + Container.requests.Count());
             foreach (Request r in Container.requests) {
                 index++;
                 Console.WriteLine($"{index} {r.sender.name} {r.message} {r.status}");
@@ -142,7 +123,7 @@ namespace szofttech
                 Console.WriteLine("Please choose a request which you want to modify! (Give a number)");
                 indexString = Console.ReadLine();
                 canConvert = int.TryParse(indexString, out index);
-                while ((indexString == "" || index < 0 && index > Container.requests.Count()) || !canConvert)
+                while ((indexString == "" || index <= 0) || !canConvert)
                 {
                     Console.WriteLine("The given number is invalid! Please give a valid number!");
                     indexString = Console.ReadLine();
@@ -152,13 +133,15 @@ namespace szofttech
                 Console.WriteLine("Please choose a status! (1 = accepted, 2 = denied)");
                 statusString = Console.ReadLine();
                 canConvert = int.TryParse(statusString, out status);
-                while ((statusString == "" || status < 1 || status > 2) || !canConvert) {
-                    Console.WriteLine("The given number is not valid! Please give a valid number!");
+                while ((statusString == "" || status < 1 && status > 2) || !canConvert)
+                {
+                    Console.WriteLine("The given number is invalid! Please give a valid number!");
                     statusString = Console.ReadLine();
+                    canConvert = int.TryParse(statusString, out status);
                 }
 
-                Container.requests[index].status = status;
-                string neptunCode = Container.requests[index].sender.neptunCode;
+                Container.requests[index-1].status = status;
+                string neptunCode = Container.requests[index-1].sender.neptunCode;
 
                 Container.students.Find(x => x.neptunCode == neptunCode)
                                   .notificationList.Add(new Notification(addNotification(), 
@@ -200,8 +183,10 @@ namespace szofttech
             foreach (Student s in Container.students) {
                 s.obligation += obligation;
                 s.notificationList.Add(new Notification(message, 
-                                                        new Date(2022,3,14,12,0).getDateString())
-                                      );
+                                                        new Date(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day,
+                                                                 DateTime.Now.Hour, DateTime.Now.Minute).getDateString())
+                                                        );
+            
             }
             Container.refreshStudentsJSON();
         }
