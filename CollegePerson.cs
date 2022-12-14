@@ -11,10 +11,14 @@ namespace szofttech
     //undorito, de igy mukodik a legegyszerubben :))))))
     public static CollegePerson user;
     public string name { get; set; }
+
+    public abstract void menu();
     public static void login()
     {
       //debug 
       Container.students.ForEach(student => Console.WriteLine(student.toString()));
+      Console.WriteLine("Welcome to the dormitory management system!\n" +
+                       "before going forward please log in to your account!");
       //username nincs, csak neptun kod
       Console.WriteLine("For login, please enter your username, or neptun code below:");
       string username = Console.ReadLine();

@@ -196,5 +196,39 @@ namespace szofttech
                 new Notification(addNotification(), new Date(DateTime.Now.Year, DateTime.Now.Month,
                                                              DateTime.Now.Day, DateTime.Now.Hour, DateTime.Now.Minute)));
         }
-  }
+        public override void menu()
+        {
+          Console.WriteLine("DEBUG: ADMIN MENU");
+          Console.WriteLine("Here is your functions, tell me what do you want to do!");
+          //ki kell irni a lehetosegek :(((((
+          int actionNumber = int.Parse(Console.ReadLine());
+          switch (actionNumber)
+          {
+            case 1:
+              addNewStudent();
+              break;
+            case 2:
+              promoteStudentToSenior();
+              break;
+            case 3:
+              approveRequest();
+              break;
+            case 4:
+              addObligation();
+              break;
+            case 5:
+              modifyDisciplinaryState();
+              break;
+            case 6:
+              moveToRoom();
+              break;
+            case 99:
+              logout();
+              break;
+            default:
+              Console.WriteLine("Sorry, but this function doesn't exist");
+              break;
+          }
+        }
+    }
 }
