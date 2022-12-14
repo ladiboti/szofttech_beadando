@@ -40,7 +40,7 @@ namespace szofttech
             Console.WriteLine("Please give us the Student room number!");
             roomNumberString = Console.ReadLine();
             canConvert = int.TryParse(roomNumberString, out roomNumber);
-            while (roomNumberString == "" || !canConvert) {
+            while ((roomNumberString == "" || roomNumber <= 0) || !canConvert) {
                 Console.WriteLine("The given input is invalid! Please give valid input!");
                 roomNumberString = Console.ReadLine();
                 canConvert = int.TryParse(roomNumberString, out roomNumber);
@@ -93,6 +93,7 @@ namespace szofttech
             requestsList.Add(request);
         }
 
+        //tesztelésre szorul!!!!
         private void approveRequest()
         {
             int index = 0;
@@ -147,11 +148,15 @@ namespace szofttech
         private void addObligation()
         {
             int obligation;
+            string obligationString;
+            bool canConvert = false;
             Console.WriteLine("Please give us the obligation!");
-            obligation = Convert.ToInt32(Console.ReadLine());
-            while (obligation < 0) {
+            obligationString = Console.ReadLine();
+            canConvert = int.TryParse(obligationString, out obligation);
+            while ((obligationString == "" || obligation <= 0) || !canConvert) {
                 Console.WriteLine("The given number is invalid! Please give a valid number!");
-                obligation = Convert.ToInt32(Console.ReadLine());
+                obligationString = Console.ReadLine();
+                canConvert = int.TryParse(obligationString, out obligation);
             }
             string message = addNotification();
             foreach (Student s in Container.students) {
