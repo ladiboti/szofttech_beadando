@@ -9,12 +9,16 @@ namespace szofttech
   abstract class CollegePerson
   {
     //undorito, de igy mukodik a legegyszerubben :))))))
-    static CollegePerson user;
+    public static CollegePerson user;
     public string name { get; set; }
+
+    public abstract void menu();
     public static void login()
     {
       //debug 
       Container.students.ForEach(student => Console.WriteLine(student.toString()));
+      Console.WriteLine("Welcome to the dormitory management system!\n" +
+                       "before going forward please log in to your account!");
       //username nincs, csak neptun kod
       Console.WriteLine("For login, please enter your username, or neptun code below:");
       string username = Console.ReadLine();
@@ -41,12 +45,14 @@ namespace szofttech
           Console.WriteLine(user is null ? "Bad credidentals, try again" :
                                           $"Welcome {(user is Student ? user.name : "admin")} glad to see you here!");
           break;
-
       }
     }
+    //test!!!
     public static void logout()
     {
-      throw new NotImplementedException();
+      Console.WriteLine("For new login restart the application\nShutting down...");
+      System.Threading.Thread.Sleep(100);
+      System.Environment.Exit(1);
     }
   }
 }

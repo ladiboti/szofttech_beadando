@@ -1,12 +1,10 @@
-﻿using System.Xml.Serialization;
+﻿using System.Reflection.Metadata;
+using System.Xml.Serialization;
 
 namespace szofttech
 {
   internal class Program
   {
-
-
-    
     private void start()
     {  
       showMenu();
@@ -14,9 +12,8 @@ namespace szofttech
 
     private void showMenu()
     {
-      Console.WriteLine("Welcome to the dormitory management system!\n" +
-                        "before going forward please log in to your account!");
       CollegePerson.login();
+      CollegePerson.user.menu();
     }
     static void Main(string[] args)
     {
