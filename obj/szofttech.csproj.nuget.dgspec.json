@@ -1,22 +1,6 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
-    "C:\\Users\\ladib\\source\\repos\\szofttech_beadando\\szofttech.csproj": {}
-  },
-  "projects": {
-    "C:\\Users\\ladib\\source\\repos\\szofttech_beadando\\szofttech.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\ladib\\source\\repos\\szofttech_beadando\\szofttech.csproj",
-        "projectName": "szofttech",
-        "projectPath": "C:\\Users\\ladib\\source\\repos\\szofttech_beadando\\szofttech.csproj",
-        "packagesPath": "C:\\Users\\ladib\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ladib\\source\\repos\\szofttech_beadando\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\ladib\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
     "C:\\Users\\Bea\\Documents\\1_Pannon Egyetem\\3. felev\\Szoftvertechnologia\\Program\\szofttech.csproj": {}
   },
   "projects": {
@@ -34,7 +18,6 @@
         ],
         "configFilePaths": [
           "C:\\Users\\Bea\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> e5c8f81bd03f26413555384ca8800795102f7800
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -81,7 +64,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
