@@ -68,10 +68,11 @@ namespace szofttech
         //test!!!
         public static void logout()
         {
-          //Console.WriteLine("For new login restart the application\nShutting down...");
-          //System.Threading.Thread.Sleep(100);
-          //System.Environment.Exit(1);
+      //Console.WriteLine("For new login restart the application\nShutting down...");
+      //System.Threading.Thread.Sleep(100);
+      //System.Environment.Exit(1);
 
+          Console.WriteLine("Successfully logged out!");
           Program.start();
         }
     }
