@@ -128,10 +128,7 @@ namespace szofttech
                 string neptunCode = Container.requests[index].sender.neptunCode;
 
                 Container.students.Find(x => x.neptunCode == neptunCode)
-                                  .notificationList.Add(new Notification(addNotification(), 
-                                                        new Date(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day,
-                                                                 DateTime.Now.Hour, DateTime.Now.Minute))
-                                                        );
+                                  .notificationList.Add(new Notification(addNotification()));
             }
             else {
                 Console.WriteLine("Request container is empty!");
@@ -166,9 +163,7 @@ namespace szofttech
             string message = addNotification();
             foreach (Student s in Container.students) {
                 s.obligation += obligation;
-                s.notificationList.Add(new Notification(message, 
-                                                        new Date(2022,3,14,12,0))
-                                      );
+                s.notificationList.Add(new Notification(message));
             }
             Container.refreshStudentsJSON();
         }
@@ -222,8 +217,7 @@ namespace szofttech
             {
                 Container.students.Find(x => x.neptunCode == neptunCode).roomNumber = roomNumber;
                 Container.students.Find(x => x.neptunCode == neptunCode).notificationList.Add(
-                    new Notification(addNotification(), new Date(DateTime.Now.Year, DateTime.Now.Month,
-                                                                 DateTime.Now.Day, DateTime.Now.Hour, DateTime.Now.Minute)));
+                    new Notification(addNotification()));
                 Container.refreshStudentsJSON();
             }
             else
