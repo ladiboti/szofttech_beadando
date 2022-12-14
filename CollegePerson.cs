@@ -46,6 +46,7 @@ namespace szofttech
                     default:
                         //rossz felhasznalonev es jelszo eseten null!!! :D
                         user = new Student();
+                        Console.WriteLine("DEBUG: " + user.GetType());
                         user = Container.students.Find(s =>
                                 s.neptunCode.ToUpper() == username
                              && s.password == password);

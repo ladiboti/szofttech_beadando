@@ -15,6 +15,11 @@ namespace szofttech
         public static Dictionary<string, string> pendingGuestRequests = new Dictionary<string, string>();
         bool dutyStatus { get; set; }
 
+        public Senior()
+        {
+            this.dutyStatus = false;
+        }
+
         public Senior(List<Notification> notificationList, List<string> bicycles, string name, string neptunCode, string major, string password, int roomNumber) 
             : base(notificationList, bicycles, name, neptunCode, major, password, roomNumber)
         {
@@ -23,12 +28,12 @@ namespace szofttech
             this.dutyStatus           = false;
         }
 
-        public static List<AccommodationTicket> getAccommodationTickets()
+        public List<AccommodationTicket> getAccommodationTickets()
         {
             return accommodationTickets;
         }
 
-        public static void setAccommodationTickets(List<AccommodationTicket> tempList)
+        public void setAccommodationTickets(List<AccommodationTicket> tempList)
         {
             foreach(var i in tempList)
             {
@@ -36,12 +41,12 @@ namespace szofttech
             }
         }
 
-        public static Dictionary<string, string> getPendingGuestRequest()
+        public Dictionary<string, string> getPendingGuestRequest()
         {
             return pendingGuestRequests;
         }
 
-        public static void setPednigGuestRequest(Dictionary<string, string> tempDict)
+        public void setPednigGuestRequest(Dictionary<string, string> tempDict)
         {
             foreach(var i in tempDict)
             {
@@ -204,7 +209,7 @@ namespace szofttech
             }
         }
 
-        public static void newGuestRequest(string id, string nev)
+        public void newGuestRequest(string id, string nev)
         {
             if (!pendingGuestRequests.ContainsKey(id))
                 pendingGuestRequests.Add(id, nev);

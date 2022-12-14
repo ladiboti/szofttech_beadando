@@ -28,6 +28,7 @@ namespace szofttech
     public int obligation { get; set; }
     public bool isUnderDiscipliary { get; set; }
 
+
     public Student()
     {
       this.notificationList   = null;
@@ -56,7 +57,7 @@ namespace szofttech
       this.balance            = 0;
       this.obligation         = 0;
       this.isUnderDiscipliary = false;
-  }
+        }
 
     public void pay()
     {

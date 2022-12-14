@@ -83,12 +83,23 @@ namespace szofttech
                 tempNeptun = Console.ReadLine();
             }
             if (Container.students.Exists(x => x.neptunCode == tempNeptun) == true)
-            {
+            { 
                 Student student = new Student();
                 student = Container.students.Find(x => x.neptunCode == tempNeptun);
-                Container.students.Add(new Senior(student.notificationList, student.bicycles, student.name,
-                                              student.neptunCode, student.major, student.password, student.roomNumber));
+                Console.WriteLine("DEBUG: " + student.toString());
+
+                Senior senior = new Senior(student.notificationList, student.bicycles, student.name,
+                                              student.neptunCode, student.major, student.password, student.roomNumber);
+                Console.WriteLine("DEBUG: " + senior.toString() + "\n" + senior.GetType());
+                
+
+                foreach(var i in Container.students)
+                {
+                    Console.WriteLine(i.toString() + i.GetType());
+                }
                 Container.students.Remove(student);
+                Container.students.Add(senior);
+
                 Console.WriteLine("The selected student is sucessfully promoted!");
                 foreach(var i in Container.students)
                 {
