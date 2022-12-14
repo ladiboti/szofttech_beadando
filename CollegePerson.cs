@@ -17,7 +17,7 @@ namespace szofttech
             do
             {
                 //debug 
-                Container.students.ForEach(student => Console.WriteLine(student.toString()));
+                //Container.students.ForEach(student => Console.WriteLine(student.toString()));
                 Console.WriteLine("Welcome to the dormitory management system!\n" +
                                  "before going forward please log in to your account!");
                 //username nincs, csak neptun kod
@@ -38,7 +38,7 @@ namespace szofttech
 
                 switch ((username, password))
                 {
-                    case ("ADMIN", "admin"):
+                    case ("ADMIN", "ADMIN"):
                         user = new Administrator();
                         Console.WriteLine("Welcome admin, glad to see you here!");
                         break;
