@@ -71,6 +71,7 @@ namespace szofttech
                                              name, neptunCode, major, password, roomNumber
                                              );
             Container.addStudent(newStudent);
+            Console.WriteLine("Student successfully added!");
         }
 
         private void promoteStudentToSenior()
