@@ -16,6 +16,7 @@ namespace szofttech
         {
             do
             {
+                Console.Clear();
                 //debug 
                 Container.students.ForEach(student => Console.WriteLine(student.toString()));
                 Console.WriteLine("Welcome to the dormitory management system!\n" +
