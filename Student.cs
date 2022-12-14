@@ -179,9 +179,18 @@ namespace szofttech
        $"99: Log out"
       );
       Console.WriteLine("Here is your functions, tell me what do you want to do!");
-      //ki kell irni a lehetosegeket :(((((
-      int actionNumber = int.Parse(Console.ReadLine());
-      switch (actionNumber)
+        //ki kell irni a lehetosegeket :(((((
+        bool canConvert = false;
+        int actionNumber;
+        string actionNumberString = Console.ReadLine();
+        canConvert = int.TryParse(actionNumberString, out actionNumber);
+        while ((actionNumberString == "" || actionNumber <= 0) || !canConvert)
+        {
+            Console.WriteLine("The given input is invalid! Please give valid input!");
+            actionNumberString = Console.ReadLine();
+            canConvert = int.TryParse(actionNumberString, out actionNumber);
+        }
+        switch (actionNumber)
       {
         case 1:
           pay();

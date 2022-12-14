@@ -14,8 +14,6 @@ namespace szofttech
             Senior tester = new Senior(new List<Notification>(), new List<string>(), "Bekő Tóni", "DE97T2", "Gazdinfo","ps_1", 115);
             Senior other = new Senior(new List<Notification>(), new List<string>(), "Karó Géza", "BG5FO9", "Vegyészmérnök","ps_2", 234);
             Student testStudent = new Student(new List<Notification>(), new List<string>(), "Kris", "DGB6LT", "Proginfo", "Dallos0927", 144);
-            tester.addEvent(new Event(tester, "Társasjáték est", new Date(2022, 12, 13, 18, 13), "Magi"));
-            tester.addEvent(new Event(other, "Szülinap", new Date(2022, 12, 28, 23, 00), "Magi"));
             Container.getEventList();
             Container.addStudent(testStudent);
 
