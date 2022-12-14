@@ -16,7 +16,7 @@ namespace szofttech
         {
             string name;
             string neptunCode;
-            int roomNumber = -1;
+            int roomNumber;
             string roomNumberString;
             bool canConvert = false;
             string major;
@@ -40,7 +40,7 @@ namespace szofttech
             Console.WriteLine("Please give us the Student room number!");
             roomNumberString = Console.ReadLine();
             canConvert = int.TryParse(roomNumberString, out roomNumber);
-            while (roomNumberString == "" && !canConvert) {
+            while (roomNumberString == "" || !canConvert) {
                 Console.WriteLine("The given input is invalid! Please give valid input!");
                 roomNumberString = Console.ReadLine();
                 canConvert = int.TryParse(roomNumberString, out roomNumber);
