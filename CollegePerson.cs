@@ -16,6 +16,9 @@ namespace szofttech
         {
             do
             {
+                Console.Clear();
+                //debug 
+                Container.students.ForEach(student => Console.WriteLine(student.toString()));
                 Console.WriteLine("Welcome to the dormitory management system!\n" +
                                  "before going forward please log in to your account!");
                 //username nincs, csak neptun kod
@@ -36,7 +39,7 @@ namespace szofttech
 
                 switch ((username, password))
                 {
-                    case ("ADMIN", "admin"):
+                    case ("ADMIN", "ADMIN"):
                         user = new Administrator();
                         Console.WriteLine("Welcome admin, glad to see you here!");
                         break;
@@ -45,12 +48,12 @@ namespace szofttech
                         //rossz felhasznalonev es jelszo eseten null!!! :D
                         user = new Student();
                         user = Container.students.Find(s =>
-                                s.neptunCode.ToUpper() == username
+                                s.neptunCode == username
                              && s.password == password);
 
                         //TODO: ciklusban menjen
                         Console.WriteLine(user is null ? "Bad credidentals, try again" :
-                                                        $"Welcome {(user is Student ? user.name : "ADMIN")} glad to see you here!");
+                                                        $"Welcome {(user is Student ? user.name : "admin")} glad to see you here!");
                         break;
                 }
             } while (user is null);
