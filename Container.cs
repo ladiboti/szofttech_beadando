@@ -151,10 +151,10 @@ namespace szofttech
                         Console.WriteLine("The given input is invalid! Please give a valid input!");
                         neptunCode = Console.ReadLine();
                     }
-                    if (Container.students.Exists(x => x.neptunCode == neptunCode) == true)
+                    if (Container.students.Exists(x => x.neptunCode == neptunCode.ToUpper()) == true)
                     {
                         Student student = new Student();
-                        student = Container.students.Find(x => x.neptunCode == neptunCode);
+                        student = Container.students.Find(x => x.neptunCode == neptunCode.ToUpper());
                         Console.WriteLine($"{student.name} {student.neptunCode} {student.major} {student.roomNumber}");
                         break;
                     }
