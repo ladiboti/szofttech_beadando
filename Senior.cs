@@ -11,7 +11,6 @@ namespace szofttech
     internal class Senior : Student
     {
         public static List<AccommodationTicket> accommodationTickets = new List<AccommodationTicket>();
-        // getter és delete???
         public static Dictionary<string, string> pendingGuestRequests = new Dictionary<string, string>();
         bool dutyStatus { get; set; }
 
@@ -21,6 +20,11 @@ namespace szofttech
             //this.accommodationTickets = accommodationTickets;
             //this.pendingGuestRequests = pendingGuestRequests;
             this.dutyStatus           = false;
+        }
+
+        public static List<AccommodationTicket> getAccommodationTickets()
+        {
+            return accommodationTickets;
         }
 
         public void addEvent(Event newEvent)
