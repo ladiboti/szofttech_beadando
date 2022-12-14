@@ -167,56 +167,59 @@ namespace szofttech
     }
     public override void menu()
     {
-      Console.WriteLine("DEBUG: STUDENT MENU");
-
-      Console.WriteLine(
-       $" 1: Pay your obligation\n" +
-       $" 2: Send request to the administrator\n" +
-       $" 3: Send a guest request\n" +
-       $" 4: Add a bicycle to the virtual storage\n" +
-       $" 5: Set your balance\n" +
-       $" 6: Show your notifications\n" +
-       $"99: Log out"
-      );
-      Console.WriteLine("Here is your functions, tell me what do you want to do!");
-        //ki kell irni a lehetosegeket :(((((
-        bool canConvert = false;
-        int actionNumber;
-        string actionNumberString = Console.ReadLine();
-        canConvert = int.TryParse(actionNumberString, out actionNumber);
-        while ((actionNumberString == "" || actionNumber <= 0) || !canConvert)
+        do
         {
-            Console.WriteLine("The given input is invalid! Please give valid input!");
-            actionNumberString = Console.ReadLine();
+            Console.WriteLine("DEBUG: STUDENT MENU");
+
+            Console.WriteLine(
+                $" 1: Pay your obligation\n" +
+                $" 2: Send request to the administrator\n" +
+                $" 3: Send a guest request\n" +
+                $" 4: Add a bicycle to the virtual storage\n" +
+                $" 5: Set your balance\n" +
+                $" 6: Show your notifications\n" +
+                $"99: Log out"
+            );
+            Console.WriteLine("Here is your functions, tell me what do you want to do!");
+            //ki kell irni a lehetosegeket :(((((
+            bool canConvert = false;
+            int actionNumber;
+            string actionNumberString = Console.ReadLine();
             canConvert = int.TryParse(actionNumberString, out actionNumber);
-        }
-        switch (actionNumber)
-      {
-        case 1:
-          pay();
-          break;
-        case 2:
-          sendRequest();
-          break;
-        case 3:
-          requestGuest();
-          break;
-        case 4:
-          addBicycle();
-          break;
-        case 5:
-          //setbalance!!!
-          break;
-        case 6:
-          showNotifications();
-          break;
-        case 99:
-          logout();
-          break;
-        default:
-          Console.WriteLine("Sorry, but this function doesn't exist");
-          break;
-      }
+            while ((actionNumberString == "" || actionNumber <= 0) || !canConvert)
+            {
+                Console.WriteLine("The given input is invalid! Please give valid input!");
+                actionNumberString = Console.ReadLine();
+                canConvert = int.TryParse(actionNumberString, out actionNumber);
+            }
+            switch (actionNumber)
+            {
+                case 1:
+                    pay();
+                    break;
+                case 2:
+                    sendRequest();
+                    break;
+                case 3:
+                    requestGuest();
+                    break;
+                case 4:
+                    addBicycle();
+                    break;
+                case 5:
+                    //setbalance!!!
+                    break;
+                case 6:
+                    showNotifications();
+                    break;
+                case 99:
+                    logout();
+                    break;
+                default:
+                    Console.WriteLine("Sorry, but this function doesn't exist");
+                    break;
+            }
+        } while (true);
     }
   }
 }
