@@ -4,9 +4,6 @@ namespace szofttech
 {
   internal class Program
   {
-
-
-    
     private void start()
     {  
       showMenu();
@@ -17,6 +14,26 @@ namespace szofttech
       Console.WriteLine("Welcome to the dormitory management system!\n" +
                         "before going forward please log in to your account!");
       CollegePerson.login();
+      CollegePerson.logout();
+      //switch-es szerkezettel szebb lenne
+      if(CollegePerson.user is Administrator)
+      {
+        adminMenu();
+      }
+      if (CollegePerson.user is Student)
+      {
+        studentMenu();
+      }
+    }
+
+    private void adminMenu()
+    {
+      Console.WriteLine("here is the admin menu:");
+    }
+
+    private void studentMenu()
+    {
+      Console.WriteLine("here is the student menu: ");
     }
     static void Main(string[] args)
     {
