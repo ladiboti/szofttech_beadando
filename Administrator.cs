@@ -10,7 +10,8 @@ namespace szofttech
     internal class Administrator : CollegePerson
     {
         //kell json a requestlistbol is ugye?
-        private static List<Request> requestsList = new List<Request>();
+        //atkerult a requestlist a containerbe
+        //private static List<Request> requestsList = new List<Request>();
 
         public void addNewStudent()
         {
@@ -20,6 +21,8 @@ namespace szofttech
             string roomNumberString;
             bool canConvert = false;
             string major;
+
+            // password MUSZÁJ BEÁLLÍTTATNI!!!!!
             string password = null;
 
             Console.WriteLine("Please give us the Student name!");
@@ -90,14 +93,15 @@ namespace szofttech
 
         public static void addRequest(Request request)
         {
-            requestsList.Add(request);
+            Container.addRequest(request);
         }
 
         //tesztelésre szorul!!!!
         private void approveRequest()
         {
             int index = 0;
-            foreach (Request r in requestsList) {
+            Console.WriteLine("DEBUG: Administrator.approveRequest()" + Container.requests.Count());
+            foreach (Request r in Container.requests) {
                 index++;
                 Console.WriteLine($"{index} {r.sender.name} {r.message} {r.status}");
             }
@@ -107,7 +111,7 @@ namespace szofttech
                 Console.WriteLine("Please choose a request which you want to modify! (Give a number)");
                 index = Convert.ToInt32(Console.ReadLine());
 
-                while (index < 0 && index > requestsList.Count) {
+                while (index < 0 && index > Container.requests.Count) {
                     Console.WriteLine("The given number is not valid! Please give a valid number!");
                     index = Convert.ToInt32(Console.ReadLine());
                 }
@@ -119,8 +123,8 @@ namespace szofttech
                     status = Convert.ToInt32(Console.ReadLine());
                 }
 
-                requestsList[index].status = status;
-                string neptunCode = requestsList[index].sender.neptunCode;
+                Container.requests[index].status = status;
+                string neptunCode = Container.requests[index].sender.neptunCode;
 
                 Container.students.Find(x => x.neptunCode == neptunCode)
                                   .notificationList.Add(new Notification(addNotification(), 
@@ -166,37 +170,64 @@ namespace szofttech
                                                         DateTime.Now.Day, DateTime.Now.Hour, DateTime.Now.Minute))
                                       );
             }
+            Container.refreshStudentsJSON();
         }
 
         private void modifyDisciplinaryState()
         {
-            Console.Write("Adja meg a fegyelmit kapó diák neptun kódját: ");
-            string tempNeptun = Console.ReadLine();
-            Container.students.Find(x => x.neptunCode == tempNeptun).isUnderDiscipliary = 
-                Container.students.Find(x => x.neptunCode == tempNeptun).isUnderDiscipliary ? false : true;
+            Console.Write("Give the neptun code of the student who you wish to change its disciplinary state: ");
+            string tempNeptun = Console.ReadLine().ToUpper();
+            while (tempNeptun == "")
+            {
+                Console.WriteLine("No neptun code given. Give one!");
+                tempNeptun = Console.ReadLine();
+            }
+            if (Container.students.Exists(x => x.neptunCode == tempNeptun) == true)
+            {
+                Container.students.Find(x => x.neptunCode == tempNeptun).isUnderDiscipliary =
+                    Container.students.Find(x => x.neptunCode == tempNeptun).isUnderDiscipliary ? false : true;
+                Console.WriteLine($"Disciplinary state successfully changed to: {Container.students.Find(x => x.neptunCode == tempNeptun).isUnderDiscipliary}");
+            }
+            else
+                Console.WriteLine("The person does not presented in the list");
+            Container.refreshStudentsJSON();
         }
 
         private void moveToRoom()
         {
             string neptunCode;
             int roomNumber;
+            string roomNumberString;
+            bool canConvert = false;
+
             Container.getStudentList();
+
             Console.WriteLine("Please give us the neptun code of the student who you want to move to another room!");
             neptunCode = Console.ReadLine();
             while (neptunCode == "") {
                 Console.WriteLine("The given neptun code is invalid! Please give us a valid neptun code!");
                 neptunCode = Console.ReadLine();
             }
+            
             Console.WriteLine("Please give us the new room number of the Student!");
-            roomNumber = Convert.ToInt32(Console.ReadLine());
-            while (roomNumber < 0) {
-                Console.WriteLine("The given room number is invalid! Please give us a valid room number!");
-                roomNumber = Convert.ToInt32(Console.ReadLine());
+            roomNumberString = Console.ReadLine();
+            canConvert = int.TryParse(roomNumberString, out roomNumber);
+            while ((roomNumberString == "" || roomNumber <= 0) || !canConvert)
+            {
+                Console.WriteLine("The given input is invalid! Please give valid input!");
+                roomNumberString = Console.ReadLine();
+                canConvert = int.TryParse(roomNumberString, out roomNumber);
             }
-            Container.students.Find(x => x.neptunCode == neptunCode).roomNumber = roomNumber;
-            Container.students.Find(x => x.neptunCode == neptunCode).notificationList.Add(
-                new Notification(addNotification(), new Date(DateTime.Now.Year, DateTime.Now.Month,
-                                                             DateTime.Now.Day, DateTime.Now.Hour, DateTime.Now.Minute)));
+            if (Container.students.Exists(x => x.neptunCode == neptunCode) == true)
+            {
+                Container.students.Find(x => x.neptunCode == neptunCode).roomNumber = roomNumber;
+                Container.students.Find(x => x.neptunCode == neptunCode).notificationList.Add(
+                    new Notification(addNotification(), new Date(DateTime.Now.Year, DateTime.Now.Month,
+                                                                 DateTime.Now.Day, DateTime.Now.Hour, DateTime.Now.Minute)));
+                Container.refreshStudentsJSON();
+            }
+            else
+                Console.WriteLine("The person does not presented in the list");
         }
     public override void menu()
     {
