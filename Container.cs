@@ -121,15 +121,50 @@ namespace szofttech
       {
           foreach (Event i in events)
           {
-              Console.WriteLine($"{i.organizer.name} {i.description} {i.getDate()} {i.place}");
+              Console.WriteLine($"{i.organizer.name} {i.description} {i.eventDate} {i.place}");
           }
       }
       public static void getStudentList()
       {
-          foreach (Student i in students)
-          {
-              Console.WriteLine($"{i.name} {i.neptunCode} {i.major} {i.roomNumber}");
+          string command;
+          Console.WriteLine("Would you like to search by neptun code between the students?(Y/N)");
+          command = Console.ReadLine();
+          while (!((command.ToUpper()).Equals("Y") || (command.ToUpper().Equals("N")))) {
+              Console.WriteLine("The given input is invalid! Please give a valid input!");
+              command = Console.ReadLine();
           }
+            if (command.Equals("N"))
+            {
+                foreach (Student i in students)
+                {
+                    Console.WriteLine($"{i.name} {i.neptunCode} {i.major} {i.roomNumber}");
+                }
+            }
+            else{
+                Console.WriteLine("Please give us the neptun code!");
+                string neptunCode;
+                do
+                {
+                    neptunCode = Console.ReadLine();
+                    while (neptunCode == "")
+                    {
+                        Console.WriteLine("The given input is invalid! Please give a valid input!");
+                        neptunCode = Console.ReadLine();
+                    }
+                    if (Container.students.Exists(x => x.neptunCode == neptunCode.ToUpper()) == true)
+                    {
+                        Student student = new Student();
+                        student = Container.students.Find(x => x.neptunCode == neptunCode.ToUpper());
+                        Console.WriteLine($"{student.name} {student.neptunCode} {student.major} {student.roomNumber}");
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("We can't find this student! Give another!");
+                    }
+                } while (true);
+            }
+          
       }
         public static void addEvent(Event newEvent)
       {   
