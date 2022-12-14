@@ -261,7 +261,7 @@ namespace szofttech
           //setbalance!!!
           break;
         case 6:
-          //addEvent();
+          addEvent();
           break;
         case 7:
           startDuty();

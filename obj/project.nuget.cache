@@ -1,10 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "LhApDXSwIgAEs8DsNNVgAeegfzF566+ZEr0eyNRIAAy9E4qvIwObGFm0InROPVedpfJ+ODeF8j3WYTbFHCwy0g==",
+  "dgSpecHash": "Lxe7mqrC7L1wftxFBGev4Lvy0JokmgaHDR8ygyR9AEVdolmpC/Iu1A7Zplg9Ou3qn8GxE12dQsLGuU3DI8EPfQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ladib\\source\\repos\\szofttech_beadando\\szofttech.csproj",
+  "projectFilePath": "C:\\Users\\Bea\\Documents\\1_Pannon Egyetem\\3. felev\\Szoftvertechnologia\\Program\\szofttech.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\ladib\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512"
+    "C:\\Users\\Bea\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\Bea\\Documents\\1_Pannon Egyetem\\3. felev\\Szoftvertechnologia\\Program\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
