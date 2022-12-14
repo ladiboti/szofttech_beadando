@@ -1,4 +1,5 @@
-﻿using System.Xml.Serialization;
+﻿using System.Reflection.Metadata;
+using System.Xml.Serialization;
 
 namespace szofttech
 {
@@ -14,21 +15,14 @@ namespace szofttech
       Console.WriteLine("Welcome to the dormitory management system!\n" +
                         "before going forward please log in to your account!");
       CollegePerson.login();
-      CollegePerson.logout();
+      //CollegePerson.logout();
       //switch-es szerkezettel szebb lenne
-      if(CollegePerson.user is Administrator)
-      {
-        adminMenu();
-      }
-      if (CollegePerson.user is Student)
-      {
-        studentMenu();
-      }
+      CollegePerson.user.menu();
     }
 
     private void adminMenu()
     {
-      Console.WriteLine("here is the admin menu:");
+      
     }
 
     private void studentMenu()

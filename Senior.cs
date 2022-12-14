@@ -134,5 +134,40 @@ namespace szofttech
             else
                 Console.WriteLine("This person is already presented in the list.");
         }
+
+    public override void menu()
+    {
+      Console.WriteLine("DEBUG: SENIOR MENU");
+      Console.WriteLine("Here is your functions, tell me what do you want to do!");
+      //ki kell irni a lehetosegek :(((((
+      int actionNumber = int.Parse(Console.ReadLine());
+      switch (actionNumber)
+      {
+        case 1:
+          //addEvent();
+          break;
+        case 2:
+          startDuty();
+          break;
+        case 3:
+          stopDuty();
+          break;
+        case 4:
+          modifyDisciplinaryState();
+          break;
+        case 5:
+          getDisciplinaryState();
+          break;
+        case 6:
+          giveAccomodationTicket();
+          break;
+        case 99:
+          listAccomodation();
+          break;
+        default:
+          Console.WriteLine("Sorry, but this function doesn't exist");
+          break;
+      }
     }
+  }
 }
