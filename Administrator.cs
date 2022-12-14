@@ -9,6 +9,7 @@ namespace szofttech
 {
     internal class Administrator : CollegePerson
     {
+        //kell json a requestlistbol is ugye?
         private static List<Request> requestsList = new List<Request>();
 
         public void addNewStudent()
