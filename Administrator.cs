@@ -82,9 +82,17 @@ namespace szofttech
                                               student.neptunCode, student.major, student.password, student.roomNumber));
                 Container.students.Remove(student);
                 Console.WriteLine("The selected student is sucessfully promoted!");
+                foreach(var i in Container.students)
+                {
+                    if(i is Senior)
+                    {
+                        Console.WriteLine(i.toString());
+                    }
+                }
             }
             else
                 Console.WriteLine("The person does not presented in the list");
+            Container.refreshStudentsJSON();
 
             //TODO: frissiteni kell majd a jsont!!!!
             //public Senior(List<Notification> notificationList, List<string> bicycles, string name, string neptunCode, string major, int roomNumber)
