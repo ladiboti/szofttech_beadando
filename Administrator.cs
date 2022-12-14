@@ -22,9 +22,9 @@ namespace szofttech
             string roomNumberString;
             bool canConvert = false;
             string major;
-
+            string password;
             // password MUSZÁJ BEÁLLÍTTATNI!!!!!
-            string password = null;
+
 
             Console.WriteLine("Please give us the Student name!");
             name = Console.ReadLine();
@@ -56,6 +56,14 @@ namespace szofttech
             {
                 Console.WriteLine("The given input is invalid! Please give valid input!");
                 major = Console.ReadLine();
+            }
+
+            Console.WriteLine("Please give us the Student password!");
+            password = Console.ReadLine();
+            while (password == "")
+            {
+                Console.WriteLine("The given input is invalid! Please give valid input!");
+                password = Console.ReadLine();
             }
 
             Student newStudent = new Student(new List<Notification>(), 
