@@ -27,6 +27,14 @@ namespace szofttech
             return accommodationTickets;
         }
 
+        public static void setAccommodationTickets(List<AccommodationTicket> tempList)
+        {
+            foreach(var i in tempList)
+            {
+                accommodationTickets.Add(i);
+            }
+        }
+
         public void addEvent(Event newEvent)
         {
             Container.addEvent(newEvent);
