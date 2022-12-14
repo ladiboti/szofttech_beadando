@@ -173,6 +173,7 @@ namespace szofttech
       string serialNumber = Console.ReadLine();
 
       bicycles.Add(serialNumber);
+        Container.refreshStudentsJSON();
       Console.WriteLine("Bicycle added successfully to the database!");
     }
 
