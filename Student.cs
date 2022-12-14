@@ -152,6 +152,19 @@ namespace szofttech
       }
       return text;
     }
+
+    public void showNotifications()
+    {
+      Console.WriteLine("Your notifications are the following:");
+      foreach (var notification in notificationList)
+      {
+        //a date null
+        Console.WriteLine(
+          $"-{notification.message}\n\tTODO: DATE!!!"
+        );
+      }
+
+    }
     public override void menu()
     {
       Console.WriteLine("DEBUG: STUDENT MENU");
@@ -162,6 +175,7 @@ namespace szofttech
        $" 3: Send a guest request\n" +
        $" 4: Add a bicycle to the virtual storage\n" +
        $" 5: Set your balance\n" +
+       $" 6: Show your notifications\n" +
        $"99: Log out"
       );
       Console.WriteLine("Here is your functions, tell me what do you want to do!");
@@ -192,6 +206,9 @@ namespace szofttech
           break;
         case 5:
           //setbalance!!!
+          break;
+        case 6:
+          showNotifications();
           break;
         case 99:
           logout();

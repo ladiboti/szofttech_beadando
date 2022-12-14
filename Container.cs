@@ -17,7 +17,7 @@ namespace szofttech
 
       //elképzelhető, hogy null marad vegig
       //productban a deserialize kell, hogy beolvassa a mar kesz jsont, ures file-al nem mukodik!!!!
-      static public List<Event> events     = JsonConvert.DeserializeObject<List<Event>>(File.ReadAllText(eventsPath));
+      static public List<Event>   events   = JsonConvert.DeserializeObject<List<Event>>(File.ReadAllText(eventsPath));
       static public List<Student> students = JsonConvert.DeserializeObject<List<Student>>(File.ReadAllText(studentsPath));
       static public List<Request> requests = JsonConvert.DeserializeObject<List<Request>>(File.ReadAllText(requestsPath));
 
