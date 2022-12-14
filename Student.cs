@@ -120,10 +120,6 @@ namespace szofttech
             Senior.newGuestRequest(id, name);
             Console.WriteLine("Guest request was successfull");
         }
-      else
-      {
-        Console.WriteLine("Nem adott meg értéket!");
-      }
     }
 
     public void addBicycle()
