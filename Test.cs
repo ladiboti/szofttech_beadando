@@ -90,7 +90,7 @@ namespace szofttech
             123
         );
 
-       Event dummyEvent1 = new Event(dummy1, "proba1", new Date(2022, 12, 12, 0, 0), "magister");
+       Event dummyEvent1 = new Event(dummy1, "proba1", new Date(2022, 12, 12, 0, 0).getDateString(), "magister");
        Container.addEvent(dummyEvent1);
     }
     public static void loadStudentsTest()
