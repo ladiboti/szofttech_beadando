@@ -23,8 +23,6 @@ namespace szofttech
             bool canConvert = false;
             string major;
             string password;
-            // password MUSZÁJ BEÁLLÍTTATNI!!!!!
-
 
             Console.WriteLine("Please give us the Student name!");
             name = Console.ReadLine();
