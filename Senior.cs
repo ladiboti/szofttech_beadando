@@ -172,6 +172,7 @@ namespace szofttech
        $" 9: Modify student's disciplinary state\n" +
        $"10: Get student's disciplinary state\n" +
        $"11: Give accomondation ticket to a student\n" +
+       $"12: Show your notifications\n" + 
        $"99: Log out"
       );
       Console.WriteLine("\nHere is your functions, tell me what do you want to do!");
@@ -212,6 +213,9 @@ namespace szofttech
           break;
         case 11:
           giveAccomodationTicket();
+          break;
+        case 12:
+          showNotifications();
           break;
         case 99:
           listAccomodation();
