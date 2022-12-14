@@ -205,7 +205,7 @@ namespace szofttech
       {
         //a date null
         Console.WriteLine(
-          $"-{notification.message}\n\tTODO: DATE!!!"
+          $"-{notification.message}\n\t{notification.messageDate}"
         );
       }
 
