@@ -75,25 +75,30 @@ namespace szofttech
 
         private void promoteStudentToSenior()
         {
-            Console.Write("Give the neptun code of the student who you wish to promote to senior rank: ");
-            string tempNeptun = Console.ReadLine().ToUpper();
-            while (tempNeptun == "")
+            if (Container.students.Count() != 0)
             {
-                Console.WriteLine("No neptun code given. Give one!");
-                tempNeptun = Console.ReadLine();
+                Console.Write("Give the neptun code of the student who you wish to promote to senior rank: ");
+                string tempNeptun = Console.ReadLine().ToUpper();
+                while (tempNeptun == "")
+                {
+                    Console.WriteLine("No neptun code given. Give one!");
+                    tempNeptun = Console.ReadLine();
+                }
+                if (Container.students.Exists(x => x.neptunCode == tempNeptun) == true)
+                {
+                    Student student = new Student();
+                    student = Container.students.Find(x => x.neptunCode == tempNeptun);
+                    Container.students.Add(new Senior(student.notificationList, student.bicycles, student.name,
+                                                  student.neptunCode, student.major, student.password, student.roomNumber));
+                    Container.students.Remove(student);
+                    Console.WriteLine("The selected student is sucessfully promoted!");
+                }
+                else
+                    Console.WriteLine("The person does not presented in the list");
             }
-            if (Container.students.Exists(x => x.neptunCode == tempNeptun) == true)
-            {
-                Student student = new Student();
-                student = Container.students.Find(x => x.neptunCode == tempNeptun);
-                Container.students.Add(new Senior(student.notificationList, student.bicycles, student.name,
-                                              student.neptunCode, student.major, student.password, student.roomNumber));
-                Container.students.Remove(student);
-                Console.WriteLine("The selected student is sucessfully promoted!");
+            else {
+                Console.WriteLine("Students container is empty!");
             }
-            else
-                Console.WriteLine("The person does not presented in the list");
-
             //TODO: frissiteni kell majd a jsont!!!!
             //public Senior(List<Notification> notificationList, List<string> bicycles, string name, string neptunCode, string major, int roomNumber)
             //      : base(notificationList, bicycles, name, neptunCode, major, roomNumber)
@@ -112,7 +117,8 @@ namespace szofttech
             Console.WriteLine("DEBUG: Administrator.approveRequest()" + Container.requests.Count());
             foreach (Request r in Container.requests) {
                 index++;
-                Console.WriteLine($"{index} {r.sender.name} {r.message} {r.status}");
+                Console.WriteLine($"{index}: Hallgató neve: {r.sender.name} Üzenet: {r.message} " +
+                    $"Status: {(r.status == 0 ? "feldolgozás alatt" : r.status == 1 ? "elfogadva" : "elutasítva")}");
             }
             if (index != 0)
             {
@@ -138,14 +144,16 @@ namespace szofttech
                     statusString = Console.ReadLine();
                 }
 
-                Container.requests[index].status = status;
-                string neptunCode = Container.requests[index].sender.neptunCode;
+                Container.requests[index-1].status = status;
+                string neptunCode = Container.requests[index-1].sender.neptunCode;
 
                 Container.students.Find(x => x.neptunCode == neptunCode)
                                   .notificationList.Add(new Notification(addNotification(), 
                                                         new Date(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day,
                                                                  DateTime.Now.Hour, DateTime.Now.Minute).getDateString())
                                                         );
+                Container.refreshStudentsJSON();
+                Container.refreshRequestJSON();
             }
             else {
                 Console.WriteLine("Request container is empty!");
