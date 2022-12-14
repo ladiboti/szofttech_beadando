@@ -71,6 +71,9 @@ namespace szofttech
                                              name, neptunCode, major, password, roomNumber
                                              );
             Container.addStudent(newStudent);
+            Console.WriteLine("New student is successfully added!");
+            Console.ReadKey();
+            Console.Clear();
         }
 
         private void promoteStudentToSenior()
@@ -93,6 +96,8 @@ namespace szofttech
             }
             else
                 Console.WriteLine("The person does not presented in the list");
+            Console.ReadKey();
+            Console.Clear();
 
             //TODO: frissiteni kell majd a jsont!!!!
             //public Senior(List<Notification> notificationList, List<string> bicycles, string name, string neptunCode, string major, int roomNumber)
@@ -144,6 +149,8 @@ namespace szofttech
             else {
                 Console.WriteLine("Request container is empty!");
             }
+            Console.ReadKey();
+            Console.Clear();
         }
 
         private string addNotification()
@@ -156,6 +163,8 @@ namespace szofttech
                 message = Console.ReadLine();
             }
             return message;
+            Console.ReadKey();
+            Console.Clear();
         }
 
         private void addObligation()
@@ -181,6 +190,8 @@ namespace szofttech
             
             }
             Container.refreshStudentsJSON();
+            Console.ReadKey();
+            Console.Clear();
         }
 
         private void modifyDisciplinaryState()
@@ -201,6 +212,8 @@ namespace szofttech
             else
                 Console.WriteLine("The person does not presented in the list");
             Container.refreshStudentsJSON();
+            Console.ReadKey();
+            Console.Clear();
         }
 
         private void moveToRoom()
@@ -237,6 +250,8 @@ namespace szofttech
             }
             else
                 Console.WriteLine("The person does not presented in the list");
+            Console.ReadKey();
+            Console.Clear();
         }
     public override void menu()
     {

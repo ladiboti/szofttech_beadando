@@ -113,6 +113,8 @@ namespace szofttech
             Container.addEvent(newEvent);
             Container.refreshEventsJSON();
             Console.WriteLine("Event created!");
+            Console.ReadKey();
+            Console.Clear();
         }
 
         public void startDuty()
@@ -126,6 +128,8 @@ namespace szofttech
                 dutyStatus = true;
                 Console.WriteLine("You are now on duty!");
             }
+            Console.ReadKey();
+            Console.Clear();
         }
 
         public void stopDuty()
@@ -138,7 +142,9 @@ namespace szofttech
             {
                 dutyStatus = false;
                 Console.WriteLine("You are no longer on duty!");
-            }  
+            }
+            Console.ReadKey();
+            Console.Clear();
         }
 
         public void modifyDisciplinaryState()
@@ -155,14 +161,17 @@ namespace szofttech
                 Container.students.Find(x => x.neptunCode == tempNeptun).isUnderDiscipliary =
                     Container.students.Find(x => x.neptunCode == tempNeptun).isUnderDiscipliary ? false : true;
                 Console.WriteLine($"Disciplinary state successfully changed to: {Container.students.Find(x => x.neptunCode == tempNeptun).isUnderDiscipliary}");
-                Container.refreshSeniorJSON();
             }
             else
                 Console.WriteLine("The person does not presented in the list");
-            
+            Container.refreshStudentsJSON();
+            Container.refreshSeniorJSON();
+            Console.ReadKey();
+            Console.Clear();
+
         }
 
-        public bool getDisciplinaryState()
+        public void getDisciplinaryState()
         {
             Console.Write("Give the neptun code of a student: ");
             string tempNeptun = Console.ReadLine().ToUpper();
@@ -173,12 +182,20 @@ namespace szofttech
             }
             if (Container.students.Exists(x => x.neptunCode == tempNeptun) == true)
             {
-                return Container.students.Find(x => x.neptunCode == tempNeptun).isUnderDiscipliary;
+                if (Container.students.Find(x => x.neptunCode == tempNeptun).isUnderDiscipliary == true)
+                {
+                    Console.WriteLine("The student is under disciplinary!");
+                }
+                else if (Container.students.Find(x => x.neptunCode == tempNeptun).isUnderDiscipliary == false)
+                {
+                    Console.WriteLine("The student is not under disciplinary!");
+                }
             }
             else
                 Console.WriteLine("The person does not presented in the list");
-            return false;
-            
+            Console.ReadKey();
+            Console.Clear();
+
         }
 
         public void giveAccomodationTicket()
@@ -217,6 +234,8 @@ namespace szofttech
             {
                 Console.WriteLine("The given ID or name doesn't exist!");
             }
+            Console.ReadKey();
+            Console.Clear();
         }
 
         public void listAccomodation()
@@ -225,6 +244,8 @@ namespace szofttech
             {
                 Console.WriteLine($"{i.guestId} {i.guestName} {i.getExpireDate()}");
             }
+            Console.ReadKey();
+            Console.Clear();
         }
 
         public static void newGuestRequest(string id, string nev)
@@ -233,6 +254,8 @@ namespace szofttech
                 pendingGuestRequests.Add(id, nev);
             else
                 Console.WriteLine("This person is already presented in the list.");
+            Console.ReadKey();
+            Console.Clear();
         }
 
     public override void menu()
@@ -258,7 +281,6 @@ namespace szofttech
                 $"99: Log out"
             );
             Console.WriteLine("\nHere is your functions, tell me what do you want to do!");
-            Console.WriteLine("Here is your functions, tell me what do you want to do!");
             //ki kell irni a lehetosegek :(((((
             bool canConvert = false;
             int actionNumber;

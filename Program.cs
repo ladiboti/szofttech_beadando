@@ -6,7 +6,7 @@ namespace szofttech
 {
   internal class Program
   {
-    private void start()
+    public static void start()
     {
       Container.loadAllJSON();
       CollegePerson.login();
@@ -23,8 +23,7 @@ namespace szofttech
         //Test.testAdministrator();
         //Test.loadStudentsTest();
 
-        Program program = new Program();
-        program.start();
+        start();
     }
   }
 }

@@ -100,7 +100,9 @@ namespace szofttech
             else {
                 Console.WriteLine("Transaction was denied!");
             }
-    }
+            Console.ReadKey();
+            Console.Clear();
+        }
     public void pay()
     {
         string command;
@@ -127,7 +129,9 @@ namespace szofttech
         else {
             Console.WriteLine("The pay was declined");
         }
-    }
+            Console.ReadKey();
+            Console.Clear();
+        }
 
     public void sendRequest()
     {
@@ -141,7 +145,9 @@ namespace szofttech
         Request request = new Request(this, message);
         Administrator.addRequest(request);
         Console.WriteLine("The request sent successfully!");
-    }
+            Console.ReadKey();
+            Console.Clear();
+        }
 
     public void requestGuest()
     {
@@ -164,7 +170,9 @@ namespace szofttech
             Senior.newGuestRequest(id, name);
             Console.WriteLine("Guest request was successfull");
         }
-    }
+            Console.ReadKey();
+            Console.Clear();
+        }
 
     public void addBicycle()
     {
@@ -175,7 +183,9 @@ namespace szofttech
       bicycles.Add(serialNumber);
         Container.refreshStudentsJSON();
       Console.WriteLine("Bicycle added successfully to the database!");
-    }
+            Console.ReadKey();
+            Console.Clear();
+        }
 
     public string toString()
     {
@@ -196,7 +206,9 @@ namespace szofttech
         text += bicycle + "\n";
       }
       return text;
-    }
+            Console.ReadKey();
+            Console.Clear();
+        }
 
     public void showNotifications()
     {
@@ -208,8 +220,9 @@ namespace szofttech
           $"-{notification.message}\n\t{notification.messageDate}"
         );
       }
-
-    }
+            Console.ReadKey();
+            Console.Clear();
+        }
     public override void menu()
     {
         do

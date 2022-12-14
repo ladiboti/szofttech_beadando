@@ -55,24 +55,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\adres\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Bea\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\adres\\Desktop\\program\\szofttech.csproj",
+      "projectUniqueName": "C:\\Users\\Bea\\Documents\\1_Pannon Egyetem\\3. felev\\Szoftvertechnologia\\vegProgram\\szofttech.csproj",
       "projectName": "szofttech",
-      "projectPath": "C:\\Users\\adres\\Desktop\\program\\szofttech.csproj",
-      "packagesPath": "C:\\Users\\adres\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\adres\\Desktop\\program\\obj\\",
+      "projectPath": "C:\\Users\\Bea\\Documents\\1_Pannon Egyetem\\3. felev\\Szoftvertechnologia\\vegProgram\\szofttech.csproj",
+      "packagesPath": "C:\\Users\\Bea\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Bea\\Documents\\1_Pannon Egyetem\\3. felev\\Szoftvertechnologia\\vegProgram\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\adres\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\Bea\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
