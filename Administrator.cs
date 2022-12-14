@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -166,8 +167,7 @@ namespace szofttech
             foreach (Student s in Container.students) {
                 s.obligation += obligation;
                 s.notificationList.Add(new Notification(message, 
-                                                        new Date(DateTime.Now.Year, DateTime.Now.Month, 
-                                                        DateTime.Now.Day, DateTime.Now.Hour, DateTime.Now.Minute))
+                                                        new Date(2022,3,14,12,0))
                                       );
             }
             Container.refreshStudentsJSON();
@@ -231,56 +231,59 @@ namespace szofttech
         }
     public override void menu()
     {
-      Console.WriteLine("DEBUG: ADMIN MENU");
-     
-      Console.WriteLine(
-        $" 1: Add new student\n" +
-        $" 2: Promote student to senior\n" +
-        $" 3: Approve requests\n" +
-        $" 4: Add obligation to student\n" +
-        $" 5: Modify student's disciplinary state\n" +
-        $" 6: Move student to another room\n" +
-        $"99: Log out"  
-      );
-      Console.WriteLine("\nHere is your functions, tell me what do you want to do!");
+        do
+        {
+            Console.WriteLine("DEBUG: ADMIN MENU");
 
-      bool canConvert = false;
-      int actionNumber;
-      string actionNumberString = Console.ReadLine();
-      canConvert = int.TryParse(actionNumberString, out actionNumber);
-      while ((actionNumberString == "" || actionNumber <= 0) || !canConvert)
-      {
-          Console.WriteLine("The given input is invalid! Please give valid input!");
+            Console.WriteLine(
+                $" 1: Add new student\n" +
+                $" 2: Promote student to senior\n" +
+                $" 3: Approve requests\n" +
+                $" 4: Add obligation to student\n" +
+                $" 5: Modify student's disciplinary state\n" +
+                $" 6: Move student to another room\n" +
+                $"99: Log out"
+            );
+            Console.WriteLine("\nHere is your functions, tell me what do you want to do!");
+
+            bool canConvert = false;
+            int actionNumber;
+            string actionNumberString = Console.ReadLine();
+            canConvert = int.TryParse(actionNumberString, out actionNumber);
+            while ((actionNumberString == "" || actionNumber <= 0) || !canConvert)
+            {
+                Console.WriteLine("The given input is invalid! Please give valid input!");
                 actionNumberString = Console.ReadLine();
-          canConvert = int.TryParse(actionNumberString, out actionNumber);
-      }
-      switch (actionNumber)
-      {
-        case 1:
-          addNewStudent();
-          break;
-        case 2:
-          promoteStudentToSenior();
-          break;
-        case 3:
-          approveRequest();
-          break;
-        case 4:
-          addObligation();
-          break;
-        case 5:
-          modifyDisciplinaryState();
-          break;
-        case 6:
-          moveToRoom();
-          break;
-        case 99:
-          logout();
-          break;
-        default:
-          Console.WriteLine("Sorry, but this function doesn't exist");
-          break;
-      }
+                canConvert = int.TryParse(actionNumberString, out actionNumber);
+            }
+            switch (actionNumber)
+            {
+                case 1:
+                    addNewStudent();
+                    break;
+                case 2:
+                    promoteStudentToSenior();
+                    break;
+                case 3:
+                    approveRequest();
+                    break;
+                case 4:
+                    addObligation();
+                    break;
+                case 5:
+                    modifyDisciplinaryState();
+                    break;
+                case 6:
+                    moveToRoom();
+                    break;
+                case 99:
+                    logout();
+                    break;
+                default:
+                    Console.WriteLine("Sorry, but this function doesn't exist");
+                    break;
+            }
+        } while (true);
     }
   }
 }
