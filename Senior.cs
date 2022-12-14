@@ -113,6 +113,8 @@ namespace szofttech
             Container.addEvent(newEvent);
             Container.refreshEventsJSON();
             Console.WriteLine("Event created!");
+            Console.ReadKey();
+            Console.Clear();
         }
 
         public void startDuty()
@@ -126,6 +128,8 @@ namespace szofttech
                 dutyStatus = true;
                 Console.WriteLine("You are now on duty!");
             }
+            Console.ReadKey();
+            Console.Clear();
         }
 
         public void stopDuty()
@@ -138,7 +142,9 @@ namespace szofttech
             {
                 dutyStatus = false;
                 Console.WriteLine("You are no longer on duty!");
-            }  
+            }
+            Console.ReadKey();
+            Console.Clear();
         }
 
         public void modifyDisciplinaryState()
@@ -159,10 +165,11 @@ namespace szofttech
             }
             else
                 Console.WriteLine("The person does not presented in the list");
-            
+            Console.ReadKey();
+            Console.Clear();
         }
 
-        public bool getDisciplinaryState()
+        public void getDisciplinaryState()
         {
             Console.Write("Give the neptun code of a student: ");
             string tempNeptun = Console.ReadLine().ToUpper();
@@ -173,12 +180,17 @@ namespace szofttech
             }
             if (Container.students.Exists(x => x.neptunCode == tempNeptun) == true)
             {
-                return Container.students.Find(x => x.neptunCode == tempNeptun).isUnderDiscipliary;
+                Console.WriteLine("A student is under disciplinary state.");
+            }
+            else if (Container.students.Exists(x => x.neptunCode == tempNeptun) == false)
+            {
+                Console.WriteLine("A student is not under disciplinary state.");
             }
             else
                 Console.WriteLine("The person does not presented in the list");
-            return false;
-            
+            Console.ReadKey();
+            Console.Clear();
+
         }
 
         public void giveAccomodationTicket()
@@ -212,11 +224,14 @@ namespace szofttech
             {
                 accommodationTickets.Add(new AccommodationTicket(tempId, tempName, new Date(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day + Convert.ToInt32(tempDay), DateTime.Now.Hour, DateTime.Now.Minute)));
                 pendingGuestRequests.Remove(tempId);
+                Console.WriteLine("Accomodation ticket successfully added!");
             }
             else
             {
                 Console.WriteLine("The given ID or name doesn't exist!");
             }
+            Console.ReadKey();
+            Console.Clear();
         }
 
         public void listAccomodation()
@@ -225,6 +240,8 @@ namespace szofttech
             {
                 Console.WriteLine($"{i.guestId} {i.guestName} {i.getExpireDate()}");
             }
+            Console.ReadKey();
+            Console.Clear();
         }
 
         public static void newGuestRequest(string id, string nev)
