@@ -38,7 +38,7 @@ namespace szofttech
 
                 switch ((username, password))
                 {
-                    case ("admin", "admin"):
+                    case ("ADMIN", "ADMIN"):
                         user = new Administrator();
                         Console.WriteLine("Welcome admin, glad to see you here!");
                         break;
