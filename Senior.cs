@@ -48,8 +48,63 @@ namespace szofttech
             }
         }
 
-        public void addEvent(Event newEvent)
+        public void addEvent()
         {
+            Console.WriteLine("Give a description about the event:");
+            string description = Console.ReadLine();
+            while (description == "")
+            {
+                Console.WriteLine("Give a description about the event!");
+                description = Console.ReadLine();
+            }
+
+            Console.WriteLine("When the event will take place?");
+            Console.Write("Year:");
+            bool canConvertYear = false;
+            int year;
+            string yearString = Console.ReadLine();
+            canConvertYear = int.TryParse(yearString, out year);
+            while ((yearString == "" || year <= 0) || !canConvertYear)
+            {
+                Console.WriteLine("The given input is invalid! Please give valid input!");
+                yearString = Console.ReadLine();
+                canConvertYear = int.TryParse(yearString, out year);
+            }
+
+            Console.Write("Month:");
+            bool canConvertMonth = false;
+            int month;
+            string monthString = Console.ReadLine();
+            canConvertMonth = int.TryParse(monthString, out month);
+            while ((monthString == "" || month <= 0) || !canConvertMonth)
+            {
+                Console.WriteLine("The given input is invalid! Please give valid input!");
+                monthString = Console.ReadLine();
+                canConvertMonth = int.TryParse(monthString, out month);
+            }
+
+            Console.Write("Day:");
+            bool canConvertDay = false;
+            int day;
+            string dayString = Console.ReadLine();
+            canConvertDay = int.TryParse(dayString, out day);
+            while ((dayString == "" || day <= 0) || !canConvertDay)
+            {
+                Console.WriteLine("The given input is invalid! Please give valid input!");
+                dayString = Console.ReadLine();
+                canConvertDay = int.TryParse(dayString, out day);
+            }
+
+            Date date = new Date(year, month, day);
+            Console.WriteLine("Where the event will take place?");
+            string place = Console.ReadLine();
+            while (place == "")
+            {
+                Console.WriteLine("Where the event will take place?");
+                place = Console.ReadLine();
+            }
+            Event newEvent = new Event(new Senior(this.notificationList,this.bicycles,this.name,this.neptunCode,this.major,this.password,this.roomNumber),
+                description, date, place);
             Container.addEvent(newEvent);
         }
 
@@ -176,8 +231,17 @@ namespace szofttech
       );
       Console.WriteLine("\nHere is your functions, tell me what do you want to do!");
       Console.WriteLine("Here is your functions, tell me what do you want to do!");
-      //ki kell irni a lehetosegek :(((((
-      int actionNumber = int.Parse(Console.ReadLine());
+        //ki kell irni a lehetosegek :(((((
+        bool canConvert = false;
+        int actionNumber;
+        string actionNumberString = Console.ReadLine();
+        canConvert = int.TryParse(actionNumberString, out actionNumber);
+        while ((actionNumberString == "" || actionNumber <= 0) || !canConvert)
+        {
+            Console.WriteLine("The given input is invalid! Please give valid input!");
+            actionNumberString = Console.ReadLine();
+            canConvert = int.TryParse(actionNumberString, out actionNumber);
+        }
       switch (actionNumber)
       {
         case 1:

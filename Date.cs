@@ -21,6 +21,15 @@ namespace szofttech
             this.hour   = hour;
             this.minute = minute;
         }
+
+        public Date(int year, int month, int day)
+        {
+            this.year = year;
+            this.month = month;
+            this.day = day;
+            this.hour = 0;
+            this.minute = 0;
+        }
     //convert kell???
         public string getDateString() {
             return $"{year}.{month}.{day}. {hour}:{minute}";
