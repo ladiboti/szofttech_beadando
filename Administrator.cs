@@ -10,7 +10,8 @@ namespace szofttech
     internal class Administrator : CollegePerson
     {
         //kell json a requestlistbol is ugye?
-        private static List<Request> requestsList = new List<Request>();
+        //atkerult a requestlist a containerbe
+        //private static List<Request> requestsList = new List<Request>();
 
         public void addNewStudent()
         {
@@ -90,14 +91,15 @@ namespace szofttech
 
         public static void addRequest(Request request)
         {
-            requestsList.Add(request);
+            Container.addRequest(request);
         }
 
         //tesztelésre szorul!!!!
         private void approveRequest()
         {
             int index = 0;
-            foreach (Request r in requestsList) {
+            Console.WriteLine("DEBUG: Administrator.approveRequest()" + Container.requests.Count());
+            foreach (Request r in Container.requests) {
                 index++;
                 Console.WriteLine($"{index} {r.sender.name} {r.message} {r.status}");
             }
@@ -107,7 +109,7 @@ namespace szofttech
                 Console.WriteLine("Please choose a request which you want to modify! (Give a number)");
                 index = Convert.ToInt32(Console.ReadLine());
 
-                while (index < 0 && index > requestsList.Count) {
+                while (index < 0 && index > Container.requests.Count) {
                     Console.WriteLine("The given number is not valid! Please give a valid number!");
                     index = Convert.ToInt32(Console.ReadLine());
                 }
@@ -119,8 +121,8 @@ namespace szofttech
                     status = Convert.ToInt32(Console.ReadLine());
                 }
 
-                requestsList[index].status = status;
-                string neptunCode = requestsList[index].sender.neptunCode;
+                Container.requests[index].status = status;
+                string neptunCode = Container.requests[index].sender.neptunCode;
 
                 Container.students.Find(x => x.neptunCode == neptunCode)
                                   .notificationList.Add(new Notification(addNotification(), 
