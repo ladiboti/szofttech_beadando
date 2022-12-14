@@ -17,6 +17,9 @@ namespace szofttech
             string neptunCode;
             int roomNumber = -1;
             string major;
+
+            //KÉRD BE ADRIÁN!!!!
+            string password = null;
             Console.WriteLine("Please give us the Student name!");
             name = Console.ReadLine();
             while (name == "") {
@@ -54,7 +57,7 @@ namespace szofttech
             }
             Student newStudent = new Student(new List<Notification>(), 
                                              new List<string>(), 
-                                             name, neptunCode, major, roomNumber
+                                             name, neptunCode, major, password, roomNumber
                                              );
             Container.addStudent(newStudent);
         }
@@ -81,7 +84,7 @@ namespace szofttech
             //public Senior(List<Notification> notificationList, List<string> bicycles, string name, string neptunCode, string major, int roomNumber)
             //      : base(notificationList, bicycles, name, neptunCode, major, roomNumber)
             Container.students.Add(new Senior(student.notificationList, student.bicycles, student.name,
-                                              student.neptunCode, student.major, student.roomNumber));
+                                              student.neptunCode, student.major, student.password, student.roomNumber));
 
             Container.students.Remove(student);
              // folytatás később

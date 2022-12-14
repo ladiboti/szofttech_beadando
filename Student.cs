@@ -19,6 +19,8 @@ namespace szofttech
     public string neptunCode { get; set; }
     public string major      { get; set; }
 
+    public string password   { get; set; }
+
     public int roomNumber { get; set; }
     public int balance    { get; set; }
     public int obligation { get; set; }
@@ -39,14 +41,15 @@ namespace szofttech
     }
 
     public Student(List<Notification> notificationList, List<string> bicycles, string name, 
-      string neptunCode, string major, int roomNumber)
+      string neptunCode, string major, string password, int roomNumber)
     {
       this.notificationList   = notificationList;
       this.bicycles           = bicycles;
 
       this.name               = name;
-      this.neptunCode         = neptunCode;
+      this.neptunCode         = neptunCode.ToUpper();
       this.major              = major;
+      this.password           = password;
       this.roomNumber         = roomNumber;
       this.balance            = 0;
       this.obligation         = 0;
@@ -97,7 +100,7 @@ namespace szofttech
     public void requestGuest()
     {
         Console.Write("The ID number of your guest: ");
-        string id = Console.ReadLine();
+        string id = Console.ReadLine().ToUpper();
         while (id == "") {
             Console.WriteLine("Invalid input! Please give a valid input!");
             id = Console.ReadLine();
