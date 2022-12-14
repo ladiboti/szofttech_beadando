@@ -27,6 +27,27 @@ namespace szofttech
             return accommodationTickets;
         }
 
+        public static void setAccommodationTickets(List<AccommodationTicket> tempList)
+        {
+            foreach(var i in tempList)
+            {
+                accommodationTickets.Add(i);
+            }
+        }
+
+        public static Dictionary<string, string> getPendingGuestRequest()
+        {
+            return pendingGuestRequests;
+        }
+
+        public static void setPednigGuestRequest(Dictionary<string, string> tempDict)
+        {
+            foreach(var i in tempDict)
+            {
+                pendingGuestRequests.Add(i.Key, i.Value);
+            }
+        }
+
         public void addEvent(Event newEvent)
         {
             Container.addEvent(newEvent);

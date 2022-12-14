@@ -17,16 +17,18 @@ namespace szofttech
             string name;
             string neptunCode;
             int roomNumber = -1;
+            string roomNumberString;
+            bool canConvert = false;
             string major;
-
-            //KÉRD BE ADRIÁN!!!!
             string password = null;
+
             Console.WriteLine("Please give us the Student name!");
             name = Console.ReadLine();
             while (name == "") {
                 Console.WriteLine("The given input is invalid! Please give valid input!");
                 name = Console.ReadLine();
             }
+
             Console.WriteLine("Please give us the Student neptun code!");
             neptunCode = Console.ReadLine();
             while (neptunCode == "")
@@ -34,28 +36,24 @@ namespace szofttech
                 Console.WriteLine("The given input is invalid! Please give valid input!");
                 neptunCode = Console.ReadLine();
             }
-            Console.WriteLine("Please give us the Student room number!");
-            
-            // ez a rész még kifejtésre szorul!!!
 
-            //while (roomNumber.GetType() != typeof(int))
-            //{
-            //    Console.WriteLine("The given input is invalid! Please give valid input!");
-            //    name = Console.ReadLine();
-            //}
-            //try
-            //{
-            //    roomNumber = Convert.ToInt32(Console.ReadLine());
-            //} catch (FormatException e) {
-            //    Console.WriteLine("The given input is invalid!");
-            //}
+            Console.WriteLine("Please give us the Student room number!");
+            roomNumberString = Console.ReadLine();
+            canConvert = int.TryParse(roomNumberString, out roomNumber);
+            while (roomNumberString == "" && !canConvert) {
+                Console.WriteLine("The given input is invalid! Please give valid input!");
+                roomNumberString = Console.ReadLine();
+                canConvert = int.TryParse(roomNumberString, out roomNumber);
+            }
+
             Console.WriteLine("Please give us the Student major!");
             major = Console.ReadLine();
             while (major == "")
             {
                 Console.WriteLine("The given input is invalid! Please give valid input!");
-                name = Console.ReadLine();
+                major = Console.ReadLine();
             }
+
             Student newStudent = new Student(new List<Notification>(), 
                                              new List<string>(), 
                                              name, neptunCode, major, password, roomNumber
@@ -65,31 +63,30 @@ namespace szofttech
 
         private void promoteStudentToSenior()
         {
-            string neptunCode;
-
-            Console.WriteLine("Please give us the neptun code of the Student you want to promote!");
-            neptunCode = Console.ReadLine();
-            
-            //ez a feltétel így biztosan nem lesz jó
-            while (neptunCode == "") {
-
-                Console.WriteLine("The given neptun code is invalid! Please give us a valid neptun code!");
-                neptunCode = Console.ReadLine();
+            Console.Write("Give the neptun code of the student who you wish to promote to senior rank: ");
+            string tempNeptun = Console.ReadLine().ToUpper();
+            while (tempNeptun == "")
+            {
+                Console.WriteLine("No neptun code given. Give one!");
+                tempNeptun = Console.ReadLine();
             }
-
-      //rossz neptun kódnál hibát fog dobni
-            Student student = new Student();
-            student = Container.students.Find(s => s.neptunCode == neptunCode);
+            if (Container.students.Exists(x => x.neptunCode == tempNeptun) == true)
+            {
+                Student student = new Student();
+                student = Container.students.Find(x => x.neptunCode == tempNeptun);
+                Container.students.Add(new Senior(student.notificationList, student.bicycles, student.name,
+                                              student.neptunCode, student.major, student.password, student.roomNumber));
+                Container.students.Remove(student);
+                Console.WriteLine("The selected student is sucessfully promoted!");
+            }
+            else
+                Console.WriteLine("The person does not presented in the list");
 
             //TODO: frissiteni kell majd a jsont!!!!
             //public Senior(List<Notification> notificationList, List<string> bicycles, string name, string neptunCode, string major, int roomNumber)
             //      : base(notificationList, bicycles, name, neptunCode, major, roomNumber)
-            Container.students.Add(new Senior(student.notificationList, student.bicycles, student.name,
-                                              student.neptunCode, student.major, student.password, student.roomNumber));
 
-            Container.students.Remove(student);
-             // folytatás később
-    }
+        }
 
         public static void addRequest(Request request)
         {
@@ -195,40 +192,6 @@ namespace szofttech
             Container.students.Find(x => x.neptunCode == neptunCode).notificationList.Add(
                 new Notification(addNotification(), new Date(DateTime.Now.Year, DateTime.Now.Month,
                                                              DateTime.Now.Day, DateTime.Now.Hour, DateTime.Now.Minute)));
-        }
-        public override void menu()
-        {
-          Console.WriteLine("DEBUG: ADMIN MENU");
-          Console.WriteLine("Here is your functions, tell me what do you want to do!");
-          //ki kell irni a lehetosegek :(((((
-          int actionNumber = int.Parse(Console.ReadLine());
-          switch (actionNumber)
-          {
-            case 1:
-              addNewStudent();
-              break;
-            case 2:
-              promoteStudentToSenior();
-              break;
-            case 3:
-              approveRequest();
-              break;
-            case 4:
-              addObligation();
-              break;
-            case 5:
-              modifyDisciplinaryState();
-              break;
-            case 6:
-              moveToRoom();
-              break;
-            case 99:
-              logout();
-              break;
-            default:
-              Console.WriteLine("Sorry, but this function doesn't exist");
-              break;
-          }
         }
     }
 }
