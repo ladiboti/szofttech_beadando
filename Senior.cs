@@ -258,7 +258,6 @@ namespace szofttech
                 $"99: Log out"
             );
             Console.WriteLine("\nHere is your functions, tell me what do you want to do!");
-            Console.WriteLine("Here is your functions, tell me what do you want to do!");
             //ki kell irni a lehetosegek :(((((
             bool canConvert = false;
             int actionNumber;
